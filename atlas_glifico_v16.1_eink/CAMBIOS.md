@@ -44,3 +44,10 @@ Definida por el usuario; implementada en las capas P/C/Q y, a petición posterio
 - **Efecto medido (167 fármacos):** la sedación operativa pasa de 1 fármaco con valor a **27** (O 27 · Q 30 · sin dato 110). Ejemplos del vector (x, y) antes → después: olanzapina (0,00; −3,21) → (−5,13; −3,91); clozapina (0,00; −2,06) → (−4,62; −2,73); cariprazina (1,42; 1,11) → (−0,33; 0,68); haloperidol sin cambios.
 - **Vistas afectadas:** todas las que leen `vectorProfile` (campo de polaridad, trayectoria, comparación A/B, informe). Es un cambio de comportamiento respecto a la v16.0.
 - **Para volver al cálculo anterior:** quitar el bloque «capa O» de `build.py` y reconstruir.
+
+## Correcciones tras comparación externa
+- **Unidades:** las vistas nuevas (red y tabla de vectores) usan la etiqueta de dosis del atlas (`v154DoseLabel`: unidad, vía y presentación) en lugar de «mg» fijo. Comprobado con ziconotida (`2.4 µg/24 h · perfusión intratecal`), fentanilo (`12 µg/h · transdérmico`) y tramadol/paracetamol (`4 comprimidos/día · Tramadol 150 mg/día + Paracetamol 1300 mg/día`).
+- **Capa P:** ahora usa la potencia documentada intrínseca, independiente de la dosis (antes dependía de ella aunque se describía como «sin dosis»). La dosis solo influye en la capa O, que es dosis-dependiente por diseño del atlas.
+- **Bases independientes:** cada eje conserva el valor de O, P y C por separado; las casillas de capa muestran la base elegida y ya no ocultan una aportación ya priorizada. Con O desactivada, la sedación de olanzapina pasa de 0,73 (O) a 0,84 (P); sin O ni P queda en 0.
+- **Efectos asociados:** sin cifras; solo dirección, base y texto cualitativo.
+- **No cambiado (decisión de diseño):** el área conjunta usa la unión no lineal 1−Π(1−cᵢ), coherente con la agregación del atlas; por eso repetir el mismo perfil aumenta el área (cariprazina ×2: 3,8 → 12,2 u²). Es una combinación, no una envolvente.

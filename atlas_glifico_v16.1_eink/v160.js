@@ -44,6 +44,7 @@ function v160Flags(list){
   else if(conv){kind='conv';text='▣ Convergencia'}
   return {kind,text,conv,parents:parents.size};
 }
+function v160DoseTxt(r){try{const t=typeof v154DoseLabel==='function'?v154DoseLabel(r):'';if(t)return String(t)}catch(e){}return r.dose!==''&&r.dose!=null?r.dose+' (unidad por confirmar)':'dosis por definir'}
 function v160Fmt(n){return (Math.round(n*10)/10).toFixed(1)}
 
 function pdnet(a){
@@ -96,7 +97,7 @@ function pdnet(a){
     if(e.comp){
       svg+='<text x="'+(x+12)+'" y="'+(p.y+35)+'" font-size="11">'+esc('componente de '+e.parent+' · '+n+' diana'+(n===1?'':'s'))+'</text>';
     }else if(!e.meta){
-      svg+='<text x="'+(x+12)+'" y="'+(p.y+42)+'" font-size="12">'+esc((e.row.dose!==''&&e.row.dose!=null?e.row.dose+' mg':'dosis por definir')+' · '+n+' diana'+(n===1?'':'s')+' con este umbral')+'</text>';
+      svg+='<text x="'+(x+12)+'" y="'+(p.y+42)+'" font-size="12">'+esc(v160DoseTxt(e.row)+' · '+n+' diana'+(n===1?'':'s')+' con este umbral')+'</text>';
       if(!n&&d.mech)svg+='<text x="'+(x+12)+'" y="'+(p.y+57)+'" font-size="10.5" fill="#222">'+esc(String(d.mech).slice(0,52))+'…</text>';
     }else{
       svg+='<text x="'+(x+12)+'" y="'+(p.y+35)+'" font-size="11">'+esc('metabolito de '+e.parent+' · '+n+' diana'+(n===1?'':'s'))+'</text>';
