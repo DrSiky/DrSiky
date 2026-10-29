@@ -1,0 +1,875 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Asenapina + Cariprazina + Lamotrigina ± Duloxetina · Atlas de combinación configurable</title>
+<style>
+:root{--ink:#000;--paper:#fff;--soft:#f2f2f2;--rule:#000;--muted:#2b2b2b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;font-size:17px;line-height:1.55}
+.skip{position:absolute;left:-999px;top:0;background:#000;color:#fff;padding:8px 12px;z-index:50}.skip:focus{left:8px;top:8px}
+header{padding:34px 5vw 20px;border-bottom:4px double var(--rule)}
+.eyebrow{font-family:"Helvetica Neue",Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;font-size:12.5px;font-weight:700}
+h1{font-size:clamp(26px,3.6vw,42px);line-height:1.15;margin:8px 0 10px;font-weight:700}.pm{font-weight:400}
+.sub{max-width:900px;font-size:17px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.badge{border:1.5px solid var(--rule);padding:5px 11px;font-size:14px;font-family:"Helvetica Neue",Arial,sans-serif}
+.toolbar{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;padding:12px 5vw;border-bottom:1.5px solid var(--rule);background:var(--soft);font-family:"Helvetica Neue",Arial,sans-serif;font-size:14px}
+.sw{display:inline-flex;gap:8px;align-items:center;cursor:pointer;font-weight:700}.sw input{width:20px;height:20px;accent-color:#000}
+nav{display:flex;flex-wrap:wrap;gap:4px 18px;padding:12px 5vw;position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:2px solid var(--rule);font-family:"Helvetica Neue",Arial,sans-serif}
+nav a{color:var(--ink);font-size:14px;padding:4px 0;text-decoration:underline;text-underline-offset:3px}
+nav a:hover{background:var(--ink);color:var(--paper);text-decoration:none}
+nav a[aria-current]{font-weight:700;text-decoration:underline;text-decoration-thickness:3px}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible{outline:3px solid #000;outline-offset:3px}
+main{padding:30px 5vw 70px;max-width:1200px;margin:auto}section{margin:0 0 40px;scroll-margin-top:70px}
+.card{border-top:5px solid var(--rule);padding:16px 0 0}
+h2{font-size:25px;margin:0 0 8px;font-weight:700}
+h3{font-family:"Helvetica Neue",Arial,sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin:24px 0 8px;padding-bottom:4px;border-bottom:1.5px solid var(--rule)}h3.h0{margin-top:0;border:0;padding:0}
+p,li{font-size:16.5px;line-height:1.55}.small{font-size:14px;color:var(--muted)}.mt{margin-top:8px}.gap-top{margin-top:16px}
+sup{font-size:.7em}
+.grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}.g3{grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}.g4{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.pill-card{border:1.5px solid var(--rule);padding:14px 16px;background:var(--paper)}.accent-dx{border-style:dashed;border-width:2px}
+.pill-title{display:flex;align-items:center;gap:10px;margin-bottom:6px}.pill-title b{font-size:18px}
+.dot{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border:1.5px solid #000;font:700 12px "Helvetica Neue",Arial,sans-serif;flex:0 0 auto}
+.d-a::before{content:"A"}.d-c::before{content:"C"}.d-l::before{content:"L"}.d-d::before{content:"D"}
+.dose{font-family:"Helvetica Neue",Arial,sans-serif;font-size:13.5px;font-weight:700}
+.tag{display:inline-block;font-family:"Helvetica Neue",Arial,sans-serif;font-size:12px;padding:2px 7px;border:1px solid var(--rule);margin:4px 4px 0 0}
+.target{font-family:"Helvetica Neue",Arial,sans-serif;font-size:14px;margin-top:8px}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14.5px;font-family:"Helvetica Neue",Arial,sans-serif}
+th,td{border-bottom:1px solid #555;padding:9px 10px;text-align:left;vertical-align:top;line-height:1.45}
+th{border-bottom:2.5px solid var(--rule);border-top:1.5px solid var(--rule);font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;background:var(--soft)}
+td:first-child{font-weight:400}
+.sev{display:inline-block;font-family:"Helvetica Neue",Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:.04em;padding:1px 7px;margin-right:6px;white-space:nowrap;background:var(--paper);color:var(--ink)}
+.sev.h{background:#000;color:#fff;border:2px solid #000}
+.sev.m{border:3px double #000}
+.sev.l{border:1.5px dashed #000}
+.ev{display:inline-block;font-family:"Helvetica Neue",Arial,sans-serif;font-size:12.5px;font-weight:700;padding:1px 8px;border:1.5px solid #000;white-space:nowrap}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:6px}
+.chips button{font:inherit;font-family:"Helvetica Neue",Arial,sans-serif;font-size:14px;color:var(--ink);background:var(--paper);border:1.5px solid #000;padding:5px 13px;cursor:pointer}
+.chips button[aria-pressed="true"]{background:#000;color:#fff;font-weight:700}
+.note,.alert{padding:12px 16px;margin-top:14px;border:1.5px solid #000}
+.note{border-left:8px solid #000}
+.alert{border:3px double #000}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-top:16px;counter-reset:s}
+.step{border:1.5px solid #000;padding:14px}.step b{display:block;margin-bottom:6px;font-family:"Helvetica Neue",Arial,sans-serif;font-size:14.5px}.step span{font-size:15.5px}
+.pheno{cursor:pointer}.pheno:hover{background:var(--soft)}
+.pheno[aria-pressed="true"]{border-width:4px}.pheno[aria-pressed="true"] h3::after{content:"  ◀ SELECCIONADO";font-size:12px}
+.has-sel .pheno:not(.sel){border-style:dashed;color:#333}
+ul.notes,.card ul{padding-left:22px}.refs li{margin-bottom:6px}
+details.log{margin-top:16px;border:1.5px solid #000;padding:10px 14px}details.log summary{cursor:pointer;font-family:"Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:14.5px}
+.totop{position:fixed;right:18px;bottom:18px;background:#fff;color:#000;border:2px solid #000;padding:8px 14px;font-family:"Helvetica Neue",Arial,sans-serif;font-size:14px;font-weight:700;text-decoration:none;display:none;z-index:30}.totop.show{display:block}
+footer{padding:24px 5vw;border-top:4px double #000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:13.5px}
+.svgwrap{border:1.5px solid #000;padding:10px;overflow:auto;margin-top:12px;background:#fff}
+svg.diag{display:block;width:100%;height:auto;min-width:820px}svg.diag text{paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}svg.diag text{font-family:"Helvetica Neue",Arial,sans-serif}
+.s-bg{fill:#fff}.s-t1,.s-t3,.s-ttl,.s-lbl,.s-rt,.s-ptt{fill:#000}.s-t2{fill:#222}
+.s-box{fill:#fff;stroke:#000;stroke-width:1.5}.s-center{fill:#f2f2f2;stroke:#000;stroke-width:2}.s-arrow{fill:#000}
+.s-ln{fill:none;stroke:#000;stroke-width:2.4}.s-ln.s-wr{stroke-dasharray:8 6}
+.s-rbox{fill:#fff;stroke:#000;stroke-width:2.5}.s-axis{stroke:#000;stroke-width:1.5}.s-base{fill:#000}
+.s-pt{fill:#fff;stroke:#000;stroke-width:2}.s-path{fill:none;stroke:#000;stroke-width:1.5;stroke-dasharray:6 6}.s-bar{fill:#fff;stroke:#000}
+.dlegend{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-family:"Helvetica Neue",Arial,sans-serif;font-size:14px}.dlegend .lg{display:inline-flex;align-items:center;gap:7px}
+[hidden]{display:none!important}
+body.no-dx .dx{display:none!important}
+svg .dx{display:inline}body.no-dx svg .dx{display:none!important}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{
+  body{font-size:11pt}nav,.toolbar,.totop,.skip,.chips{display:none!important}
+  .card{break-inside:auto}.pill-card,tr,.step{break-inside:avoid}.tw{overflow:visible}
+  h2{break-after:avoid}section{margin-bottom:18pt}
+  a{text-decoration:none;color:#000}
+}
+
+.dot{width:auto;min-width:22px;padding:0 3px}
+.d-li::before{content:"Li"}.d-v::before{content:"V"}.d-bn::before{content:"BN"}.d-q::before{content:"Q"}
+.cfg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
+fieldset{border:1.5px solid #000;margin:0;padding:10px 14px 12px;min-width:0}
+legend{font-family:"Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:13.5px;padding:0 6px;text-transform:uppercase;letter-spacing:.05em}
+fieldset label{display:flex;gap:8px;align-items:center;font-family:"Helvetica Neue",Arial,sans-serif;font-size:14.5px;padding:4px 0;cursor:pointer}
+fieldset input[type=radio],fieldset input[type=checkbox]{width:19px;height:19px;accent-color:#000;flex:0 0 auto}
+fieldset .sub-opt{margin-top:4px;font-weight:700}
+fieldset .small{display:block;margin-top:6px}
+select{font:inherit;font-family:"Helvetica Neue",Arial,sans-serif;font-size:14.5px;border:1.5px solid #000;background:#fff;color:#000;padding:4px 8px;margin-left:6px}
+select:disabled,input:disabled{opacity:1}
+fieldset.off{border-style:dashed}
+fieldset.off label,fieldset.off .small{color:#555}
+fieldset:has(select:disabled) .sub-opt{color:#555}
+.btn{font:inherit;font-family:"Helvetica Neue",Arial,sans-serif;font-size:14.5px;font-weight:700;border:2px solid #000;background:#fff;color:#000;padding:7px 16px;cursor:pointer}
+.btn:hover{background:#000;color:#fff}
+.cfg-notes{list-style:none;padding:0;margin:8px 0 0}
+.cfg-notes li{border-bottom:1px solid #555;padding:8px 0;font-size:15.5px}
+.ctx-note{margin-top:16px}
+tr.fhide{display:none}
+@media print{
+  #cfgForm,#cfgReset,.ctx-note + h3{display:none!important}
+}
+
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#cfg">Saltar al contenido</a>
+<header>
+<div class="eyebrow">Atlas psicofarmacológico · Combinaciones racionales · v4 configurable</div>
+<h1 id="h1">Asenapina + Cariprazina + Lamotrigina <span class="pm">±</span> Duloxetina</h1>
+<p class="sub">Representación teórico-clínica de una pauta multimodal configurable para cuadros afectivos, psicóticos o mixtos. La diana es el fenotipo (activación, anhedonia, ansiedad, dolor, consumo), no la etiqueta diagnóstica. Elige los componentes en el configurador y todo el atlas se adapta: tablas, diagramas, seguridad, interacciones, monitorización y algoritmo.</p>
+<div class="badges" id="badges" aria-label="Pauta seleccionada"></div>
+</header>
+
+<div class="toolbar"><span class="legend"><b>Leyenda:</b> ▼ antagonismo/inhibición · pAg agonista parcial · ↑ aumento · <span class="sev h">▲ ALTO</span> <span class="sev m">◆ MODERADO</span> <span class="sev l">● BAJO</span></span></div>
+
+<nav aria-label="Secciones del atlas">
+<a href="#cfg">Configurador</a><a href="#p1">1 · Mapa farmacodinámico</a><a href="#p2">2 · Lógica</a><a href="#p2b">2-bis · Sinergias</a><a href="#p3">3 · Fenotipos</a><a href="#p4">4 · Seguridad</a><a href="#p4b">4-bis · Chemsex y VIH</a><a href="#p5">5 · Monitorización</a><a href="#p6">6 · Algoritmo</a><a href="#p7">7 · Bibliografía</a>
+</nav>
+<main>
+
+<section id="cfg" class="card" aria-labelledby="h-cfg">
+<h2 id="h-cfg">Configurador de la pauta</h2>
+<p class="small">Las dosis las fijas tú. El atlas no las valida: señala abajo cuándo salen de ficha técnica o suman un riesgo específico.</p>
+<form id="cfgForm" class="cfg-grid" onsubmit="return false">
+<fieldset><legend>Contexto diagnóstico</legend>
+<label><input type="radio" name="X" value="tx" checked> Transdiagnóstico (por fenotipo)</label>
+<label><input type="radio" name="X" value="bip"> Espectro bipolar</label>
+<label><input type="radio" name="X" value="uni"> Depresión unipolar / resistente</label>
+<label><input type="radio" name="X" value="psy"> Espectro psicótico</label>
+</fieldset>
+<fieldset><legend>Asenapina (sublingual)</legend>
+<label><input type="radio" name="A" value="5"> 5 mg/día</label>
+<label><input type="radio" name="A" value="10" checked> 10 mg/día</label>
+<label><input type="radio" name="A" value="15"> 15 mg/día</label>
+<label><input type="radio" name="A" value="20"> 20 mg/día</label>
+</fieldset>
+<fieldset><legend>Cariprazina</legend>
+<label><input type="radio" name="C" value="1.5" checked> 1,5 mg/día</label>
+<label><input type="radio" name="C" value="3"> 3 mg/día</label>
+</fieldset>
+<fieldset><legend>Estabilizador</legend>
+<label><input type="radio" name="S" value="lam" checked> Lamotrigina 200 mg/día</label>
+<label><input type="radio" name="S" value="li"> Litio · litemia 0,7 mEq/L</label>
+</fieldset>
+<fieldset><legend>Antidepresivo (opcional)</legend>
+<label><input type="radio" name="AD" value="none"> Ninguno</label>
+<label><input type="radio" name="AD" value="dul" checked> Duloxetina 60 mg/día</label>
+<label><input type="radio" name="AD" value="vor"> Vortioxetina</label>
+<label class="sub-opt">Dosis de vortioxetina
+<select name="V" aria-label="Dosis de vortioxetina">
+<option value="10">10 mg/día</option><option value="15">15 mg/día</option><option value="20">20 mg/día</option>
+</select></label>
+</fieldset>
+<fieldset id="fsBN"><legend>Complemento (solo con vortioxetina)</legend>
+<label><input type="checkbox" name="BN"> Bupropión + naltrexona</label>
+<label class="sub-opt">Bupropión
+<select name="B" aria-label="Dosis de bupropión"><option value="300">300 mg/día</option><option value="450">450 mg/día</option></select></label>
+<span class="small">Naltrexona 50 mg/día (oral). Con vortioxetina limitada a 10–15 mg. No se contempla con duloxetina.</span>
+</fieldset>
+<fieldset><legend>Rescate de insomnio</legend>
+<label><input type="checkbox" name="Q"> Quetiapina IR</label>
+<label class="sub-opt">Dosis
+<select name="QD" aria-label="Dosis de quetiapina"><option value="12.5">12,5 mg</option><option value="25" selected>25 mg</option><option value="50">50 mg</option></select></label>
+</fieldset>
+</form>
+<div class="ctx-note note" id="ctxNote" aria-live="polite"></div>
+<h3>Avisos de la pauta elegida</h3>
+<ul id="cfgNotes" class="cfg-notes" aria-live="polite"></ul>
+<p><button type="button" id="cfgReset" class="btn">Restablecer pauta por defecto</button></p>
+</section>
+
+<section id="p1" class="card" aria-labelledby="h-p1">
+<h2 id="h-p1">Página 1 · Mapa farmacodinámico integrado</h2>
+<p class="small">La combinación articula ejes complementarios: bloqueo multirreceptor con efecto antiactivación (asenapina), modulación dopaminérgica parcial (cariprazina), estabilización de largo plazo (lamotrigina o litio) y, de forma condicional, potenciación monoaminérgica (duloxetina o vortioxetina), complemento de recompensa/consumo (bupropión + naltrexona) y rescate de sueño (quetiapina).</p>
+<div class="grid g4 gap-top">
+<div class="pill-card"><div class="pill-title"><span class="dot d-a" aria-hidden="true"></span><b>Asenapina</b></div><div class="dose">5–20 mg/día · sublingual (sin comer ni beber 10 min)</div><div class="target"><b>5-HT2A</b> ▼ · <b>D2</b> ▼ · <b>α1/α2</b> ▼ · <b>H1</b> ▼ · <b>5-HT2C</b> ▼ · <b>5-HT7</b> ▼</div><div><span class="tag">Antimaníaca rápida</span><span class="tag">Antipsicótico</span><span class="tag">Antiactivación</span><span class="tag">Sedación</span></div><p class="small mt">Aporte central: reducción temprana de activación, irritabilidad, desorganización y síntomas psicóticos. La vía sublingual evita el primer paso hepático (deglutida, su biodisponibilidad es muy baja).</p></div>
+<div class="pill-card"><div class="pill-title"><span class="dot d-c" aria-hidden="true"></span><b>Cariprazina</b></div><div class="dose">1,5–3 mg/día · oral</div><div class="target"><b>D3</b> pAg · <b>D2</b> pAg · <b>5-HT1A</b> pAg · <b>5-HT2B</b> ▼</div><div><span class="tag">Modulación dopaminérgica</span><span class="tag">Antipsicótico</span><span class="tag">Cognición/negativos</span></div><p class="small mt">Aporte central: agonismo parcial D2/D3 con preferencia por D3; puede complementar la asenapina con menor carga sedante y metabólica. La evidencia de la combinación específica con asenapina es limitada.</p></div>
+<div class="pill-card" data-req="lam"><div class="pill-title"><span class="dot d-l" aria-hidden="true"></span><b>Lamotrigina</b></div><div class="dose">200 mg/día · oral (titulación obligatoria, ver p.6)</div><div class="target"><b>Canales Na<sup>+</sup> dependientes de voltaje</b> ▼ · <b>Liberación de glutamato</b> ▼ · <b>HCN (Ih)</b> modulación</div><div><span class="tag">Prevención depresiva</span><span class="tag">Estabilizador</span><span class="tag">Tolerabilidad</span><span class="tag">Neuroprotección (hipótesis preclínica)</span></div><p class="small mt">Aporte central: reducción de recurrencias depresivas y de la labilidad afectiva; no es antimaníaca aguda potente. Requiere titulación lenta por riesgo de rash.</p></div>
+<div class="pill-card" data-req="li"><div class="pill-title"><span class="dot d-li" aria-hidden="true"></span><b>Litio</b></div><div class="dose">Litemia objetivo 0,7 mEq/L (mantenimiento habitual 0,6–0,8) · oral</div><div class="target"><b>GSK-3</b> ▼ · <b>Inositol monofosfatasa</b> ▼ · modulación de segundos mensajeros</div><div><span class="tag">Antimaníaco</span><span class="tag">Prevención de recaídas</span><span class="tag">Efecto antisuicida</span><span class="tag">Ventana terapéutica estrecha</span></div><p class="small mt">Aporte central: estabilizador de referencia. Preventivo claro en manía y más equívoco en depresión bipolar [10]; reduce el riesgo de suicidio en trastornos del ánimo, también unipolares [11]; potencia antidepresivos en depresión resistente [12]. Exige monitorizar litemia, función renal y tiroidea.</p></div>
+<div class="pill-card accent-dx" data-req="dul"><div class="pill-title"><span class="dot d-d" aria-hidden="true"></span><b>Duloxetina · opcional</b></div><div class="dose">60 mg/día · oral (dosis de referencia)</div><div class="target"><b>SERT</b> ▼ · <b>NET</b> ▼ · <b>DAT</b> ▼ (débil). Afinidad despreciable por 5-HT2A, 5-HT2C y α2.</div><div><span class="tag">Depresión</span><span class="tag">Ansiedad</span><span class="tag">Dolor neuropático</span><span class="tag">Riesgo de viraje</span></div><p class="small mt">Aporte condicional: potencia el eje monoaminérgico en depresión, ansiedad o dolor comórbido. Más de 60 mg/día no ha demostrado beneficio adicional en la ficha técnica.</p></div>
+<div class="pill-card accent-dx" data-req="vor"><div class="pill-title"><span class="dot d-v" aria-hidden="true"></span><b>Vortioxetina · opcional</b></div><div class="dose">10–20 mg/día (10–15 mg con bupropión) · oral</div><div class="target"><b>SERT</b> ▼ · <b>5-HT3</b> ▼ · <b>5-HT7</b> ▼ · <b>5-HT1D</b> ▼ · <b>5-HT1B</b> pAg · <b>5-HT1A</b> agonista</div><div><span class="tag">Depresión</span><span class="tag">Perfil multimodal</span><span class="tag">Náusea frecuente</span><span class="tag">Riesgo de viraje</span></div><p class="small mt">Aporte condicional: antidepresivo multimodal. Su indicación en la UE es el trastorno depresivo mayor; no tiene indicación ni ensayos pivotales en depresión bipolar. Se metaboliza sobre todo por CYP2D6.</p></div>
+<div class="pill-card accent-dx" data-req="b n"><div class="pill-title"><span class="dot d-bn" aria-hidden="true"></span><b>Bupropión + naltrexona</b></div><div class="dose">Bupropión 300–450 mg/día + naltrexona 50 mg/día · oral</div><div class="target"><b>Bupropión:</b> <b>DAT</b> ▼ · <b>NET</b> ▼ · inhibidor potente de CYP2D6. <b>Naltrexona:</b> antagonista opioide μ.</div><div><span class="tag">Craving y consumo</span><span class="tag">Anhedonia</span><span class="tag">Riesgo convulsivo</span><span class="tag">Bloqueo opioide</span></div><p class="small mt">Aporte condicional, solo con vortioxetina en este atlas. La base clínica de la pareja es el trastorno por consumo de metanfetamina [13], con naltrexona inyectable de liberación prolongada.</p></div>
+<div class="pill-card" data-req="q"><div class="pill-title"><span class="dot d-q" aria-hidden="true"></span><b>Quetiapina IR · rescate</b></div><div class="dose">12,5–50 mg · uso puntual</div><div class="target"><b>H1</b> ▼ · <b>5-HT2A</b> ▼ · <b>α1</b> ▼ (a dosis bajas, D2 ▼ mínimo)</div><div><span class="tag">Rescate de insomnio</span><span class="tag">Sedación</span><span class="tag">Hipotensión</span><span class="tag">Fuera de indicación</span></div><p class="small mt">Aporte puntual: sedación nocturna cuando la asenapina no basta. Suma un tercer antipsicótico a la pauta.</p></div>
+</div>
+
+<h3>Mapa de la red farmacodinámica</h3>
+<div class="svgwrap"><svg class="diag" viewBox="0 0 1200 600" role="img" aria-labelledby="svg1t svg1d">
+<title id="svg1t">Mapa farmacodinámico de la combinación</title>
+<desc id="svg1d">Cada fármaco aporta un vector hacia la estabilización afectiva central: la asenapina controla la activación, la cariprazina modula la dopamina, el estabilizador previene recaídas, el antidepresivo opcional potencia el efecto antidepresivo, bupropión más naltrexona actúan sobre craving y anhedonia, y la quetiapina es un rescate de sueño.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="s-arrow" d="M0,0 L10,5 L0,10 z"/></marker></defs>
+<rect class="s-bg" x="0" y="0" width="1200" height="600"/>
+<text class="s-t1" x="40" y="42" font-size="23" font-weight="700">Red farmacodinámica: objetivos sinérgicos y puntos de fricción</text>
+<text class="s-t2" x="40" y="66" font-size="13">Línea continua: efecto buscado · Línea discontinua: componente condicional o vigilancia clínica</text>
+<circle class="s-center" cx="600" cy="262" r="112"/>
+<text class="s-t1" x="600" y="250" text-anchor="middle" font-size="18" font-weight="700">Estabilización</text>
+<text class="s-t1" x="600" y="274" text-anchor="middle" font-size="18" font-weight="700">afectiva</text>
+<text class="s-t2" x="600" y="298" text-anchor="middle" font-size="12.5">Funcionamiento · sueño · cognición</text>
+
+<g><rect class="s-box" x="60" y="100" width="250" height="120" rx="14"/>
+<text class="s-ttl" x="80" y="130" font-size="15" font-weight="700">[A] Asenapina</text>
+<text class="s-t3" x="80" y="155" font-size="12.5">5-HT2A ▼ · D2 ▼ · α1/α2 ▼</text>
+<text class="s-t3" x="80" y="176" font-size="12.5">H1 ▼ · 5-HT2C ▼ · 5-HT7 ▼</text>
+<text class="s-t2" x="80" y="203" font-size="12">Antiactivación · sueño · psicosis</text></g>
+<g><rect class="s-box" x="60" y="290" width="250" height="120" rx="14"/>
+<text class="s-ttl" x="80" y="320" font-size="15" font-weight="700">[C] Cariprazina</text>
+<text class="s-t3" x="80" y="345" font-size="12.5">D3 pAg · D2 pAg · 5-HT1A pAg</text>
+<text class="s-t3" x="80" y="366" font-size="12.5">5-HT2B ▼</text>
+<text class="s-t2" x="80" y="393" font-size="12">Dopamina contextual · negativos</text></g>
+<g><rect class="s-box" x="890" y="100" width="250" height="120" rx="14"/>
+<g data-req="lam"><text class="s-ttl" x="910" y="130" font-size="15" font-weight="700">[L] Lamotrigina</text>
+<text class="s-t3" x="910" y="155" font-size="12.5">Canales Na⁺ ▼ · glutamato ▼</text>
+<text class="s-t3" x="910" y="176" font-size="12.5">HCN (Ih) · modulación</text>
+<text class="s-t2" x="910" y="203" font-size="12">Prevención depresiva · labilidad</text></g>
+<g data-req="li"><text class="s-ttl" x="910" y="130" font-size="15" font-weight="700">[Li] Litio · 0,7 mEq/L</text>
+<text class="s-t3" x="910" y="155" font-size="12.5">GSK-3 ▼ · IMPasa ▼</text>
+<text class="s-t3" x="910" y="176" font-size="12.5">Segundos mensajeros</text>
+<text class="s-t2" x="910" y="203" font-size="12">Recaídas · efecto antisuicida</text></g></g>
+<g data-any="dul vor"><rect class="s-box" x="890" y="290" width="250" height="120" rx="14"/>
+<g data-req="dul"><text class="s-ttl" x="910" y="320" font-size="15" font-weight="700">[D] Duloxetina ±</text>
+<text class="s-t3" x="910" y="345" font-size="12.5">SERT ▼ · NET ▼ · DAT ▼ (débil)</text>
+<text class="s-t3" x="910" y="366" font-size="12.5">Sin efecto en 5-HT2A, α2</text>
+<text class="s-t2" x="910" y="393" font-size="12">Depresión · ansiedad · dolor</text></g>
+<g data-req="vor"><text class="s-ttl" x="910" y="320" font-size="15" font-weight="700">[V] Vortioxetina ±</text>
+<text class="s-t3" x="910" y="345" font-size="12.5">SERT ▼ · 5-HT3/7/1D ▼</text>
+<text class="s-t3" x="910" y="366" font-size="12.5">5-HT1B pAg · 5-HT1A ag.</text>
+<text class="s-t2" x="910" y="393" font-size="12">Depresión · cognición (TDM)</text></g></g>
+<g data-req="b n"><rect class="s-box" x="60" y="470" width="310" height="100" rx="14"/>
+<text class="s-ttl" x="80" y="498" font-size="15" font-weight="700">[BN] Bupropión + naltrexona</text>
+<text class="s-t3" x="80" y="522" font-size="12.5">Bupropión: DAT ▼ · NET ▼</text>
+<text class="s-t3" x="80" y="542" font-size="12.5">Naltrexona: antagonista opioide μ</text>
+<text class="s-t2" x="80" y="562" font-size="12">Craving · consumo · anhedonia</text></g>
+<g data-req="q"><rect class="s-box" x="830" y="470" width="310" height="100" rx="14"/>
+<text class="s-ttl" x="850" y="498" font-size="15" font-weight="700">[Q] Quetiapina IR · rescate</text>
+<text class="s-t3" x="850" y="522" font-size="12.5">H1 ▼ · 5-HT2A ▼ · α1 ▼</text>
+<text class="s-t2" x="850" y="548" font-size="12">Insomnio puntual · no uso crónico</text></g>
+
+<line class="s-ln s-ok" x1="310" y1="160" x2="498" y2="228" marker-end="url(#arrow)"/>
+<line class="s-ln s-ok" x1="310" y1="350" x2="498" y2="296" marker-end="url(#arrow)"/>
+<line class="s-ln s-ok" x1="890" y1="160" x2="702" y2="228" marker-end="url(#arrow)"/>
+<line class="s-ln s-wr" data-any="dul vor" x1="890" y1="350" x2="702" y2="296" marker-end="url(#arrow)"/>
+<line class="s-ln s-wr" data-req="b n" x1="370" y1="505" x2="520" y2="358" marker-end="url(#arrow)"/>
+<line class="s-ln s-wr" data-req="q" x1="830" y1="505" x2="680" y2="358" marker-end="url(#arrow)"/>
+<text class="s-lbl" x="335" y="150" font-size="12">Control activación</text>
+<text class="s-lbl" x="320" y="385" font-size="12">Modulación dopaminérgica</text>
+<text class="s-lbl" x="725" y="150" font-size="12">Prevención de recaída</text>
+<text class="s-lbl" data-any="dul vor" x="730" y="352" font-size="12">Potenciación antidepresiva</text>
+<text class="s-lbl" data-req="b n" x="372" y="470" font-size="12">Craving / anhedonia</text>
+<text class="s-lbl" data-req="q" x="700" y="470" font-size="12">Rescate de sueño</text>
+<g><rect class="s-rbox" x="410" y="480" width="380" height="76" rx="12"/>
+<text class="s-rt" x="600" y="505" text-anchor="middle" font-size="13.5" font-weight="700">Fricciones a vigilar</text>
+<text class="s-t3" id="frictionA" x="600" y="527" text-anchor="middle" font-size="12">Sedación · akatisia · hipotensión</text>
+<text class="s-t3" id="frictionB" x="600" y="546" text-anchor="middle" font-size="12"></text></g>
+</svg></div>
+<div class="dlegend" aria-label="Leyenda de fármacos">
+<span class="lg"><span class="dot d-a" aria-hidden="true"></span>Asenapina</span>
+<span class="lg"><span class="dot d-c" aria-hidden="true"></span>Cariprazina</span>
+<span class="lg" data-req="lam"><span class="dot d-l" aria-hidden="true"></span>Lamotrigina</span>
+<span class="lg" data-req="li"><span class="dot d-li" aria-hidden="true"></span>Litio</span>
+<span class="lg" data-req="dul"><span class="dot d-d" aria-hidden="true"></span>Duloxetina</span>
+<span class="lg" data-req="vor"><span class="dot d-v" aria-hidden="true"></span>Vortioxetina</span>
+<span class="lg" data-req="b n"><span class="dot d-bn" aria-hidden="true"></span>Bupropión + naltrexona</span>
+<span class="lg" data-req="q"><span class="dot d-q" aria-hidden="true"></span>Quetiapina (rescate)</span>
+</div>
+
+<h3>Estatus regulatorio y datos farmacocinéticos clave</h3>
+<p class="small">La columna «Uso en este contexto» cambia con el contexto diagnóstico elegido en el configurador.</p>
+<div class="tw"><table>
+<thead><tr><th>Fármaco</th><th>Indicación autorizada en la UE (EMA/AEMPS)</th><th>Uso en este contexto</th><th>Observación clave</th></tr></thead>
+<tbody>
+<tr><td><b>Asenapina</b></td><td>Episodios maníacos moderados-graves del trastorno bipolar I.</td><td><span data-req="bip">Dentro de indicación (manía/mixto).</span><span data-req="uni">Fuera de indicación.</span><span data-req="psy">Fuera de indicación en la UE (la esquizofrenia está autorizada en EE. UU.).</span><span data-req="tx">En indicación solo en manía bipolar I; en el resto, fuera de ficha.</span></td><td>Dosis de ficha: 10 mg/12 h en monoterapia y 5 mg/12 h como coadyuvante; 5 mg/día queda por debajo de las dosis de ficha. Metabolismo por UGT1A4 y CYP1A2.</td></tr>
+<tr><td><b>Cariprazina</b></td><td>Esquizofrenia en adultos.</td><td><span data-req="bip">Fuera de indicación en la UE; EE. UU. la autoriza en manía/mixto y depresión bipolar I.</span><span data-req="uni">Fuera de indicación en la UE; EE. UU. la autoriza como adyuvante en trastorno depresivo mayor.</span><span data-req="psy">Dentro de indicación (esquizofrenia).</span><span data-req="tx">En indicación solo en esquizofrenia (UE).</span></td><td>Metabolito activo DDCAR con semivida de 1–3 semanas: titulación lenta, akatisia posible de aparición tardía y efectos que persisten semanas tras suspender. Sustrato principal de CYP3A4.</td></tr>
+<tr data-req="lam"><td><b>Lamotrigina</b></td><td>Epilepsia. Trastorno bipolar I: prevención de episodios depresivos.</td><td><span data-req="bip">Dentro de indicación.</span><span data-req="uni">Fuera de indicación; evidencia limitada y heterogénea como potenciación (verificar).</span><span data-req="psy">Fuera de indicación.</span><span data-req="tx">En indicación en epilepsia y bipolar I (prevención depresiva).</span></td><td>Titulación estricta por riesgo de rash grave. Glucuronidación por UGT: muy sensible a inductores e inhibidores.</td></tr>
+<tr data-req="li"><td><b>Litio</b></td><td>Indicaciones según la ficha nacional (en general, manía aguda y profilaxis del trastorno bipolar). Verificar la ficha vigente.</td><td><span data-req="bip">Dentro de indicación (verificar ficha).</span><span data-req="uni">Potenciación de antidepresivos respaldada por metaanálisis [12]; la indicación depende de la ficha nacional.</span><span data-req="psy">Uso como coadyuvante, con evidencia limitada (verificar).</span><span data-req="tx">Según contexto y ficha nacional.</span></td><td>Ventana terapéutica estrecha. Eliminación renal exclusiva, sin metabolismo hepático: depende del sodio, la hidratación y la función renal.</td></tr>
+<tr data-req="dul"><td><b>Duloxetina</b></td><td>Trastorno depresivo mayor, dolor neuropático diabético, trastorno de ansiedad generalizada.</td><td><span data-req="bip">Fuera de indicación; riesgo de viraje.</span><span data-req="uni">Dentro de indicación.</span><span data-req="psy">Fuera de indicación como añadido a antipsicótico.</span><span data-req="tx">En indicación en TDM, TAG y dolor neuropático diabético.</span></td><td>Metabolismo por CYP1A2 y CYP2D6; inhibidor moderado de CYP2D6. Contraindicada con IMAO y con inhibidores potentes de CYP1A2 (fluvoxamina, ciprofloxacino).</td></tr>
+<tr data-req="vor"><td><b>Vortioxetina</b></td><td>Trastorno depresivo mayor en adultos.</td><td><span data-req="bip">Fuera de indicación; sin ensayos pivotales en depresión bipolar.</span><span data-req="uni">Dentro de indicación.</span><span data-req="psy">Fuera de indicación como añadido a antipsicótico.</span><span data-req="tx">En indicación solo en TDM.</span></td><td>Rango de ficha 5–20 mg/día. Se metaboliza sobre todo por CYP2D6: la ficha pide considerar reducir la dosis con inhibidores potentes de CYP2D6 (como bupropión).</td></tr>
+<tr data-req="b n"><td><b>Bupropión</b></td><td>Trastorno depresivo mayor (liberación prolongada); deshabituación tabáquica (otra presentación). La ficha de la UE fija el máximo en 300 mg/día (verificar).</td><td><span data-req="bip">Fuera de indicación; reducir al mínimo el riesgo de viraje.</span><span data-req="uni">Dentro de indicación en TDM (hasta 300 mg/día en la UE).</span><span data-req="psy">Fuera de indicación.</span><span data-req="tx">En indicación en TDM; 450 mg/día es fuera de ficha en la UE.</span></td><td>Inhibidor potente de CYP2D6. Riesgo de convulsiones dependiente de la dosis. 450 mg/día corresponde a la ficha de EE. UU. (XL) y al protocolo del ensayo ADAPT-2 [13].</td></tr>
+<tr data-req="b n"><td><b>Naltrexona 50 mg</b></td><td>Prevención de recaídas en dependencia de alcohol; bloqueo opioide tras desintoxicación.</td><td>Consumo de estimulantes: fuera de indicación en todos los contextos [13][14].</td><td>El ensayo ADAPT-2 usó naltrexona inyectable de liberación prolongada 380 mg cada 3 semanas, no naltrexona oral 50 mg [13]. Naltrexona oral 50 mg sola redujo el consumo de anfetaminas en un ensayo de 12 semanas [14].</td></tr>
+<tr data-req="q"><td><b>Quetiapina IR</b></td><td>Esquizofrenia y episodios maníacos o depresivos del trastorno bipolar.</td><td>Insomnio: fuera de indicación en todos los contextos.</td><td>Metabolismo por CYP3A4: con inhibidores potentes (ritonavir, cobicistat) la ficha exige una reducción drástica de la dosis. A dosis bajas actúa sobre todo por H1, 5-HT2A y α1.</td></tr>
+</tbody>
+</table></div>
+<p class="small">Fuente: fichas técnicas EMA/AEMPS vigentes [1]. Contrastar siempre con la versión actual en CIMA antes de uso pericial o docente.</p>
+</section>
+
+<section id="p2" class="card" aria-labelledby="h-p2">
+<h2 id="h-p2">Página 2 · Lógica teórica de la combinación</h2>
+<p>La propuesta no persigue sumar efectos de forma indiscriminada, sino distribuir la carga terapéutica entre <b>control agudo</b>, <b>modulación dopaminérgica</b> y <b>prevención de recaídas</b>, con módulos condicionales para antidepresión, consumo y sueño. La asenapina aporta rapidez; la cariprazina, ajuste fino dopaminérgico; <span data-req="lam">la lamotrigina, estabilidad a medio-largo plazo</span><span data-req="li">el litio, estabilidad a medio-largo plazo y efecto antisuicida</span>.</p>
+<div class="grid g3 gap-top">
+<div class="pill-card"><h3 class="h0">Núcleo estabilizador</h3><p><b>Asenapina + <span data-req="lam">lamotrigina</span><span data-req="li">litio</span>.</b> Cubre la fase aguda de activación y la prevención posterior <span data-req="lam">de episodios depresivos [3][4]</span><span data-req="li">de recaídas [10]. La coadyuvancia de asenapina a litio está estudiada en manía aguda [9]</span>. Es el eje con mayor justificación clínica dentro de esta combinación.</p></div>
+<div class="pill-card"><h3 class="h0">Módulo dopaminérgico</h3><p><b>Cariprazina añadida.</b> Puede buscar beneficio sobre anhedonia, apatía, síntomas negativos o disfunción cognitiva cuando persisten tras controlar activación y sueño. Su agonismo parcial D2/D3 exige precaución por acumulación de metabolito activo (DDCAR).</p></div>
+<div class="pill-card accent-dx" data-any="dul vor"><h3 class="h0">Módulo antidepresivo</h3><p><b><span data-req="dul">Duloxetina</span><span data-req="vor">Vortioxetina</span> añadida.</b> Opción para depresión resistente, dolor crónico o ansiedad relevante<span data-req="bip">; en el espectro bipolar, solo con cobertura antimaníaca robusta</span>. No debe introducirse como «antidepresivo de refuerzo» sin definir indicación, fase afectiva y plan de retirada. La evidencia de los antidepresivos añadidos en depresión bipolar es limitada [2][5].</p></div>
+<div class="pill-card accent-dx" data-req="b n"><h3 class="h0">Módulo de consumo y recompensa</h3><p><b>Bupropión + naltrexona.</b> Dirigido a craving y consumo de estimulantes y a anhedonia. La combinación se estudió en trastorno por consumo de metanfetamina [13], con respuesta modesta (13,6 % frente a 2,5 % con placebo).</p></div>
+<div class="pill-card" data-req="q"><h3 class="h0">Módulo de rescate</h3><p><b>Quetiapina IR 12,5–50 mg.</b> Solo para insomnio puntual no resuelto con la asenapina nocturna. No es un componente de mantenimiento.</p></div>
+</div>
+
+<h3>Qué se pretende ganar</h3>
+<div class="tw"><table>
+<thead><tr><th>Problema clínico</th><th>Componente principal</th><th>Mecanismo propuesto</th><th>Resultado esperado</th></tr></thead>
+<tbody>
+<tr><td>Activación / irritabilidad / psicosis</td><td>Asenapina</td><td>Bloqueo D2 y 5-HT2A; sedación por H1</td><td>Reducción rápida de activación, insomnio y síntomas psicóticos</td></tr>
+<tr data-req="lam"><td>Labilidad y recaídas depresivas</td><td>Lamotrigina</td><td>Modulación glutamatérgica y de canales de sodio</td><td>Mayor estabilidad intercrisis y menor recurrencia depresiva</td></tr>
+<tr data-req="li"><td>Recaídas, labilidad y riesgo suicida</td><td>Litio</td><td>Inhibición de GSK-3 e IMPasa</td><td>Menos recaídas (claro en manía) y menor riesgo de suicidio [10][11]</td></tr>
+<tr><td>Apatía, anhedonia, negativos</td><td>Cariprazina</td><td>Agonismo parcial D3/D2 contextual</td><td>Mejora funcional y motivacional, si no hay akatisia ni activación</td></tr>
+<tr data-any="dul vor"><td>Depresión residual / dolor / ansiedad</td><td><span data-req="dul">Duloxetina</span><span data-req="vor">Vortioxetina</span></td><td><span data-req="dul">Inhibición doble SERT/NET</span><span data-req="vor">Inhibición de SERT con modulación de receptores 5-HT</span></td><td>Mejora sintomática, con vigilancia estrecha de viraje</td></tr>
+<tr data-req="b n"><td>Craving, consumo de estimulantes, anhedonia</td><td>Bupropión + naltrexona</td><td>Inhibición de DAT/NET y bloqueo opioide μ</td><td>Reducción del consumo (efecto modesto en el ensayo de referencia [13])</td></tr>
+<tr><td>Insomnio y agitación nocturna</td><td>Asenapina<span data-req="q"> (rescate: quetiapina)</span></td><td>Antagonismo H1 y 5-HT2A</td><td>Mejora del sueño, a costa de posible sedación diurna</td></tr>
+</tbody>
+</table></div>
+<div class="note"><b>Lectura epistemológica:</b> esta es una representación de racionalidad mecanicista, no una recomendación de equivalencia clínica. La sinergia teórica entre receptores no garantiza beneficio neto: cada adición debe justificarse por un fenotipo diana, un objetivo medible y una alternativa más simple descartada.</div>
+</section>
+
+<section id="p2b" class="card" aria-labelledby="h-p2b">
+<h2 id="h-p2b">Página 2-bis · Sinergias farmacodinámicas ampliadas</h2>
+<p>La combinación puede leerse como una <b>red de sinergias funcionales</b>, no como una suma lineal de receptores. Cada par modifica un circuito distinto: activación, dopamina, segundos mensajeros, noradrenalina, recompensa, vigilia y dolor. Solo aparecen los pares de la pauta elegida.</p>
+
+<h3>Nivel de evidencia asignado a cada par</h3>
+<div class="grid g3">
+<div class="pill-card"><span class="ev">Nivel A</span><p class="small mt">Ensayos de la combinación específica. <b>Ningún par de este atlas alcanza este nivel.</b></p></div>
+<div class="pill-card"><span class="ev">Nivel B</span><p class="small mt">Cada componente tiene evidencia propia en la indicación o fase diana; la combinación está extrapolada.</p></div>
+<div class="pill-card"><span class="ev">Nivel C</span><p class="small mt">Extrapolación mecanicista o uso fuera de ficha sin ensayos relevantes de ningún componente en esa fase.</p></div>
+</div>
+<p class="small">La asignación es del autor del documento, no una gradación formal de guías.</p>
+
+<h3>Matriz de sinergias por pares</h3>
+<div class="chips" id="pairFilter" role="group" aria-label="Filtrar pares por fármaco">
+<span class="small">Filtrar:</span>
+<button type="button" data-f="all" aria-pressed="true">Todos</button>
+<button type="button" data-f="A" aria-pressed="false">Asenapina</button>
+<button type="button" data-f="C" aria-pressed="false">Cariprazina</button>
+<button type="button" data-f="S" aria-pressed="false">Estabilizador</button>
+<button type="button" data-f="X" aria-pressed="false">Antidepresivo</button>
+<button type="button" data-f="B" aria-pressed="false">Bupropión/naltrexona</button>
+<button type="button" data-f="Q" aria-pressed="false">Quetiapina</button>
+</div>
+<div class="tw"><table id="pairTable">
+<thead><tr><th>Par</th><th>Evidencia</th><th>Mecanismo farmacodinámico</th><th>Beneficio teórico</th><th>Fricción / riesgo</th></tr></thead>
+<tbody>
+<tr data-d="AC"><td><b>Asenapina + Cariprazina</b></td><td><span class="ev">Nivel C</span></td><td>Asenapina bloquea D2 y 5-HT2A; cariprazina es agonista parcial D2/D3 de alta afinidad. <b>Hipótesis, no hecho:</b> a dosis bajas podría reintroducir señal dopaminérgica contextual donde el bloqueo D2 sea excesivo. Al competir un antagonista y un agonista parcial por el mismo receptor, el efecto neto es impredecible.</td><td>Control de activación/psicosis con posible mejora de apatía, anhedonia, iniciativa y cognición social.</td><td>Politerapia antipsicótica sin ensayos. Akatisia, rigidez, temblor, desinhibición paradójica o empeoramiento de agitación.</td></tr>
+<tr data-d="AS" data-req="lam"><td><b>Asenapina + Lamotrigina</b></td><td><span class="ev">Nivel B</span></td><td>Asenapina reduce activación monoaminérgica y cortical; lamotrigina limita liberación glutamatérgica y estabiliza membranas. Combina control top-down y estabilización excitatoria bottom-up.</td><td>Control de activación aguda y prevención posterior de depresión; menor labilidad intercrisis.</td><td>Lamotrigina no cubre activación aguda; asenapina no previene suficientemente la depresión a largo plazo; sedación acumulada.</td></tr>
+<tr data-d="AS" data-req="li"><td><b>Asenapina + Litio</b></td><td><span class="ev">Nivel B</span></td><td>Asenapina bloquea D2/5-HT2A; el litio actúa sobre GSK-3 e IMPasa. La asenapina como coadyuvante de litio o valproato mejoró la manía aguda frente a estabilizador solo [9].</td><td>Control antimaníaco/mixto rápido con estabilizador de fondo.</td><td>Temblor, sedación y ganancia de peso. No se ha descrito en la ficha de asenapina una interacción farmacocinética relevante con litio (verificar). Vigilar neurotoxicidad por litio (temblor grosero, ataxia, confusión).</td></tr>
+<tr data-d="CS" data-req="lam"><td><b>Cariprazina + Lamotrigina</b></td><td><span class="ev">Nivel B</span></td><td>Lamotrigina amortigua excitabilidad glutamatérgica; cariprazina modula señal dopaminérgica fásica/tónica.</td><td>Mejora funcional en depresión con anhedonia, apatía o síntomas negativos residuales.</td><td>Activación, insomnio o inquietud; es difícil distinguir respuesta antidepresiva, akatisia o viraje.</td></tr>
+<tr data-d="CS" data-req="li"><td><b>Cariprazina + Litio</b></td><td><span class="ev">Nivel C</span></td><td>El litio se elimina por vía renal sin metabolismo hepático; cariprazina se metaboliza por CYP3A4. No cabe esperar interacción farmacocinética.</td><td>Contención afectiva con modulación dopaminérgica.</td><td>El temblor del litio puede confundirse con akatisia o parkinsonismo por cariprazina; ambos producen inquietud.</td></tr>
+<tr data-d="AX" data-req="a dul"><td><b>Asenapina + Duloxetina</b></td><td><span class="ev">Nivel C</span></td><td>Duloxetina aumenta 5-HT y NA. El antagonismo H1, α1, 5-HT2A y 5-HT2C de la <b>asenapina</b> puede atenuar insomnio y activación. Su antagonismo α2, en cambio, podría sumar impulso noradrenérgico (efecto teórico opuesto).</td><td>Antidepresión y analgesia con mayor contención de activación, ansiedad o insomnio.</td><td>Hipotensión, sedación, síndrome serotoninérgico con otros fármacos, riesgo residual de viraje.</td></tr>
+<tr data-d="AX" data-req="a vor"><td><b>Asenapina + Vortioxetina</b></td><td><span class="ev">Nivel C</span></td><td>Ambas antagonizan 5-HT7; vortioxetina además inhibe SERT y antagoniza 5-HT3 y 5-HT1D. Solapamiento en 5-HT7 (efecto sumatorio teórico).</td><td>Antidepresión con contención de activación e insomnio.</td><td>Náusea (muy frecuente con vortioxetina), hiponatremia, riesgo serotoninérgico con otros fármacos y viraje en el espectro bipolar.</td></tr>
+<tr data-d="CX" data-req="c dul"><td><b>Cariprazina + Duloxetina</b></td><td><span class="ev">Nivel C</span></td><td>Duloxetina potencia monoaminas descendentes; cariprazina ajusta transmisión dopaminérgica mediante agonismo parcial.</td><td>Mejora de energía, interés, motivación y funcionamiento en depresión con apatía/anhedonia.</td><td>Náusea, sudoración, disfunción sexual, akatisia y activación.</td></tr>
+<tr data-d="CX" data-req="c vor"><td><b>Cariprazina + Vortioxetina</b></td><td><span class="ev">Nivel C</span></td><td>Vortioxetina refuerza 5-HT (con agonismo 5-HT1A y agonismo parcial 5-HT1B); cariprazina es agonista parcial 5-HT1A y D2/D3.</td><td>Mejora de energía, interés y cognición con apatía/anhedonia.</td><td>Akatisia, activación, insomnio y náusea; suma serotoninérgica teórica.</td></tr>
+<tr data-d="SX" data-req="lam dul"><td><b>Lamotrigina + Duloxetina</b></td><td><span class="ev">Nivel C</span></td><td>Lamotrigina reduce excitabilidad glutamatérgica; duloxetina refuerza monoaminas. Busca separar estabilidad estructural y potenciación sintomática.</td><td>Antidepresión con posible amortiguación de desestabilización y beneficio en dolor neuropático.</td><td>No elimina el riesgo de viraje. No se ha descrito en las fichas técnicas [1] una interacción farmacocinética clínicamente relevante (lamotrigina se glucuronida; duloxetina pasa por CYP1A2/CYP2D6). Verificar en la ficha vigente.</td></tr>
+<tr data-d="SX" data-req="lam vor"><td><b>Lamotrigina + Vortioxetina</b></td><td><span class="ev">Nivel C</span></td><td>Lamotrigina amortigua excitabilidad glutamatérgica; vortioxetina aporta potenciación serotoninérgica multimodal.</td><td>Antidepresión con estabilización de fondo.</td><td>No elimina el riesgo de viraje en el espectro bipolar. No se ha descrito en las fichas [1] una interacción farmacocinética clínicamente relevante (verificar).</td></tr>
+<tr data-d="SX" data-req="li dul"><td><b>Litio + Duloxetina</b></td><td><span class="ev">Nivel C</span></td><td>El litio estabiliza segundos mensajeros y potencia antidepresivos en depresión resistente [12]; duloxetina refuerza 5-HT/NA.</td><td>Antidepresión potenciada, con efecto antisuicida del litio [11].</td><td>La hiponatremia/SIADH de duloxetina favorece la reabsorción de litio y puede elevar la litemia. Toxicidad serotoninérgica rara con litio. Temblor.</td></tr>
+<tr data-d="SX" data-req="li vor"><td><b>Litio + Vortioxetina</b></td><td><span class="ev">Nivel C</span></td><td>Litio como potenciador de antidepresivos [12]; vortioxetina aporta efecto serotoninérgico multimodal.</td><td>Antidepresión potenciada, con efecto antisuicida del litio [11].</td><td>Hiponatremia descrita con vortioxetina (eleva el riesgo de retención de litio). La ficha de vortioxetina advierte de riesgo serotoninérgico con litio (verificar).</td></tr>
+<tr data-d="AB" data-req="a b"><td><b>Asenapina + Bupropión</b></td><td><span class="ev">Nivel C</span></td><td>Bupropión (DAT/NET) activa; asenapina sedante. Bupropión inhibe CYP2D6 de forma potente; asenapina se metaboliza por UGT1A4 y CYP1A2, por lo que no cabe esperar una interacción farmacocinética mayor.</td><td>Contrapeso de la sedación y de la apatía.</td><td>Bupropión y antipsicóticos reducen el umbral convulsivo (efecto dependiente de la dosis); hipertensión, insomnio, ansiedad.</td></tr>
+<tr data-d="CB" data-req="c b"><td><b>Cariprazina + Bupropión</b></td><td><span class="ev">Nivel C</span></td><td>Ambos aumentan señal dopaminérgica/noradrenérgica por vías distintas (agonismo parcial frente a inhibición de recaptación).</td><td>Mejora de energía y motivación.</td><td>Akatisia, insomnio, ansiedad y activación. Convulsiones: cautela en antecedentes convulsivos (verificar la ficha de cariprazina).</td></tr>
+<tr data-d="SB" data-req="lam b"><td><b>Lamotrigina + Bupropión</b></td><td><span class="ev">Nivel C</span></td><td>Sin interacción farmacocinética descrita (verificar).</td><td>Antidepresión/anhedonia con estabilización de fondo.</td><td>Rash: bupropión también puede causar urticaria y reacciones de hipersensibilidad, lo que complica atribuir un rash a lamotrigina.</td></tr>
+<tr data-d="SB" data-req="li b"><td><b>Litio + Bupropión</b></td><td><span class="ev">Nivel C</span></td><td>Sin interacción farmacocinética (litio renal). Farmacodinamia sumatoria sobre el umbral convulsivo: bupropión lo reduce y la intoxicación por litio puede causar convulsiones.</td><td>Antidepresión/anhedonia con estabilización de fondo.</td><td>Temblor e insomnio. Vigilar litemia ante deshidratación.</td></tr>
+<tr data-d="XB" data-req="vor b"><td><b>Vortioxetina + Bupropión</b></td><td><span class="ev">Nivel C</span></td><td><b>Interacción farmacocinética relevante:</b> bupropión e hidroxibupropión inhiben de forma potente CYP2D6 y vortioxetina se metaboliza sobre todo por CYP2D6. La exposición a vortioxetina aumenta (≈ 2,3 veces el AUC según la ficha FDA; verificar). La ficha recomienda considerar reducir la dosis de vortioxetina.</td><td>Potenciación serotoninérgica multimodal más noradrenérgica/dopaminérgica en depresión con anhedonia o apatía.</td><td>Sobreexposición a vortioxetina: con 10–15 mg y bupropión la exposición equivale, aproximadamente, a la de dosis por encima de 20 mg solos. Náusea, activación, hiponatremia, insomnio, hipertensión y convulsiones.</td></tr>
+<tr data-d="XB" data-req="vor n"><td><b>Vortioxetina + Naltrexona</b></td><td><span class="ev">Nivel C</span></td><td>Sin interacción farmacocinética descrita (verificar).</td><td>—</td><td>Suma de náuseas (efecto adverso más frecuente de vortioxetina y frecuente con naltrexona).</td></tr>
+<tr data-d="B" data-req="b n"><td><b>Bupropión + Naltrexona</b></td><td><span class="ev">Nivel B*</span></td><td>Estudiada en trastorno por consumo de metanfetamina: naltrexona inyectable de liberación prolongada 380 mg/3 semanas + bupropión XL 450 mg/día; respuesta ponderada 13,6 % frente a 2,5 % con placebo [13]. Naltrexona oral 50 mg sola redujo el consumo de anfetaminas [14].</td><td>Reducción de craving y consumo de estimulantes; efecto de bupropión sobre anhedonia.</td><td>*La evidencia es en trastorno por consumo, no con esta pauta. Eventos adversos del ensayo: digestivos, temblor, malestar, hiperhidrosis y anorexia [13]. Convulsiones y bloqueo opioide.</td></tr>
+<tr data-d="AB" data-req="n"><td><b>Naltrexona + antipsicóticos (asenapina, cariprazina)</b></td><td><span class="ev">Nivel C</span></td><td>Naltrexona antagoniza receptores opioides; no se ha descrito interacción farmacocinética con asenapina ni cariprazina (verificar).</td><td>Reducción de craving y consumo.</td><td>Náuseas, cefalea, mareo, astenia; hepatotoxicidad (controlar transaminasas); bloqueo de analgésicos opioides.</td></tr>
+<tr data-d="SB" data-req="lam n"><td><b>Naltrexona + Lamotrigina</b></td><td><span class="ev">Nivel C</span></td><td>Sin interacción descrita (verificar).</td><td>—</td><td>Controlar transaminasas; ante fiebre o rash, atribuir con cautela (lamotrigina frente a otras causas).</td></tr>
+<tr data-d="SB" data-req="li n"><td><b>Naltrexona + Litio</b></td><td><span class="ev">Nivel C</span></td><td>Las náuseas, vómitos y diarrea de naltrexona pueden producir depleción de volumen y elevar la litemia (inferencia).</td><td>—</td><td>Hidratación y control de litemia ante síntomas digestivos.</td></tr>
+<tr data-d="AQ" data-req="q"><td><b>Quetiapina + antipsicóticos (asenapina, cariprazina)</b></td><td><span class="ev">Nivel C</span></td><td>A dosis bajas la quetiapina actúa por H1, 5-HT2A y α1, con D2 mínimo. Suma un tercer antipsicótico.</td><td>Rescate puntual de insomnio que la asenapina nocturna no controla.</td><td>Sedación aditiva, hipotensión ortostática, QTc, efecto metabólico. Evitar uso crónico; no mezclar con alcohol, GHB ni benzodiacepinas.</td></tr>
+<tr data-d="SQ" data-req="q"><td><b>Quetiapina + estabilizador</b></td><td><span class="ev">Nivel C</span></td><td><span data-req="lam">Sin interacción farmacocinética relevante descrita con lamotrigina (verificar).</span><span data-req="li">Combinación usada en la práctica con litio; sin interacción farmacocinética (litio renal).</span></td><td>Rescate puntual de insomnio.</td><td>Sedación aditiva<span data-req="li">, temblor, ganancia de peso e hipotiroidismo</span>.</td></tr>
+<tr data-d="QX" data-req="q" data-any="dul vor"><td><b>Quetiapina + antidepresivo</b></td><td><span class="ev">Nivel C</span></td><td>Quetiapina se metaboliza por CYP3A4; <span data-req="dul">duloxetina inhibe CYP2D6 de forma moderada, sin impacto mayor esperable.</span><span data-req="vor">vortioxetina no se solapa de forma relevante en la vía metabólica principal (CYP2D6).</span></td><td>Rescate puntual de insomnio.</td><td>Sedación aditiva e hipotensión ortostática.</td></tr>
+<tr data-d="QB" data-req="q b"><td><b>Quetiapina + Bupropión</b></td><td><span class="ev">Nivel C</span></td><td>Bupropión y quetiapina reducen ambos el umbral convulsivo; sedación frente a activación.</td><td>Rescate puntual de insomnio inducido por bupropión.</td><td>Convulsiones (umbral), hipotensión ortostática.</td></tr>
+</tbody>
+</table></div>
+
+<h3>Sinergias de red</h3>
+<div class="grid g2">
+<div class="pill-card"><h3 class="h0">1 · Activación con preservación funcional</h3><p><b>Asenapina + cariprazina.</b> La asenapina reduce señal dopaminérgica patológica y actividad 5-HT2A; cariprazina podría restaurar señal dopaminérgica gradual y contextual. No se busca «bloquear dopamina», sino ajustar la relación señal/ruido (hipótesis mecanicista).</p><p class="small"><b>Clínica:</b> menos agitación e insomnio, conservando iniciativa y cognición.</p></div>
+<div class="pill-card" data-req="lam"><h3 class="h0">2 · Estabilidad excitatoria y emocional</h3><p><b>Lamotrigina + asenapina ± cariprazina.</b> Lamotrigina reduce descargas glutamatérgicas y sensibilización afectiva; los antipsicóticos contienen la expresión clínica.</p><p class="small"><b>Clínica:</b> menos recaídas depresivas, menor reactividad emocional, mejor sueño.</p></div>
+<div class="pill-card" data-req="li"><h3 class="h0">2 · Estabilidad de segundos mensajeros</h3><p><b>Litio + asenapina ± cariprazina.</b> El litio inhibe GSK-3 e IMPasa y previene recaídas (claro en manía, más equívoco en depresión bipolar [10]) y reduce el riesgo de suicidio [11]; los antipsicóticos contienen la expresión clínica aguda.</p><p class="small"><b>Clínica:</b> menos recaídas y menor riesgo suicida, con monitorización estrecha de litemia.</p></div>
+<div class="pill-card"><h3 class="h0">3 · Recuperación motivacional controlada</h3><p><b>Cariprazina + <span data-req="lam">lamotrigina</span><span data-req="li">litio</span><span data-any="dul vor"> ± <span data-req="dul">duloxetina</span><span data-req="vor">vortioxetina</span></span>.</b> El estabilizador da suelo; cariprazina eleva tono dopaminérgico para iniciar conducta<span data-any="dul vor">; el antidepresivo añade impulso monoaminérgico</span>.</p><p class="small"><b>Clínica:</b> mejora de anhedonia y apatía, vigilando insomnio, impulsividad y akatisia.</p></div>
+<div class="pill-card" data-req="dul"><h3 class="h0">4 · Eje vigilia-sueño</h3><p><b>Asenapina + duloxetina.</b> El antagonismo H1, 5-HT2A y α1 de la asenapina puede contrarrestar la activación de la duloxetina; pero también puede producir sedación diurna o hipotensión.</p><p class="small"><b>Clínica:</b> útil si insomnio/agitación limitan la duloxetina; peligrosa si hay somnolencia incapacitante.</p></div>
+<div class="pill-card" data-req="vor"><h3 class="h0">4 · Antidepresión multimodal</h3><p><b>Vortioxetina + asenapina.</b> Comparten antagonismo 5-HT7; el perfil de vortioxetina es menos noradrenérgico que el de duloxetina. En TDM se ha descrito efecto sobre la cognición; no hay datos en depresión bipolar.</p><p class="small"><b>Clínica:</b> vigilar náusea e hiponatremia; no asumir beneficio cognitivo fuera de TDM.</p></div>
+<div class="pill-card" data-req="dul"><h3 class="h0">5 · Analgesia y carga alostática</h3><p><b>Duloxetina + estabilizador ± antipsicótico.</b> Duloxetina modula vías descendentes inhibitorias del dolor; el estabilizador podría reducir sensibilización; el antipsicótico disminuye reactividad emocional e insomnio.</p><p class="small"><b>Clínica:</b> posible beneficio en dolor neuropático o dolor crónico con comorbilidad afectiva.</p></div>
+<div class="pill-card" data-req="b n"><h3 class="h0">6 · Recompensa y consumo</h3><p><b>Bupropión + naltrexona.</b> Bupropión sostiene la señal dopaminérgica/noradrenérgica; naltrexona atenúa el refuerzo opioide-dependiente del consumo. En el ensayo de referencia la respuesta fue baja pero superior a placebo [13].</p><p class="small"><b>Clínica:</b> beneficio posible en craving y anhedonia, con riesgo convulsivo y de sobreexposición a vortioxetina.</p></div>
+<div class="pill-card" data-req="q"><h3 class="h0">7 · Rescate de sueño</h3><p><b>Quetiapina a dosis bajas.</b> Sedación por H1 sin pretensión antipsicótica. Es un recurso puntual, no un componente de la red de mantenimiento.</p><p class="small"><b>Clínica:</b> fijar un límite de uso y evitar su hábito.</p></div>
+<div class="pill-card"><h3 class="h0">8 · Cobertura de heterogeneidad</h3><p><b>Toda la combinación.</b> Actúa sobre monoaminas, dopamina, glutamato o segundos mensajeros, sueño y reactividad emocional para cubrir activación, depresión, apatía, ansiedad, dolor e inestabilidad.</p><p class="small"><b>Clínica:</b> mayor amplitud teórica, pero mayor dificultad para atribuir mejoría o daño.</p></div>
+</div>
+
+<h3>Lectura por sistemas</h3>
+<div class="tw"><table>
+<thead><tr><th>Sistema</th><th>Asenapina</th><th>Cariprazina</th><th>Estabilizador</th><th data-any="dul vor">Antidepresivo</th><th data-any="b q">Complemento / rescate</th><th>Efecto neto</th></tr></thead>
+<tbody>
+<tr><td>Dopaminérgico</td><td>D2 ▼</td><td>D2/D3 pAg</td><td>Indirecto</td><td data-any="dul vor"><span data-req="dul">DAT ▼ (débil)</span><span data-req="vor">Indirecto</span></td><td data-any="b q"><span data-req="b">DAT ▼ (bupropión)</span><span data-req="q"> D2 ▼ (mínimo)</span></td><td>Control de activación con recuperación motivacional</td></tr>
+<tr><td>Serotoninérgico</td><td>5-HT2A/2C/7 ▼</td><td>5-HT1A pAg</td><td><span data-req="lam">Indirecto</span><span data-req="li">Potencia neurotransmisión 5-HT (hipótesis)</span></td><td data-any="dul vor"><span data-req="dul">SERT ▼ → 5-HT ↑</span><span data-req="vor">SERT ▼; 5-HT3/7/1D ▼; 5-HT1B pAg; 5-HT1A ag.</span></td><td data-any="b q"><span data-req="q">5-HT2A ▼ (quetiapina)</span><span data-req="b"> —</span></td><td>Mejora afectiva/ansiosa con contención de activación</td></tr>
+<tr><td>Noradrenérgico</td><td>α2 ▼ (puede ↑ NA); α1 ▼</td><td>Indirecto</td><td>Indirecto</td><td data-any="dul vor"><span data-req="dul">NET ▼ → NA ↑</span><span data-req="vor">Efecto NET débil</span></td><td data-any="b q"><span data-req="b">NET ▼ (bupropión)</span><span data-req="q"> α1 ▼ (quetiapina)</span></td><td>Energía y atención, vigilando insomnio y TA</td></tr>
+<tr><td>Glutamato / segundos mensajeros</td><td>Indirecto</td><td>Indirecto</td><td><span data-req="lam">Liberación de glutamato ▼</span><span data-req="li">GSK-3 ▼; IMPasa ▼</span></td><td data-any="dul vor">Indirecto</td><td data-any="b q">—</td><td>Estabilidad y prevención de recaída</td></tr>
+<tr data-req="n"><td>Opioide / recompensa</td><td>—</td><td>—</td><td>—</td><td data-any="dul vor">—</td><td data-any="b q">Naltrexona: antagonista μ</td><td>Menor refuerzo del consumo</td></tr>
+<tr><td>Histaminérgico / vigilia</td><td>H1 ▼</td><td>Neutro-bajo</td><td>Neutro</td><td data-any="dul vor"><span data-req="dul">Vigilia ↑ (indirecto)</span><span data-req="vor">Neutro-bajo</span></td><td data-any="b q"><span data-req="b">Vigilia ↑ (insomnio)</span><span data-req="q"> H1 ▼ (rescate)</span></td><td>Sedación controlada; riesgo de somnolencia diurna</td></tr>
+<tr data-req="dul"><td>Dolor / interocepción</td><td>Modulación emocional</td><td>Modulación motivacional</td><td>Posible reducción de sensibilización</td><td>Analgesia descendente</td><td data-any="b q">—</td><td>Menor amplificación afectiva del dolor</td></tr>
+</tbody>
+</table></div>
+
+<div class="note"><b>Principio de sinergia prudente:</b> una interacción es terapéutica cuando mejora una diana clínica sin amplificar otra. Si reduce la depresión pero produce akatisia, insomnio o desinhibición, la «sinergia» se convierte en carga alostática.</div>
+<div class="alert"><b>Límite epistemológico:</b> estas sinergias son principalmente teórico-mecanicistas y extrapoladas de monoterapias o combinaciones parciales. La evidencia específica de la asociación completa es escasa.</div>
+</section>
+
+<section id="p3" class="card" aria-labelledby="h-p3">
+<h2 id="h-p3">Página 3 · Vectores clínicos y fenotipos diana</h2>
+<p>La pauta puede representarse como un espacio de vectores. La dosis y la necesidad de cada módulo dependen de la posición de la persona en ese espacio, no solo del diagnóstico categorial.</p>
+<div class="svgwrap"><svg class="diag" viewBox="0 0 1200 620" role="img" aria-labelledby="svg2t svg2d">
+<title id="svg2t">Espacio clínico: vectores terapéuticos</title>
+<desc id="svg2d">Plano con eje vertical de activación frente a inhibición y eje horizontal de labilidad frente a estabilidad. La asenapina se sitúa en el cuadrante de antiactivación, la cariprazina en el dopaminérgico y de síntomas negativos, el estabilizador en el de prevención de recaída, el antidepresivo opcional en el monoaminérgico, bupropión más naltrexona en el de recompensa y la quetiapina en el de sueño.</desc>
+<rect class="s-bg" width="1200" height="620"/>
+<text class="s-t1" x="40" y="48" font-size="22" font-weight="700">Espacio clínico: vectores terapéuticos</text>
+<line class="s-axis" x1="600" y1="90" x2="600" y2="540"/>
+<line class="s-axis" x1="100" y1="315" x2="1100" y2="315"/>
+<text class="s-t2" x="600" y="78" text-anchor="middle" font-size="13">Activación / manía / psicosis</text>
+<text class="s-t2" x="600" y="565" text-anchor="middle" font-size="13">Inhibición / depresión / anhedonia</text>
+<text class="s-t2" x="100" y="302" font-size="13">◀ Labilidad / recaída</text>
+<text class="s-t2" x="1100" y="302" text-anchor="end" font-size="13">Estabilidad / funcionamiento ▶</text>
+<circle class="s-base" cx="600" cy="315" r="8"/>
+<text class="s-t1" x="614" y="308" font-size="13">Estado basal</text>
+<path class="s-path" data-any="dul vor" d="M410,185 Q600,120 835,205"/>
+<path class="s-path" d="M300,425 Q600,500 790,425"/>
+<path class="s-path" d="M410,185 Q300,300 300,425"/>
+<path class="s-path" data-any="dul vor" d="M835,205 Q900,300 790,425"/>
+<g><circle class="s-pt" cx="410" cy="185" r="15"/><text class="s-ptt" x="410" y="190" text-anchor="middle" font-size="13" font-weight="700">A</text>
+<text class="s-ttl" x="434" y="178" font-size="14" font-weight="700">Asenapina</text>
+<text class="s-t3" x="434" y="198" font-size="12.5">Vector antiactivación</text></g>
+<g><circle class="s-pt" cx="790" cy="425" r="15"/><text class="s-ptt" x="790" y="430" text-anchor="middle" font-size="13" font-weight="700">C</text>
+<text class="s-ttl" x="814" y="418" font-size="14" font-weight="700">Cariprazina</text>
+<text class="s-t3" x="814" y="438" font-size="12.5">Vector dopaminérgico / negativos</text></g>
+<g data-req="lam"><circle class="s-pt" cx="300" cy="425" r="15"/><text class="s-ptt" x="300" y="430" text-anchor="middle" font-size="13" font-weight="700">L</text>
+<text class="s-ttl" x="324" y="418" font-size="14" font-weight="700">Lamotrigina</text>
+<text class="s-t3" x="324" y="438" font-size="12.5">Vector antirrecaída depresiva</text></g>
+<g data-req="li"><circle class="s-pt" cx="300" cy="425" r="15"/><text class="s-ptt" x="300" y="430" text-anchor="middle" font-size="12" font-weight="700">Li</text>
+<text class="s-ttl" x="324" y="418" font-size="14" font-weight="700">Litio</text>
+<text class="s-t3" x="324" y="438" font-size="12.5">Vector antirrecaída y antisuicida</text></g>
+<g data-req="dul"><circle class="s-pt" cx="835" cy="205" r="15"/><text class="s-ptt" x="835" y="210" text-anchor="middle" font-size="13" font-weight="700">D</text>
+<text class="s-ttl" x="859" y="198" font-size="14" font-weight="700">Duloxetina ±</text>
+<text class="s-t3" x="859" y="218" font-size="12.5">Vector monoaminérgico / dolor</text></g>
+<g data-req="vor"><circle class="s-pt" cx="835" cy="205" r="15"/><text class="s-ptt" x="835" y="210" text-anchor="middle" font-size="13" font-weight="700">V</text>
+<text class="s-ttl" x="859" y="198" font-size="14" font-weight="700">Vortioxetina ±</text>
+<text class="s-t3" x="859" y="218" font-size="12.5">Vector serotoninérgico multimodal</text></g>
+<g data-req="b n"><circle class="s-pt" cx="960" cy="470" r="17"/><text class="s-ptt" x="960" y="475" text-anchor="middle" font-size="11.5" font-weight="700">BN</text>
+<text class="s-ttl" x="986" y="464" font-size="14" font-weight="700">Bupropión + naltrexona</text>
+<text class="s-t3" x="986" y="484" font-size="12.5">Vector recompensa / consumo</text></g>
+<g data-req="q"><circle class="s-pt" cx="250" cy="235" r="15"/><text class="s-ptt" x="250" y="240" text-anchor="middle" font-size="13" font-weight="700">Q</text>
+<text class="s-ttl" x="274" y="228" font-size="14" font-weight="700">Quetiapina IR</text>
+<text class="s-t3" x="274" y="248" font-size="12.5">Rescate de sueño (puntual)</text></g>
+<g data-any="dul vor"><rect class="s-bar" x="70" y="580" width="1060" height="26" rx="13"/>
+<text class="s-t2" x="600" y="598" text-anchor="middle" font-size="12.5">El antidepresivo desplaza el vector hacia la mejora depresiva, pero puede aumentar el riesgo de desestabilización hacia activación si no hay cobertura suficiente.</text></g>
+</svg></div>
+
+<p class="small gap-top">Selecciona un fenotipo (clic o Intro) para resaltarlo y atenuar el resto.</p>
+<div class="grid g2" id="phenos">
+<div class="pill-card pheno" tabindex="0" role="button" aria-pressed="false"><h3 class="h0">Fenotipo A · Mixto agitado / psicótico</h3><p><b>Prioridad:</b> asenapina plena; estabilizador de base si ya está establecido; evitar el antidepresivo durante la fase aguda.</p><p class="small">Objetivo: sueño, reducción de la velocidad del pensamiento, control de irritabilidad y resolución de síntomas psicóticos.</p></div>
+<div class="pill-card pheno" tabindex="0" role="button" aria-pressed="false"><h3 class="h0">Fenotipo B · Depresión con apatía/anhedonia</h3><p><b>Prioridad:</b> <span data-bind="stab">lamotrigina</span> + cariprazina; asenapina a dosis mínima si hay insomnio, irritabilidad o rasgos mixtos. <span data-any="dul vor">El antidepresivo entra solo si persiste una diana depresiva clara.</span></p><p class="small">Objetivo: energía, interés, cognición y funcionamiento sin inducir desinhibición, akatisia o hipomanía.</p></div>
+<div class="pill-card pheno" tabindex="0" role="button" aria-pressed="false"><h3 class="h0">Fenotipo C · Dolor / ansiedad comórbida</h3><p><b>Prioridad:</b> estabilizador + antipsicótico según fase; <span data-req="dul">duloxetina si el dolor neuropático o la ansiedad son dianas clínicas relevantes (en su indicación: TAG y dolor neuropático diabético)</span><span data-req="vor">vortioxetina solo si la depresión es la diana (sin indicación en dolor ni TAG)</span><span data-req="noad">sin antidepresivo en la pauta actual</span>.</p><p class="small">Objetivo: analgesia central y control ansioso, vigilando interacciones, náusea, sudoración y riesgo de viraje.</p></div>
+<div class="pill-card pheno" tabindex="0" role="button" aria-pressed="false"><h3 class="h0">Fenotipo D · Estabilidad intercrisis</h3><p><b>Prioridad:</b> simplificar. Si no hay indicación activa, retirar gradualmente el componente menos necesario: primero rescate, complemento y antidepresivo; después uno de los antipsicóticos.</p><p class="small">Objetivo: mantener la prevención con la menor polifarmacia posible.</p></div>
+<div class="pill-card pheno" tabindex="0" role="button" aria-pressed="false" data-req="b n"><h3 class="h0">Fenotipo E · Consumo problemático de estimulantes</h3><p><b>Prioridad:</b> tratar el trastorno por consumo como diana propia. El complemento de bupropión + naltrexona se apoya en un ensayo en consumo de metanfetamina, no en una pauta con antipsicóticos [13]. Vigilar convulsiones, viraje e interacciones con vortioxetina.</p><p class="small">Objetivo: reducir craving y consumo, sin desestabilizar el ánimo ni el sueño.</p></div>
+<div class="pill-card pheno" tabindex="0" role="button" aria-pressed="false" data-req="li"><h3 class="h0">Fenotipo F · Riesgo suicida elevado</h3><p><b>Prioridad:</b> el litio es el estabilizador con mejor evidencia antisuicida en trastornos del ánimo, bipolares y unipolares [11]. Exige adherencia fiable y control de litemia.</p><p class="small">Objetivo: reducir riesgo suicida y recaídas, con seguimiento estrecho.</p></div>
+</div>
+</section>
+
+<section id="p4" class="card" aria-labelledby="h-p4">
+<h2 id="h-p4">Página 4 · Seguridad, interacciones y puntos críticos</h2>
+<p>El principal riesgo de esta asociación no es un único mecanismo, sino la <b>acumulación de efectos</b>: sedación, hipotensión ortostática, síntomas extrapiramidales/akatisia, alteración metabólica, descenso del umbral convulsivo y pérdida de la frontera entre estabilización y activación.</p>
+<div class="tw"><table>
+<thead><tr><th>Riesgo</th><th>Fármacos</th><th>Mecanismo</th><th>Manejo</th></tr></thead>
+<tbody>
+<tr><td><span class="sev m">◆ MODERADO</span> Sedación / deterioro cognitivo</td><td>Asenapina + cariprazina<span data-req="q"> + quetiapina</span><span data-any="dul vor"> ± antidepresivo</span></td><td>Suma H1, 5-HT2A, D2 y efectos sobre vigilia</td><td>Dosis mínima eficaz; horario nocturno si procede</td></tr>
+<tr><td><span class="sev m">◆ MODERADO</span> Akatisia / EPS</td><td>Asenapina + cariprazina<span data-req="b"> ± bupropión</span></td><td>Bloqueo/agonismo parcial D2 combinado. En cariprazina puede aparecer tarde por la larga semivida de DDCAR.</td><td>No confundir con ansiedad; reducir, pausar o cambiar. Vigilar semanas tras cada cambio.</td></tr>
+<tr><td><span class="sev m">◆ MODERADO</span> Hipotensión ortostática</td><td>Asenapina<span data-req="dul"> ± duloxetina</span><span data-req="q"> ± quetiapina</span></td><td>Antagonismo α1/α2 y efectos autonómicos</td><td>Alzado gradual, hidratación, revisar antihipertensivos</td></tr>
+<tr data-req="lam"><td><span class="sev h">▲ ALTO</span> Rash / SJS</td><td>Lamotrigina</td><td>Hipersensibilidad idiosincrásica; más riesgo con titulación rápida, dosis inicial excesiva o valproato asociado</td><td>Titulación estricta (ver p.6); suspender ante rash mucocutáneo o fiebre</td></tr>
+<tr data-req="li"><td><span class="sev h">▲ ALTO</span> Toxicidad por litio</td><td>Litio</td><td>Ventana terapéutica estrecha; la litemia sube con deshidratación, depleción de sodio, deterioro renal, AINE, IECA/ARA-II y tiazidas. Síntomas: temblor grosero, ataxia, disartria, vómitos/diarrea, confusión.</td><td>Litemia valle a las 12 h tras cada cambio; consultar ante vómitos, diarrea, fiebre o deshidratación antes de la siguiente dosis</td></tr>
+<tr data-req="li"><td><span class="sev m">◆ MODERADO</span> Efectos crónicos del litio</td><td>Litio</td><td>Disminución de la función renal, hipotiroidismo, hiperparatiroidismo/hipercalcemia, temblor, poliuria, ganancia de peso</td><td>Creatinina/eGFR, TSH y calcio periódicos; planificación de embarazo</td></tr>
+<tr data-req="b"><td><span class="sev h">▲ ALTO</span> Convulsiones</td><td>Bupropión<span data-req="q"> + quetiapina</span> + antipsicóticos</td><td>Riesgo dependiente de la dosis (450 mg &gt; 300 mg); reducen el umbral los antipsicóticos, los estimulantes y la abstinencia brusca de alcohol, benzodiacepinas o GHB/GBL</td><td>Dosis única matutina; no superar el techo elegido; descartar antecedentes convulsivos</td></tr>
+<tr data-req="b"><td><span class="sev h">▲ ALTO</span> Contraindicaciones de bupropión</td><td>Bupropión</td><td>Trastorno convulsivo, tumor del SNC, trastorno de la conducta alimentaria (actual o pasado), abstinencia brusca de alcohol o benzodiacepinas, IMAO</td><td>Descartar antes de iniciar (ficha vigente) [1]</td></tr>
+<tr data-req="vor b"><td><span class="sev m">◆ MODERADO</span> Sobreexposición a vortioxetina</td><td>Vortioxetina + bupropión</td><td>Bupropión e hidroxibupropión inhiben CYP2D6; vortioxetina depende de CYP2D6 (ver p.2-bis)</td><td>La ficha recomienda considerar reducir la dosis de vortioxetina; vigilar náusea, activación e hiponatremia</td></tr>
+<tr data-req="n"><td><span class="sev h">▲ ALTO</span> Bloqueo opioide</td><td>Naltrexona</td><td>Antagonismo opioide μ: los analgésicos opioides pierden eficacia; en dependencia opioide puede precipitar abstinencia; intentar vencer el bloqueo puede causar sobredosis</td><td>Confirmar ausencia de consumo opioide; tarjeta informativa para urgencias y analgesia</td></tr>
+<tr data-req="n"><td><span class="sev m">◆ MODERADO</span> Hepatotoxicidad</td><td>Naltrexona</td><td>Elevación de transaminasas descrita</td><td>Función hepática basal y periódica</td></tr>
+<tr data-req="q"><td><span class="sev m">◆ MODERADO</span> Quetiapina de rescate</td><td>Quetiapina IR</td><td>Sedación, ortostatismo, QTc y efecto metabólico; suma un tercer antipsicótico. Con inhibidores potentes de CYP3A4 (ritonavir, cobicistat) la ficha exige reducir la dosis de forma drástica.</td><td>Uso puntual con frecuencia máxima pactada; no combinar con alcohol, GHB ni benzodiacepinas</td></tr>
+<tr><td><span class="sev m">◆ MODERADO</span> Prolongación del QTc</td><td>Asenapina (efecto modesto)<span data-req="q">, quetiapina</span></td><td>Bloqueo de canales hERG. Aditivo con otros fármacos que prolongan el QT.</td><td>ECG basal si hay factores de riesgo o cofármacos con efecto QT; corregir K<sup>+</sup> y Mg<sup>2+</sup> [1]</td></tr>
+<tr data-any="dul vor b" data-req="bip"><td><span class="sev h">▲ ALTO</span> Viraje maníaco</td><td><span data-req="dul">Duloxetina</span><span data-req="vor">Vortioxetina</span><span data-req="b"> + bupropión</span></td><td>Potenciación monoaminérgica sin control suficiente. Los antidepresivos añadidos no superaron a placebo en depresión bipolar en STEP-BD [5]; la tasa de viraje varía según el antidepresivo [6].</td><td>Usar solo con cobertura establecida; suspender ante activación</td></tr>
+<tr data-any="dul vor b" data-not="bip"><td><span class="sev m">◆ MODERADO</span> Viraje / activación</td><td><span data-req="dul">Duloxetina</span><span data-req="vor">Vortioxetina</span><span data-req="b"> + bupropión</span></td><td>Potenciación monoaminérgica. En este contexto el riesgo depende de bipolaridad no diagnosticada (espectro bipolar, antecedentes de hipomanía, historia familiar) [5][6].</td><td>Explorar antecedentes antes de iniciar; suspender ante insomnio, aceleración o impulsividad nuevos</td></tr>
+<tr data-any="dul vor"><td><span class="sev h">▲ ALTO</span> Síndrome serotoninérgico</td><td><span data-req="dul">Duloxetina</span><span data-req="vor">Vortioxetina</span> + otros serotoninérgicos<span data-req="li"> (incluido litio)</span></td><td>Suma serotoninérgica</td><td>Revisar triptanes, tramadol, linezolid, MDMA, hipérico y catinonas</td></tr>
+<tr data-req="dul"><td><span class="sev h">▲ ALTO</span> Contraindicaciones de duloxetina</td><td>Duloxetina + IMAO, fluvoxamina, ciprofloxacino</td><td>IMAO: toxicidad serotoninérgica. Inhibidores potentes de CYP1A2: aumentan mucho la exposición a duloxetina.</td><td>No asociar [1]</td></tr>
+<tr data-req="dul"><td><span class="sev l">● BAJO</span> Náusea / sudoración / disfunción sexual</td><td>Duloxetina<span data-req="c"> ± cariprazina</span></td><td>Serotonérgico y noradrenérgico</td><td>Informar, titular despacio, valorar alternativas</td></tr>
+<tr data-req="vor"><td><span class="sev l">● BAJO</span> Náusea</td><td>Vortioxetina<span data-req="n"> + naltrexona</span></td><td>Efecto adverso más frecuente de vortioxetina; dependiente de la dosis</td><td>Titular desde 10 mg; tomar con comida si ayuda; vigilar a la subida</td></tr>
+<tr data-any="dul vor"><td><span class="sev m">◆ MODERADO</span> Hiponatremia / SIADH</td><td><span data-req="dul">Duloxetina</span><span data-req="vor">Vortioxetina</span></td><td>Más frecuente en personas mayores, con diuréticos o con hipovolemia. Aditivo con MDMA<span data-req="li">; la depleción de sodio eleva la litemia</span>.</td><td>Na<sup>+</sup> basal y ante síntomas (cefalea, confusión, náuseas)</td></tr>
+<tr data-req="dul"><td><span class="sev m">◆ MODERADO</span> Hepatotoxicidad y alcohol</td><td>Duloxetina</td><td>Elevación de transaminasas; contraindicada en hepatopatía con insuficiencia hepática. Desaconsejada con consumo elevado de alcohol.</td><td>Función hepática basal; preguntar por alcohol [1]</td></tr>
+<tr data-any="dul b"><td><span class="sev m">◆ MODERADO</span> Aumento de tensión arterial</td><td><span data-req="dul">Duloxetina</span><span data-req="b"> Bupropión</span></td><td>Inhibición de recaptación de NA (y DA con bupropión). Duloxetina está contraindicada con hipertensión no controlada.</td><td>TA basal y durante la titulación</td></tr>
+<tr data-req="lam"><td><span class="sev m">◆ MODERADO</span> Variación de niveles de lamotrigina</td><td>Lamotrigina + valproato, inductores enzimáticos, estrógenos</td><td>El valproato prolonga su semivida (la duplica aproximadamente); los inductores y los estrógenos reducen sus niveles. No se ha descrito en las fichas técnicas [1] una interacción farmacocinética relevante con asenapina, cariprazina ni antidepresivos (verificar en la ficha vigente).</td><td>Ajustar la titulación (ver p.6). Ante neurotoxicidad (diplopía, ataxia, mareo) revisar cofármacos y, si procede, niveles.</td></tr>
+<tr><td><span class="sev m">◆ MODERADO</span> Prolactina y efectos endocrinos</td><td>Asenapina ± cariprazina</td><td>Bloqueo D2 (vía tuberoinfundibular)</td><td>Vigilar galactorrea, amenorrea y disfunción sexual; cariprazina suele tener menor impacto</td></tr>
+<tr><td><span class="sev m">◆ MODERADO</span> Peso y metabolismo</td><td>Asenapina<span data-req="q">, quetiapina</span><span data-req="li">, litio</span></td><td>Efectos variables sobre apetito, H1 y 5-HT2C</td><td>Peso, perímetro abdominal, glucosa y lípidos periódicos</td></tr>
+</tbody>
+</table></div>
+<div class="alert"><b>Advertencia:</b> esta combinación de varios psicofármacos debe documentarse como estrategia individualizada. Antes de añadir un antidepresivo conviene confirmar la fase afectiva y descartar hipotiroidismo, abuso de sustancias, privación de sueño, efecto adverso actual y causas somáticas de activación o de depresión resistente.</div>
+</section>
+
+<section id="p4b" class="card" aria-labelledby="h-p4b">
+<h2 id="h-p4b">Página 4-bis · Interacciones en contexto de chemsex y VIH</h2>
+<p>Módulo específico para personas que practican chemsex o viven con VIH. Cada fila indica su <b>base documental</b>: lo que consta en ficha técnica frente a lo que es inferencia farmacológica.</p>
+<div class="alert"><b>Límite documental:</b> no existen ensayos de esta combinación con sustancias recreativas ni con antirretrovirales. Las filas marcadas «inferencia» son razonamiento farmacológico, no hechos probados. Contrastar siempre en el comprobador de interacciones de la Universidad de Liverpool [8] y en las fichas técnicas [1] antes de decidir.</div>
+
+<h3>Sustancias de uso recreativo y situaciones asociadas</h3>
+<div class="tw"><table>
+<thead><tr><th>Agente</th><th>Con</th><th>Mecanismo</th><th>Riesgo</th><th>Manejo</th><th>Base</th></tr></thead>
+<tbody>
+<tr><td><b>GHB / GBL</b></td><td>Asenapina<span data-req="q">, quetiapina de rescate</span></td><td>Depresión aditiva del SNC. GHB tiene ventana terapéutica estrecha y curva dosis-respuesta empinada; asenapina y quetiapina aportan antagonismo H1/α1.</td><td><span class="sev h">▲ ALTO</span> Sedación profunda, coma, depresión respiratoria, aspiración</td><td>Psicoeducación específica y reducción de daños; no estar solo; no tomar el rescate de quetiapina tras GHB, alcohol o benzodiacepinas.</td><td>Ficha (precaución con depresores del SNC) + inferencia</td></tr>
+<tr><td><b>Alcohol, benzodiacepinas, ketamina, opioides</b></td><td>Asenapina<span data-req="q">, quetiapina</span></td><td>Sedación y depresión respiratoria aditivas</td><td><span class="sev m">◆ MODERADO</span> Sedación, caídas, hipoventilación</td><td>Informar; ajustar horarios de dosis</td><td>Ficha + inferencia</td></tr>
+<tr><td><b>Nitritos (poppers) + inhibidores de PDE5</b></td><td>Asenapina<span data-req="dul"> ± duloxetina</span><span data-req="q"> ± quetiapina</span></td><td>Vasodilatación por nitritos + PDE5i (combinación peligrosa por sí misma) sumada al bloqueo α1 y a la hipotensión ortostática de la pauta</td><td><span class="sev h">▲ ALTO</span> Hipotensión grave, síncope</td><td>Desaconsejar nitritos con PDE5i, con independencia de la medicación psiquiátrica</td><td>Ficha de PDE5i (nitritos contraindicados) + inferencia para la suma</td></tr>
+<tr data-any="dul vor b"><td><b>Metanfetamina, mefedrona, cocaína y otros estimulantes</b></td><td><span data-req="dul">Duloxetina</span><span data-req="vor">Vortioxetina</span><span data-req="b"> + bupropión</span></td><td>Suma de efectos noradrenérgicos, dopaminérgicos y serotoninérgicos; descenso del umbral convulsivo (bupropión)</td><td><span class="sev h">▲ ALTO</span> Hipertensión, taquicardia, hipertermia, toxicidad serotoninérgica, convulsiones, viraje o psicosis</td><td>Desaconsejar la asociación; reevaluar la indicación del antidepresivo y del bupropión</td><td>Inferencia farmacológica</td></tr>
+<tr data-any="dul vor"><td><b>MDMA y análogos</b></td><td><span data-req="dul">Duloxetina</span><span data-req="vor">Vortioxetina</span></td><td>Toxicidad serotoninérgica; hiponatremia aditiva<span data-req="dul">; la inhibición moderada de CYP2D6 por duloxetina podría aumentar la exposición a MDMA (sustrato de CYP2D6)</span></td><td><span class="sev h">▲ ALTO</span> Síndrome serotoninérgico, hiponatremia</td><td>Desaconsejar la asociación; vigilar Na<sup>+</sup></td><td>Ficha (riesgo serotoninérgico general) + inferencia</td></tr>
+<tr data-req="b"><td><b>Abstinencia brusca de GHB/GBL, alcohol o benzodiacepinas</b></td><td>Bupropión</td><td>Estas abstinencias reducen el umbral convulsivo por sí mismas; la ficha de bupropión contraindica la abstinencia brusca de alcohol y benzodiacepinas. La abstinencia de GHB/GBL puede, además, simular un episodio agitado-psicótico.</td><td><span class="sev h">▲ ALTO</span> Convulsiones, delirium</td><td>No iniciar ni mantener bupropión durante una abstinencia; manejo hospitalario de la abstinencia de GHB/GBL</td><td>Ficha (alcohol/benzodiacepinas) + inferencia (GHB/GBL)</td></tr>
+<tr data-req="li"><td><b>Deshidratación en sesiones prolongadas</b> (calor, sudoración, vómitos por GHB, diarrea, MDMA/metanfetamina)</td><td>Litio</td><td>Eliminación renal exclusiva: la depleción de volumen y de sodio eleva la litemia. La hiperhidratación con MDMA tiene su propio riesgo de hiponatremia.</td><td><span class="sev h">▲ ALTO</span> Intoxicación por litio</td><td>Plan acordado de «días de enfermedad»: ante vómitos, diarrea o deshidratación intensa consultar antes de la siguiente dosis; hidratación sin exceso</td><td>Ficha de litio + inferencia</td></tr>
+<tr data-req="li"><td><b>AINE, IECA/ARA-II, tiazidas</b></td><td>Litio</td><td>Reducen el aclaramiento renal de litio</td><td><span class="sev h">▲ ALTO</span> Elevación de la litemia</td><td>Evitar o monitorizar litemia; avisar de la automedicación con AINE</td><td>Ficha</td></tr>
+<tr data-req="n"><td><b>Opioides (incluidos los usados con fines recreativos)</b></td><td>Naltrexona</td><td>Antagonismo opioide μ</td><td><span class="sev h">▲ ALTO</span> Abstinencia precipitada; sobredosis si se intenta vencer el bloqueo</td><td>Confirmar ausencia de consumo; información explícita a la persona</td><td>Ficha</td></tr>
+</tbody>
+</table></div>
+
+<h3>Antirretrovirales y potenciadores farmacocinéticos</h3>
+<div class="tw"><table>
+<thead><tr><th>Agente</th><th>Con</th><th>Mecanismo</th><th>Riesgo</th><th>Manejo</th><th>Base</th></tr></thead>
+<tbody>
+<tr><td><b>Ritonavir, cobicistat</b> (potenciados)</td><td>Cariprazina</td><td>Inhibición potente de CYP3A4: aumentan la exposición a cariprazina y a DDCAR, con eliminación lentísima</td><td><span class="sev h">▲ ALTO</span> Akatisia, sedación, efectos que persisten semanas</td><td>Reducir la dosis a la mitad si se añade un inhibidor potente a una dosis estable; ajustar el inicio según ficha. Revisar el efecto persistente tras retirar el potenciador.</td><td>Ficha [1]</td></tr>
+<tr data-req="q"><td><b>Ritonavir, cobicistat</b> (potenciados)</td><td>Quetiapina</td><td>Inhibición potente de CYP3A4: la ficha de quetiapina exige reducir la dosis de forma drástica (a una fracción de la habitual)</td><td><span class="sev h">▲ ALTO</span> Sedación excesiva, hipotensión, QTc, incluso con 12,5–50 mg</td><td>No usar el rescate sin ajuste previo; verificar la reducción exacta en la ficha vigente</td><td>Ficha [1] (verificar la magnitud)</td></tr>
+<tr data-req="lam"><td><b>Lopinavir/r, atazanavir/r</b></td><td>Lamotrigina</td><td>Inducción de la glucuronidación: la ficha de lamotrigina describe descenso de AUC (≈ 50 % y ≈ 32 % respectivamente)</td><td><span class="sev m">◆ MODERADO</span> Pérdida de eficacia estabilizadora</td><td>Vigilar respuesta; considerar ajuste de dosis. Al retirar el antirretroviral, reajustar en sentido inverso. Con otros regímenes potenciados (p. ej. darunavir/c) la ficha no aporta datos: consultar [8].</td><td>Ficha [1]</td></tr>
+<tr data-req="b"><td><b>Ritonavir, lopinavir/r, efavirenz</b></td><td>Bupropión</td><td>Se metaboliza por CYP2B6; los inductores de CYP2B6 reducen su exposición (descrito con ritonavir y lopinavir/r en la ficha y con efavirenz en estudios farmacocinéticos)</td><td><span class="sev m">◆ MODERADO</span> Menor eficacia</td><td>Consultar [8]; no superar el techo de dosis para compensar</td><td>Ficha [1] + estudios farmacocinéticos (verificar)</td></tr>
+<tr data-req="li"><td><b>Tenofovir disoproxilo y otros fármacos nefrotóxicos</b></td><td>Litio</td><td>Pueden deteriorar la función renal y elevar la litemia</td><td><span class="sev m">◆ MODERADO</span> Intoxicación por litio</td><td>Creatinina/eGFR y litemia al iniciar o cambiar el TAR o la PrEP</td><td>Inferencia</td></tr>
+<tr><td><b>Efavirenz</b></td><td>Todo el esquema</td><td>Efectos neuropsiquiátricos descritos en ficha (sueños vívidos, insomnio, depresión, psicosis). Inductor enzimático: la ficha de cariprazina no recomienda su asociación con inductores de CYP3A4.</td><td><span class="sev m">◆ MODERADO</span> Confusión diagnóstica; menor exposición a cariprazina</td><td>Registrar fecha de inicio o cambio frente a inicio de síntomas; consultar [8]</td><td>Ficha + inferencia</td></tr>
+<tr><td><b>Dolutegravir y otros inhibidores de integrasa</b></td><td>Todo el esquema</td><td>Insomnio, ansiedad y depresión figuran entre las reacciones adversas; ideación suicida descrita en personas con antecedente de depresión</td><td><span class="sev m">◆ MODERADO</span> Alteración del sueño como desencadenante afectivo</td><td>Vigilar sueño y ánimo tras cualquier cambio de TAR</td><td>Ficha</td></tr>
+<tr><td><b>Rilpivirina</b> (a dosis supraterapéuticas) y otros fármacos con efecto QT</td><td>Asenapina<span data-req="q">, quetiapina</span></td><td>Prolongación aditiva del QTc</td><td><span class="sev m">◆ MODERADO</span> Arritmia</td><td>ECG basal y tras añadir fármacos con efecto QT</td><td>Ficha</td></tr>
+</tbody>
+</table></div>
+
+<h3>Consideraciones clínicas transversales</h3>
+<div class="grid g2">
+<div class="pill-card"><h3 class="h0">Privación de sueño y sesiones prolongadas</h3><p>La reducción del sueño es una vía final común en la génesis de la manía [7]. Sesiones de 24–72 h sin dormir son un desencadenante de episodio mixto o maníaco. Las dosis omitidas importan<span data-req="lam">: si la lamotrigina se suspende más de 5 semividas, hay que retitular desde el inicio [1]</span><span data-req="li">: la suspensión brusca del litio se asocia a recaídas, y debe evitarse</span>. Pactar un plan de dosis flexible, alarmas y pastillero.</p></div>
+<div class="pill-card"><h3 class="h0">Intoxicación o abstinencia frente a episodio</h3><p>Antes de atribuir un cuadro agitado o psicótico a un trastorno primario, descartar intoxicación por estimulantes o abstinencia. <b>La abstinencia de GHB/GBL puede simular un episodio agitado-psicótico y es potencialmente grave</b> (delirium, convulsiones): requiere manejo hospitalario.</p></div>
+<div class="pill-card"><h3 class="h0">Revisión del régimen antirretroviral y de PrEP</h3><p>Listar todo el régimen antes de prescribir. La PrEP estándar (tenofovir/emtricitabina) no lleva potenciador; los regímenes potenciados de TAR sí, y son los relevantes para cariprazina, quetiapina y lamotrigina. Contrastar con [8].</p></div>
+<div class="pill-card"><h3 class="h0">Actitud terapéutica</h3><p>Lenguaje no estigmatizante y orientación a reducción de daños. La alianza terapéutica depende de preguntar por consumos de forma específica, sin juicio, y de revisar con la persona los riesgos concretos de cada combinación.</p></div>
+</div>
+</section>
+
+<section id="p5" class="card" aria-labelledby="h-p5">
+<h2 id="h-p5">Página 5 · Monitorización estructurada</h2>
+<p>La vigilancia debe separar <b>eficacia</b>, <b>tolerabilidad subjetiva</b> y <b>seguridad objetiva</b>. Un cambio de dosis solo se interpreta junto con sueño, consumo de sustancias, adherencia y contexto psicosocial.</p>
+<div class="grid g3">
+<div class="pill-card"><h3 class="h0">Basal y semana 0–2</h3><ul>
+<li>ECG/QTc si hay factores de riesgo o cofármacos con efecto QT</li>
+<li>Función hepática y renal<span data-any="dul vor">; Na<sup>+</sup> plasmático (antidepresivo)</span></li>
+<li data-req="li">Litemia valle a los 5–7 días de cada cambio de dosis; TSH, calcio, eGFR; hCG si procede</li>
+<li data-req="n">Transaminasas basales; confirmar ausencia de consumo de opioides</li>
+<li data-req="b">TA basal; antecedentes convulsivos y de conducta alimentaria</li>
+<li>Sueño, agitación, ideación suicida</li>
+<li>Escala de manía / síntomas mixtos</li>
+<li>Akatisia, rigidez, temblor</li>
+<li>TA/FC, especialmente ortostática</li>
+<li data-req="lam">Rash, mucosas, fiebre</li>
+</ul></div>
+<div class="pill-card"><h3 class="h0">Semanas 2–8</h3><ul>
+<li data-any="dul vor">Respuesta depresiva / ansiedad (antidepresivo)</li>
+<li>Anhedonia, motivación y funcionamiento</li>
+<li>Peso, apetito, náusea, sudoración</li>
+<li>Disfunción sexual y prolactina clínica</li>
+<li>Akatisia tardía (cariprazina)</li>
+<li data-req="b n">Craving, consumo, convulsiones, insomnio, tensión arterial</li>
+<li data-req="q">Frecuencia de uso del rescate (¿se está volviendo un hábito?)</li>
+<li>Reevaluar necesidad de politerapia</li>
+</ul></div>
+<div class="pill-card"><h3 class="h0">Mantenimiento</h3><ul>
+<li>Glucosa, HbA1c y perfil lipídico</li>
+<li>Peso y perímetro abdominal</li>
+<li>Función renal/hepática</li>
+<li data-req="li">Litemia trimestral el primer año y semestral después (orientativo; adaptar al protocolo local); creatinina, TSH y calcio periódicos</li>
+<li>Revisión anual de indicaciones</li>
+<li>Plan de retirada secuencial y reversible</li>
+</ul></div>
+</div>
+<h3>Señales de alarma</h3>
+<div class="flow">
+<div class="step" data-req="lam"><b>Rash progresivo</b><span>Suspender lamotrigina y valoración urgente si hay afectación mucosa, fiebre, eosinofilia o afectación sistémica.</span></div>
+<div class="step" data-req="li"><b>Toxicidad por litio</b><span>Temblor grosero, ataxia, disartria, vómitos/diarrea o confusión: suspender y valoración urgente con litemia.</span></div>
+<div class="step"><b>Activación paradójica</b><span>Insomnio, aceleración, impulsividad o sexualidad aumentada: revisar antidepresivo, cariprazina, bupropión y fase afectiva.</span></div>
+<div class="step"><b>Inquietud motora</b><span>Akatisia posible: no aumentar el antipsicótico; considerar reducción, cambio o manejo específico.</span></div>
+<div class="step"><b>Sedación incapacitante</b><span>Reducir asenapina, revisar horario, alcohol/benzodiacepinas/GHB, rescate de quetiapina y comorbilidad respiratoria.</span></div>
+<div class="step" data-req="b"><b>Convulsión o aura</b><span>Suspender bupropión y valoración urgente; revisar abstinencias, estimulantes y dosis.</span></div>
+<div class="step" data-any="dul vor"><b>Síndrome serotoninérgico</b><span>Temblor, clonías, hipertermia, diaforesis, agitación: suspender el serotoninérgico y valoración urgente.</span></div>
+<div class="step"><b>Ideación suicida</b><span>Explorar de forma activa en cada visita, sobre todo tras cambios de dosis o inicio de antidepresivo.</span></div>
+</div>
+</section>
+
+<section id="p6" class="card" aria-labelledby="h-p6">
+<h2 id="h-p6">Página 6 · Algoritmo de implantación y retirada</h2>
+<p>El orden más defendible es <b>estabilizar primero, modular después y añadir antidepresivo o complemento solo si persiste una diana clara</b>. La retirada sigue el orden inverso a la necesidad clínica.</p>
+<div class="flow">
+<div class="step"><b>1 · Definir fase y diana</b><span>Activación/mixto, depresión, síntomas negativos, ansiedad, dolor o consumo. Fijar 2–3 objetivos medibles.</span></div>
+<div class="step"><b>2 · Base antiactivación</b><span>Asenapina <span data-bind="A">10</span> mg/día (rango 5–20); valorar subir según respuesta y tolerabilidad.</span></div>
+<div class="step"><b>3 · Prevención</b><span data-req="lam">Lamotrigina con titulación lenta hasta 200 mg/día si no hay interacciones que exijan ajuste (ver tabla inferior).</span><span data-req="li">Litio hasta litemia de 0,7 mEq/L, con monitorización (ver tabla inferior).</span></div>
+<div class="step"><b>4 · Modular dopamina</b><span>Cariprazina 1,5 mg/día; subir a 3 mg solo si hay diana negativa/cognitiva y buena tolerancia. Esperar semanas entre cambios por la semivida de DDCAR.</span></div>
+<div class="step" data-req="dul"><b>5 · Duloxetina condicional</b><span>60 mg/día. No subir a 120 mg por falta de respuesta: sin beneficio adicional demostrado en ficha. Reevaluar diagnóstico, adherencia, consumos y alternativas.</span></div>
+<div class="step" data-req="vor"><b>5 · Vortioxetina condicional</b><span>Inicio con 10 mg/día (5 mg si hay intolerancia o edad avanzada); rango de ficha 5–20 mg/día. Con bupropión, la ficha recomienda considerar reducir la dosis.</span></div>
+<div class="step" data-req="b n"><b>5-bis · Bupropión + naltrexona</b><span>Bupropión de liberación prolongada, dosis única matutina: 150 mg/día y luego 300 mg; 450 mg es techo de EE. UU. y fuera de ficha en la UE. Naltrexona 50 mg/día. Solo con vortioxetina a 10–15 mg.</span></div>
+<div class="step" data-req="q"><b>6 · Rescate de insomnio</b><span>Quetiapina IR 12,5–50 mg, solo si hay insomnio pese a medidas de higiene del sueño y con límite pactado de uso. No tras GHB, alcohol o benzodiacepinas.</span></div>
+<div class="step"><b>7 · Simplificar</b><span>Retirar primero lo añadido por síntomas residuales; conservar el mínimo eficaz para la prevención.</span></div>
+</div>
+<div class="note"><b>Principio operativo:</b> un cambio por visita. Si se modifica más de un fármaco simultáneamente, se pierde la atribución causal del beneficio o del efecto adverso.</div>
+
+<div data-req="lam">
+<h3>Titulación de lamotrigina</h3>
+<div class="tw"><table>
+<thead><tr><th>Semanas</th><th>Sin valproato ni inductores</th><th>Con valproato</th><th>Con inductores (carbamazepina, fenitoína, fenobarbital, primidona) sin valproato</th></tr></thead>
+<tbody>
+<tr><td>1–2</td><td>25 mg/día</td><td>25 mg en días alternos</td><td>50 mg/día</td></tr>
+<tr><td>3–4</td><td>50 mg/día</td><td>25 mg/día</td><td>100 mg/día (en dosis divididas)</td></tr>
+<tr><td>5</td><td>100 mg/día</td><td>50 mg/día</td><td>200 mg/día</td></tr>
+<tr><td>6</td><td><b>200 mg/día (objetivo)</b></td><td><b>100 mg/día (objetivo)</b></td><td>300 mg/día</td></tr>
+<tr><td>7</td><td>—</td><td>—</td><td>Hasta 400 mg/día (objetivo habitual 300 mg/día)</td></tr>
+</tbody>
+</table></div>
+<ul class="notes">
+<li>Con anticonceptivos con estrógenos puede ser necesario hasta duplicar la dosis de mantenimiento; en la semana sin píldora las concentraciones pueden subir [1].</li>
+<li>Si se suspende más de 5 semividas, retitular desde el principio [1].</li>
+<li>Los antirretrovirales potenciados con efecto inductor también modifican la dosis (ver p.4-bis).</li>
+</ul>
+<p class="small">Esquema según ficha técnica de lamotrigina [1]. Contrastar con la versión vigente antes de prescribir.</p>
+</div>
+
+<div data-req="li">
+<h3>Inicio y monitorización del litio</h3>
+<div class="tw"><table>
+<thead><tr><th>Momento</th><th>Qué hacer</th></tr></thead>
+<tbody>
+<tr><td>Antes de iniciar</td><td>Creatinina/eGFR, electrolitos (Na<sup>+</sup>, K<sup>+</sup>), calcio, TSH, peso; ECG si hay edad avanzada o cardiopatía; hCG si procede. Revisar AINE, IECA/ARA-II, tiazidas y nefrotóxicos.</td></tr>
+<tr><td>Inicio</td><td>Dosis inicial baja y ajuste por litemia, no por miligramos fijos. Litemia valle a las 12 h de la última dosis.</td></tr>
+<tr><td>Ajuste</td><td>Litemia a los 5–7 días de cada cambio de dosis. Objetivo 0,7 mEq/L (mantenimiento habitual 0,6–0,8).</td></tr>
+<tr><td>Seguimiento</td><td>Litemia trimestral el primer año y semestral después; creatinina, TSH y calcio periódicos (orientativo según guía NICE; adaptar al protocolo local).</td></tr>
+<tr><td>Retirada</td><td>Gradual, durante semanas. La suspensión brusca se asocia a recaída.</td></tr>
+</tbody>
+</table></div>
+<p class="small">Esquema orientativo. Contrastar con la ficha técnica nacional y con el protocolo del servicio.</p>
+</div>
+</section>
+
+<section id="p7" class="card" aria-labelledby="h-p7">
+<h2 id="h-p7">Página 7 · Bibliografía y registro de revisión</h2>
+<ol class="refs">
+<li id="r1">Fichas técnicas EMA/AEMPS vigentes: Sycrest (asenapina), Reagila (cariprazina), Lamictal (lamotrigina), Cymbalta (duloxetina), Brintellix (vortioxetina), bupropión (liberación prolongada), naltrexona, quetiapina y litio. Consultar CIMA (AEMPS) y los EPAR de la EMA.</li>
+<li id="r2">Yatham LN, et al. CANMAT and ISBD 2018 guidelines for the management of patients with bipolar disorder. <i>Bipolar Disord</i> 2018;20(2):97–170. PMID 29536616.</li>
+<li id="r3">Bowden CL, et al. A placebo-controlled 18-month trial of lamotrigine and lithium maintenance treatment in recently manic or hypomanic patients with bipolar I disorder. <i>Arch Gen Psychiatry</i> 2003;60:392–400. PMID 12695317.</li>
+<li id="r4">Calabrese JR, et al. A placebo-controlled 18-month trial of lamotrigine and lithium maintenance treatment in recently depressed patients with bipolar I disorder. <i>J Clin Psychiatry</i> 2003;64:1013–1024. PMID 14628976.</li>
+<li id="r5">Sachs GS, et al. Effectiveness of adjunctive antidepressant treatment for bipolar depression. <i>N Engl J Med</i> 2007;356:1711–1722. PMID 17392295.</li>
+<li id="r6">Post RM, et al. Mood switch in bipolar depression: comparison of adjunctive venlafaxine, bupropion and sertraline. <i>Br J Psychiatry</i> 2006;189:124–131. PMID 16880481.</li>
+<li id="r7">Wehr TA, et al. Sleep reduction as a final common pathway in the genesis of mania. <i>Am J Psychiatry</i> 1987;144:201–204. PMID 3812788.</li>
+<li id="r8">University of Liverpool. HIV Drug Interactions Checker. https://www.hiv-druginteractions.org</li>
+<li id="r9">Szegedi A, et al. Asenapine as adjunctive treatment for acute mania associated with bipolar disorder: results of a 12-week core study and 40-week extension. <i>J Clin Psychopharmacol</i> 2012;32:46–55. PMID 22198448. doi:10.1097/JCP.0b013e31823f872f.</li>
+<li id="r10">Geddes JR, et al. Long-term lithium therapy for bipolar disorder: systematic review and meta-analysis of randomized controlled trials. <i>Am J Psychiatry</i> 2004;161:217–222. PMID 14754766. doi:10.1176/appi.ajp.161.2.217.</li>
+<li id="r11">Cipriani A, et al. Lithium in the prevention of suicide in mood disorders: updated systematic review and meta-analysis. <i>BMJ</i> 2013;346:f3646. PMID 23814104. doi:10.1136/bmj.f3646.</li>
+<li id="r12">Crossley NA, Bauer M. Acceleration and augmentation of antidepressants with lithium for depressive disorders: two meta-analyses of randomized, placebo-controlled trials. <i>J Clin Psychiatry</i> 2007;68:935–940. PMID 17592920. doi:10.4088/jcp.v68n0617.</li>
+<li id="r13">Trivedi MH, et al. Bupropion and naltrexone in methamphetamine use disorder. <i>N Engl J Med</i> 2021;384:140–153. PMID 33497547. doi:10.1056/NEJMoa2020214.</li>
+<li id="r14">Jayaram-Lindström N, et al. Naltrexone for the treatment of amphetamine dependence: a randomized, placebo-controlled trial. <i>Am J Psychiatry</i> 2008;165:1442–1448. PMID 18765480. doi:10.1176/appi.ajp.2008.08020304.</li>
+</ol>
+<p class="small">Las referencias 2–14 se han comprobado en PubMed (revista, año, volumen, página y autor principal; títulos y resúmenes de 9–14). Las fichas técnicas [1] y el comprobador [8] no se han consultado en línea durante esta edición: los datos de dosis, indicaciones y cifras de interacción deben contrastarse con su versión vigente.</p>
+
+<details class="log">
+<summary>Registro de revisión v4 respecto a v3</summary>
+<ul>
+<li>Atlas configurable: contexto diagnóstico (transdiagnóstico por defecto), asenapina 5–20 mg, cariprazina 1,5–3 mg, estabilizador (lamotrigina 200 mg o litio con litemia 0,7 mEq/L), antidepresivo (duloxetina 60 mg o vortioxetina 10–20 mg), complemento bupropión 300–450 mg + naltrexona 50 mg (solo con vortioxetina a 10–15 mg) y rescate con quetiapina IR 12,5–50 mg.</li>
+<li>Replanteado sin partir de un diagnóstico bipolar: la diana es el fenotipo; el estatus de ficha y los avisos de viraje cambian con el contexto.</li>
+<li>Nuevos módulos de contenido: litio (farmacodinamia, toxicidad, monitorización), vortioxetina, bupropión, naltrexona y quetiapina de rescate, con sus pares, filas de seguridad e interacciones con chemsex y VIH.</li>
+<li>Aviso explícito: con bupropión, 10–15 mg de vortioxetina equivalen en exposición a dosis superiores a 20 mg; 450 mg de bupropión supera el máximo de la ficha de la UE; el ensayo de referencia usó naltrexona inyectable de liberación prolongada, no oral 50 mg.</li>
+<li>Bibliografía ampliada con las referencias 9–14.</li>
+</ul>
+</details>
+</section>
+
+</main>
+<a class="totop" href="#top" id="totop" aria-label="Volver arriba">↑ Arriba</a>
+<footer><b>Documento de apoyo visual y docente.</b> No sustituye la ficha técnica, las guías clínicas vigentes ni la valoración individualizada. Las dosis y combinaciones deben adaptarse a diagnóstico, fase afectiva, comorbilidad somática, embarazo, interacciones, consumo de sustancias y preferencias de la persona.</footer>
+<script>
+(function(){
+  var KEY='atlas-v4-cfg';
+  var DEF={X:'tx',A:'10',C:'1.5',S:'lam',AD:'dul',V:'10',BN:false,B:'300',Q:false,QD:'25'};
+  var st=copy(DEF);
+  function copy(o){var r={};for(var k in o)r[k]=o[k];return r;}
+  function fmt(v){return String(v).replace('.',',');}
+  var form=document.getElementById('cfgForm');
+
+  try{var saved=JSON.parse(localStorage.getItem(KEY)||'null');if(saved){for(var k in DEF){if(k in saved)st[k]=saved[k];}}}catch(e){}
+
+  function readForm(){
+    var f=form.elements;
+    ['X','A','C','S','AD'].forEach(function(n){var r=form.querySelector('input[name="'+n+'"]:checked');if(r)st[n]=r.value;});
+    st.V=f.V.value;st.B=f.B.value;st.QD=f.QD.value;st.BN=f.BN.checked;st.Q=f.Q.checked;
+  }
+  function writeForm(){
+    var f=form.elements;
+    ['X','A','C','S','AD'].forEach(function(n){var r=form.querySelector('input[name="'+n+'"][value="'+st[n]+'"]');if(r)r.checked=true;});
+    f.V.value=st.V;f.B.value=st.B;f.QD.value=st.QD;f.BN.checked=st.BN;f.Q.checked=st.Q;
+  }
+
+  function tokens(){
+    var t={a:1,c:1};
+    t[st.S]=1;
+    t[st.AD==='none'?'noad':st.AD]=1;
+    t[st.X]=1;
+    if(st.BN){t.b=1;t.n=1;}
+    if(st.Q){t.q=1;}
+    return t;
+  }
+  function applyRules(){
+    var t=tokens();
+    var els=document.querySelectorAll('[data-req],[data-any],[data-not]');
+    Array.prototype.forEach.call(els,function(el){
+      var ok=true,r=el.getAttribute('data-req'),a=el.getAttribute('data-any'),n=el.getAttribute('data-not');
+      if(r){r.split(' ').forEach(function(x){if(!t[x])ok=false;});}
+      if(ok&&a){var any=false;a.split(' ').forEach(function(x){if(t[x])any=true;});ok=any;}
+      if(ok&&n){n.split(' ').forEach(function(x){if(t[x])ok=false;});}
+      el.toggleAttribute('hidden',!ok);
+    });
+  }
+
+  var CTX={
+    tx:'Transdiagnóstico: el atlas razona por fenotipo y diana (activación, anhedonia, ansiedad, dolor, consumo), no por etiqueta. Cada fármaco indica su estatus de ficha según el contexto que elijas.',
+    bip:'Espectro bipolar: prioridad a la cobertura antiactivación y estabilizadora antes de cualquier antidepresivo; el riesgo de viraje condiciona la elección y se marca como alto.',
+    uni:'Depresión unipolar o resistente: duloxetina, vortioxetina y bupropión están en indicación (TDM). Litio y antipsicóticos actúan como potenciación; la lamotrigina tiene evidencia limitada y heterogénea. El viraje se sigue vigilando por si hay bipolaridad no diagnosticada.',
+    psy:'Espectro psicótico: asenapina y cariprazina como base antipsicótica (en la UE, cariprazina está autorizada en esquizofrenia). Estabilizador y antidepresivo son añadidos por dianas afectivas residuales.'
+  };
+
+  function notes(){
+    var n=[];
+    function add(s,t){n.push({s:s,t:t});}
+    if(st.A==='5')add('l','Asenapina 5 mg/día: por debajo de las dosis de ficha (coadyuvante 5 mg/12 h = 10 mg/día; monoterapia 10 mg/12 h). Uso fuera de ficha, por ejemplo como dosis nocturna única.');
+    if(st.A==='15')add('l','Asenapina 15 mg/día: pauta no estándar (por ejemplo 5 mg + 10 mg). El máximo de ficha es 20 mg/día (10 mg/12 h).');
+    if(st.S==='li')add('m','Litio: la dosis se ajusta por litemia (valle a las 12 h), no por miligramos. Objetivo 0,7 mEq/L, dentro del rango habitual de mantenimiento 0,6–0,8. Ver toxicidad y monitorización en p.4 y p.6.');
+    if(st.S==='lam')add('m','Lamotrigina 200 mg/día es la dosis objetivo sin valproato ni inductores. Si hay valproato o inductores, cambia la titulación (ver p.6).');
+    if(st.AD==='vor')add('l','Vortioxetina '+st.V+' mg/día: rango de ficha 5–20 mg/día; indicada en la UE solo en trastorno depresivo mayor.');
+    if(st.AD==='dul')add('l','Duloxetina 60 mg/día es la dosis de referencia; más de 60 mg no ha demostrado beneficio adicional en la ficha.');
+    if(st.BN){
+      add('m','Bupropión inhibe CYP2D6 de forma potente y vortioxetina se metaboliza sobre todo por CYP2D6. La ficha recomienda considerar reducir la dosis de vortioxetina; con '+st.V+' mg y bupropión la exposición equivale, aproximadamente, a la de dosis superiores a 20 mg solos (≈ 2,3 veces el AUC según la ficha FDA; verificar). Vigilar náusea, activación, insomnio e hiponatremia.');
+      if(st.B==='450')add('h','Bupropión 450 mg/día supera el máximo de la ficha de la UE (300 mg/día); corresponde a la ficha de EE. UU. (XL) y al protocolo del ensayo ADAPT-2. El riesgo de convulsiones depende de la dosis.');
+      add('h','Antes del bupropión descartar epilepsia, trastorno de la conducta alimentaria y riesgo de abstinencia brusca de alcohol, benzodiacepinas o GHB/GBL. Con antipsicóticos y estimulantes el umbral convulsivo baja más.');
+      add('m','Naltrexona 50 mg/día oral: bloquea opioides (también los analgésicos); transaminasas basales. El ensayo ADAPT-2 usó naltrexona inyectable de liberación prolongada 380 mg cada 3 semanas con bupropión XL 450 mg/día en trastorno por consumo de metanfetamina, no naltrexona oral 50 mg.');
+    }
+    if(st.Q){
+      add('m','Quetiapina IR '+fmt(st.QD)+' mg de rescate: uso puntual, con límite de frecuencia pactado. Suma un tercer antipsicótico; no tomar tras GHB, alcohol o benzodiacepinas. Con ritonavir o cobicistat la ficha exige reducir la dosis de forma drástica.');
+    }
+    if(st.AD==='dul')add('l','Bupropión + naltrexona no se contempla con duloxetina en este atlas: bupropión inhibe CYP2D6 (inferencia: aumento de la exposición a duloxetina) y suma efectos noradrenérgicos, hipertensivos y sobre el umbral convulsivo.');
+    return n;
+  }
+  var SEVT={h:'▲ ALTO',m:'◆ MODERADO',l:'● BAJO'};
+
+  function render(){
+    var h1=document.getElementById('h1');
+    var title='Asenapina + Cariprazina + '+(st.S==='li'?'Litio':'Lamotrigina');
+    if(st.AD==='dul')title+=' ± Duloxetina';
+    if(st.AD==='vor')title+=' ± Vortioxetina';
+    if(st.BN)title+=' + Bupropión + Naltrexona';
+    h1.textContent=title;
+    if(st.Q){var s=document.createElement('span');s.className='pm';s.textContent=' · rescate quetiapina';h1.appendChild(s);}
+    document.title=title+(st.Q?' · rescate quetiapina':'')+' · Atlas de combinación configurable';
+
+    var b=document.getElementById('badges');b.textContent='';
+    function badge(name,dose){var d=document.createElement('div');d.className='badge';var e=document.createElement('b');e.textContent=name;d.appendChild(e);d.appendChild(document.createTextNode(' '+dose));b.appendChild(d);}
+    badge('Asenapina',st.A+' mg/día');
+    badge('Cariprazina',fmt(st.C)+' mg/día');
+    if(st.S==='li')badge('Litio','litemia 0,7 mEq/L');else badge('Lamotrigina','200 mg/día');
+    if(st.AD==='dul')badge('Duloxetina','60 mg/día · opcional');
+    if(st.AD==='vor')badge('Vortioxetina',st.V+' mg/día · opcional');
+    if(st.BN){badge('Bupropión',st.B+' mg/día');badge('Naltrexona','50 mg/día');}
+    if(st.Q)badge('Rescate','quetiapina IR '+fmt(st.QD)+' mg');
+    var cl={tx:'Transdiagnóstico',bip:'Espectro bipolar',uni:'Unipolar / resistente',psy:'Espectro psicótico'};
+    badge('Contexto',cl[st.X]);
+    badge('Uso','off-label / individualizado');
+
+    document.getElementById('ctxNote').textContent=CTX[st.X];
+
+    var ul=document.getElementById('cfgNotes');ul.textContent='';
+    notes().forEach(function(x){
+      var li=document.createElement('li');
+      var sp=document.createElement('span');sp.className='sev '+x.s;sp.textContent=SEVT[x.s];
+      li.appendChild(sp);li.appendChild(document.createTextNode(' '+x.t));ul.appendChild(li);
+    });
+
+    Array.prototype.forEach.call(document.querySelectorAll('[data-bind]'),function(el){
+      var k=el.getAttribute('data-bind');
+      if(k==='A')el.textContent=st.A;
+      else if(k==='C')el.textContent=fmt(st.C);
+      else if(k==='stab')el.textContent=st.S==='li'?'litio':'lamotrigina';
+    });
+
+    var fa=document.getElementById('frictionA'),fb=document.getElementById('frictionB');
+    var l1=['Sedación','akatisia','hipotensión'],l2=[];
+    if(st.S==='lam')l2.push('rash');
+    if(st.S==='li')l2.push('litemia');
+    if(st.AD!=='none')l2.push('viraje');
+    if(st.BN)l2.push('convulsiones');
+    if(st.Q)l1.push('QTc');
+    fa.textContent=l1.join(' · ');fb.textContent=l2.join(' · ');
+  }
+
+  function constrain(){
+    var vor=st.AD==='vor';
+    var fs=document.getElementById('fsBN');
+    var cb=form.elements.BN,bsel=form.elements.B,vsel=form.elements.V;
+    if(!vor){st.BN=false;}
+    cb.disabled=!vor;bsel.disabled=!st.BN;
+    fs.classList.toggle('off',!vor);
+    vsel.disabled=!vor;
+    var o20=vsel.querySelector('option[value="20"]');
+    if(o20)o20.disabled=!!st.BN;
+    if(st.BN&&st.V==='20')st.V='15';
+    form.elements.QD.disabled=!st.Q;
+  }
+
+  function persist(){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
+
+  function update(fromForm){
+    if(fromForm)readForm();
+    constrain();
+    writeForm();
+    applyRules();
+    render();
+    persist();
+  }
+
+  form.addEventListener('change',function(){update(true);});
+  document.getElementById('cfgReset').addEventListener('click',function(){st=copy(DEF);update(false);});
+  update(false);
+
+  var chips=document.querySelectorAll('#pairFilter button');
+  var rows=document.querySelectorAll('#pairTable tbody tr');
+  Array.prototype.forEach.call(chips,function(c){
+    c.addEventListener('click',function(){
+      var f=c.getAttribute('data-f');
+      Array.prototype.forEach.call(chips,function(x){x.setAttribute('aria-pressed',x===c?'true':'false');});
+      Array.prototype.forEach.call(rows,function(r){
+        r.classList.toggle('fhide',!(f==='all'||r.getAttribute('data-d').indexOf(f)>-1));
+      });
+    });
+  });
+
+  var phenos=document.querySelectorAll('.pheno');
+  var wrap=document.getElementById('phenos');
+  function pick(p){
+    var on=p.getAttribute('aria-pressed')!=='true';
+    Array.prototype.forEach.call(phenos,function(x){x.setAttribute('aria-pressed','false');x.classList.remove('sel');});
+    wrap.classList.toggle('has-sel',on);
+    if(on){p.setAttribute('aria-pressed','true');p.classList.add('sel');}
+  }
+  Array.prototype.forEach.call(phenos,function(p){
+    p.addEventListener('click',function(){pick(p);});
+    p.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(p);}});
+  });
+
+  var links=document.querySelectorAll('nav a');
+  var map={};
+  Array.prototype.forEach.call(links,function(a){map[a.getAttribute('href').slice(1)]=a;});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting&&map[e.target.id]){
+          Array.prototype.forEach.call(links,function(a){a.removeAttribute('aria-current');});
+          map[e.target.id].setAttribute('aria-current','true');
+        }
+      });
+    },{rootMargin:'-20% 0px -70% 0px'});
+    Array.prototype.forEach.call(document.querySelectorAll('main section'),function(s){io.observe(s);});
+  }
+
+  var top=document.getElementById('totop');
+  function vis(){top.classList.toggle('show',window.scrollY>600);}
+  window.addEventListener('scroll',vis,{passive:true});vis();
+})();
+
+</script>
+</body>
+</html>
