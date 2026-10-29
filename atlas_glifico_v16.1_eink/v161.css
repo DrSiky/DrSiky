@@ -1,0 +1,61 @@
+/* ===== v16.1: figuras ampliables, panel de pauta plegable, avisos heredados, áreas ===== */
+.view-tools{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin:0 0 12px;font-family:var(--sans);font-size:13.5px}
+.view-tools button{padding:6px 14px;font-weight:700}
+.legacy-sw{display:inline-flex;gap:7px;align-items:center;cursor:pointer}
+body:not(.show-legacy) .legacy-notice{display:none!important}
+body.pauta-oculta .grid{grid-template-columns:minmax(0,1fr)!important}
+body.pauta-oculta .explore-aside{display:none!important}
+body.fig-open{overflow:hidden}
+
+.fig-scroll{position:relative;overflow-x:auto;overflow-y:hidden;max-width:100%;background:#fff}
+.fig-bar{position:sticky;left:0;top:0;z-index:3;display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;padding:5px 8px;margin:0 0 4px;background:#fff;border-bottom:1.5px solid #000;font-family:var(--sans);font-size:12.5px;width:100%;box-sizing:border-box}
+.fig-bar .fig-t{font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-right:6px}
+.fig-bar button{padding:2px 10px;min-width:30px;font-weight:700}
+.fig-bar output{min-width:46px;text-align:center;font-weight:700}
+.fig-scroll>svg{display:block;height:auto}
+.fig-scroll.fig-full{position:fixed;inset:0;z-index:300;overflow:auto;padding:0 16px 16px;background:#fff}
+.fig-scroll.fig-full>.fig-bar{margin:0 -16px 8px;width:calc(100% + 32px);padding:8px 16px;border-bottom:3px solid #000}
+
+/* más espacio para las figuras cuando el panel de pauta está oculto */
+.receptor-tree-wrap,.fount-map-wrap{grid-template-columns:minmax(0,1fr) 270px!important}
+.cm-layout{grid-template-columns:minmax(0,1fr) 300px!important}
+.cm-canvas{overflow:visible!important}
+.map-pair{grid-template-columns:minmax(0,1fr) 340px!important}
+.receptor-tree-wrap>.fig-scroll,.fount-map-wrap>.fig-scroll{min-width:0}
+
+/* vectores como áreas */
+.vec-toggles{gap:8px 18px}
+.vec-toggles label{font-weight:400}
+.vec-legend svg{width:64px;height:20px}
+.vec-table .bas{font-size:.72em;font-weight:700;border:1px solid #000;padding:0 3px;margin-left:2px}
+.vec-table td.rs{white-space:normal;min-width:240px;font-size:12.5px}
+.vec-table .mut{color:#444}
+.vec-table tr.sumr td{border-top:2px solid #000;font-weight:700}
+.vec-all{margin-top:14px;border:1.5px solid #000;padding:8px 12px}
+.vec-all>summary{font-weight:700}
+.vec-matrix td small{color:#333}
+.vec-card{margin-top:12px}
+.pdn-controls input[type=search]{border:1.5px solid #000;padding:4px 8px;margin-left:6px;background:#fff;color:#000}
+@media print{.view-tools,.fig-bar{display:none!important}.legacy-notice{display:none!important}}
+
+.ctx-fold{border:1.5px solid #000;margin:0 0 10px;padding:6px 12px;font-family:var(--sans)}
+.ctx-fold>summary{font-weight:700;font-size:13.5px}
+.ctx-fold .atlas-context{margin-top:8px}
+.legacy-sw span b{font-weight:700}
+
+svg .eink-node{fill:#dedede!important;fill-opacity:1!important;stroke:#000!important;stroke-width:1.8px!important}
+svg:not(.pdn-svg):not(.vec-svg) text.eink-nt{fill:#000!important;stroke:none!important}
+svg:not(.pdn-svg):not(.vec-svg) text[fill="#fff"],svg:not(.pdn-svg):not(.vec-svg) text[fill="#ffffff"]{stroke-width:1.2px}
+
+/* mapa clínico: texto de nodos sin dato y rótulos con contraste suficiente */
+#supplement .cm-canvas svg text[fill="#7b91a3"],#supplement .cm-canvas svg text[fill="#8a9dab"],#supplement .cm-canvas svg text[fill="#60758a"],#supplement .cm-canvas svg text[fill="#486780"]{fill:#2a2a2a!important}
+#supplement .cm-canvas svg text[fill="#173f6b"],#supplement .cm-canvas svg text[fill="#193f61"]{fill:#000!important}
+#supplement .cm-canvas svg rect[stroke="#aebfcd"]{stroke:#555!important;stroke-dasharray:4 3}
+
+svg.receptor-tree .trunk,svg.receptor-tree .v158-trunk{stroke:#6a6a6a!important;stroke-opacity:1!important;stroke-width:2.2px!important}
+svg.receptor-tree .twig{stroke:#2b2b2b!important;stroke-opacity:.9!important;stroke-width:1.3px!important}
+
+svg.receptor-tree path.v158-trunk{stroke:#555!important;stroke-width:2.6px!important;opacity:1!important;stroke-opacity:1!important}
+svg.receptor-tree path[stroke-width="1.05"]{stroke:#2b2b2b!important;stroke-width:1.5px!important;opacity:.85!important}
+svg.receptor-tree path[stroke-width="1.8"]{stroke:#000!important;stroke-width:2.6px!important;opacity:1!important}
+.v145-q-head span{color:#222!important}

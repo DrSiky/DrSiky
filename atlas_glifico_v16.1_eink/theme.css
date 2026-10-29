@@ -1,0 +1,121 @@
+/* ===== TEMA E-INK v16.0 · alto contraste, sin dependencia del color ===== */
+:root{--bg:#fff;--panel:#fff;--panel2:#f2f2f2;--line:#000;--text:#000;--muted:#2b2b2b;--ink:#000;--paper:#fff;--soft:#f2f2f2;
+--serif:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;--sans:"Helvetica Neue",Arial,sans-serif}
+html{filter:grayscale(1) contrast(1.12);scroll-behavior:smooth}
+*,*::before,*::after{border-radius:0!important;box-shadow:none!important;text-shadow:none!important;transition:none!important;animation:none!important;backdrop-filter:none!important}
+html,body{background:#fff!important;color:#000!important}
+body{font-family:var(--serif);font-size:16px;line-height:1.5}
+.shell{max-width:1580px}
+a{color:#000}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:3px solid #000!important;outline-offset:2px!important}
+
+/* cabecera */
+.header{border-bottom:4px double #000;padding-bottom:12px;margin-bottom:14px}
+.header h1{font-family:var(--serif);font-size:clamp(24px,3vw,36px);font-weight:700;color:#000!important;letter-spacing:0}
+.header p{color:#2b2b2b!important;font-size:16px}
+.badge{border:1.5px solid #000!important;background:#fff!important;color:#000!important;font-family:var(--sans);font-size:13px}
+.eink-tag{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+
+/* tipografía de interfaz */
+button,select,input,textarea,summary,label,th,small,.badge,.tag,nav,.field label,.stat span,.context-cell,.atlas-context{font-family:var(--sans)}
+h1,h2,h3,h4{font-family:var(--serif);color:#000!important}
+h2{font-size:22px;font-weight:700}
+h3{font-family:var(--sans);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;border-bottom:1.5px solid #000;padding-bottom:3px}
+p,li,td{color:#000}
+.muted,small,.small{color:#2b2b2b!important}
+
+/* contenedores */
+.panel,.stat,.finding,[class*="card"],.context-cell,.lens-console,.tool-drawer,.aside-fold,.logic-card,.pk-step,.candidate-card,.supp-detail,.cm-inspector,.receptor-detail,.fount-detail,.psych-detail,.ab-inspector,.interaction-card,.v152-audit,.v144-audit,.v137-audit,.regimen-snapshot,.compare-regimens,.supp-canvas,.cm-canvas,.case-tools{background:#fff!important;border:1.5px solid #000!important;color:#000!important}
+.panel{padding:16px}
+.stat{border-bottom:4px solid #000!important}
+.stat b{font-family:var(--serif)}
+.explore-aside{border-width:2px!important}
+details{border-color:#000}
+summary{cursor:pointer;font-weight:700}
+.tool-drawer>summary,.aside-fold>summary{color:#000!important}
+
+/* avisos y notas */
+.notice,.atlas-principle,.layer-status,.clinical-scope-note,.layer-caveat,.lens-status,.v137-dose-note,.preflight,.fixed-combo-note,.v152-pet-note,.empty-evidence,.pk-empty,.hypothesis,.cyp-warn,.cm-method,.cm-outside{background:#fff!important;color:#000!important;border:1.5px solid #000!important;border-left:8px solid #000!important}
+.atlas-principle{font-family:var(--sans);font-size:14px}
+.lens-gate{border:3px double #000!important}
+.gate-mark,.lens-badge,.atlas-icon{background:#fff!important;color:#000!important;border:1.5px solid #000!important;font-family:var(--sans)!important;font-weight:700}
+
+/* navegación principal */
+.atlas-nav{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))!important;gap:8px!important}
+.atlas-nav button{border:1.5px solid #000!important;background:#fff!important;color:#000!important;min-height:66px;padding:10px 12px}
+.atlas-nav button b{font-family:var(--serif);color:#000!important}
+.atlas-nav small{color:#222!important;font-family:var(--sans);font-size:11.5px}
+.atlas-nav .atlas-icon{width:38px!important;height:38px!important;border:1.5px solid #000!important;background:#fff!important;color:#000!important}
+.atlas-nav button:hover{background:#f2f2f2!important}
+.atlas-nav button.active{background:#000!important;color:#fff!important}
+.atlas-nav button.active b,.atlas-nav button.active small{color:#fff!important}
+.atlas-nav button.active .atlas-icon{background:#fff!important;color:#000!important;border-color:#fff!important}
+.secondary-nav button,.nav button{border:1.5px solid #000!important;background:#fff!important;color:#000!important}
+
+/* botones y controles */
+button,.smallbtn,.evidence-switch button,.goal-row button,.entity-toggle,.ab-control-buttons button,.cm-toolbar button,.supp-toolbar button{border:1.5px solid #000!important;background:#fff!important;color:#000!important;cursor:pointer;font-family:var(--sans)}
+button:hover:not(:disabled),.smallbtn:hover{background:#f2f2f2!important}
+button.active,.smallbtn.active,.evidence-switch button.active,.goal-row button.active,.entity-toggle.active,button[aria-pressed="true"],.primary{background:#000!important;color:#fff!important;border-color:#000!important}
+button:disabled{border-style:dashed!important;color:#444!important}
+.drugrow button{background:#fff!important;color:#000!important;border:1.5px solid #000!important}
+input,select,textarea,.field input,.field select,.field textarea,.drugrow input,.drugrow select{border:1.5px solid #000!important;background:#fff!important;color:#000!important}
+input[type=range]{accent-color:#000;border:0!important}
+input[type=checkbox],input[type=radio]{accent-color:#000;width:18px;height:18px}
+.field label,.checks label,.dim label{color:#000!important;font-size:12.5px}
+
+/* tablas */
+table{border-collapse:collapse;font-family:var(--sans);font-size:13.5px}
+th,td{border-bottom:1px solid #555!important;color:#000!important}
+th{background:#f2f2f2!important;border-top:1.5px solid #000!important;border-bottom:2.5px solid #000!important;text-transform:uppercase;letter-spacing:.05em;font-size:12px}
+.tablewrap{border:1.5px solid #000!important}
+
+/* etiquetas, chips, estados */
+.tag,.pk-flag,.combo-chip,.entity-badge,.v145-q-chip,.v159-met-badge,[class*="chip"],.ab-marker,.legend-medal,.lens-badge{background:#fff!important;color:#000!important;border:1.5px solid #000!important}
+.unknown,.missing,.uncertain,.empty{border-style:dashed!important}
+.high,.risk{font-weight:700}
+.direct,.inference{color:#000!important}
+
+/* barras y rellenos: patrones en lugar de color */
+.fill,.potency-fill,.pet-fill,.delta-mark{background:#000!important}
+.theory-fill{background:repeating-linear-gradient(45deg,#000 0 3px,#fff 3px 6px)!important;border:1px solid #000}
+.track,.delta-track{background:#fff!important;border:1px solid #000!important}
+
+/* SVG heredados */
+svg{max-width:100%}
+.receptor-tree-wrap,.fount-map-wrap,.psych-map-wrap,.svgwrap,.landscape,.clinical-map{background:#fff!important;border:1.5px solid #000!important}
+
+/* pie de ficha y fuentes */
+.source,.cm-evidence,.v145-q-detail{color:#000!important}
+
+/* impresión */
+@media print{
+  html{filter:none}
+  .atlas-nav,.secondary-nav,.tool-drawer,.lens-console,.ab-controls,.explore-aside,.totop{display:none!important}
+  .grid{display:block!important}
+  .panel,.view.active{break-inside:auto}
+  svg,.pdn-card,.vec-card{break-inside:avoid}
+  a{text-decoration:none}
+}
+
+/* ===== refinamientos tras auditoría de contraste ===== */
+*,*::before,*::after{border-color:#222!important}
+[style*="color:"]:not([style*="background"]):not(svg *){color:#111!important}
+.context-cell *,.ab-controls *,.ab-container *{color:#111!important}
+.ab-controls,.ab-container,.ab-pair{background:#fff!important;border:1.5px solid #000!important}
+
+/* SVG heredados: texto claro sobre fondo claro → negro con halo; texto gris → casi negro */
+svg:not(.pdn-svg):not(.vec-svg) text[fill="#fff"],svg:not(.pdn-svg):not(.vec-svg) text[fill="#ffffff"]{paint-order:stroke;stroke:#000;stroke-width:1.2px;stroke-linejoin:round}
+svg text[fill="#60758a"],svg text[fill="#706157"],svg text[fill="#7b6b60"],svg text[fill="#8c7d72"],svg text[fill="#9b806c"]{fill:#222!important}
+
+/* campo de polaridad y paisaje longitudinal */
+#polarity svg text,#trajectory svg text{fill:#000!important;paint-order:stroke;stroke:#fff!important;stroke-width:3px!important;stroke-linejoin:round}
+#polarity svg rect,#polarity svg ellipse,#trajectory svg ellipse{fill:#fff!important;stroke:#000!important;stroke-width:1.8px}
+#polarity svg line[stroke="#4f83ae"],#polarity svg line[stroke="#c68c35"]{stroke:#000!important}
+#polarity svg line[stroke="#4f948f"]{stroke:#000!important;stroke-width:4px!important}
+#polarity svg line[stroke="#ffffff"],#trajectory svg line[stroke="#ffffff"]{stroke:#000!important;stroke-dasharray:3 5!important}
+#polarity svg line[stroke="#8c70b3"],#trajectory svg line[stroke="#8c70b3"]{stroke:#000!important;stroke-dasharray:10 4 2 4!important}
+#polarity svg circle[fill="#c68c35"],#trajectory svg circle[fill="#c68c35"]{fill:#000!important;stroke:#fff!important}
+#polarity svg circle[fill="#8c70b3"],#trajectory svg circle[fill="#8c70b3"]{fill:#fff!important;stroke:#000!important;stroke-width:3px!important}
+#polarity svg circle[fill="#4f948f"]{fill:#000!important}
+#polarity svg circle[fill="#ffffff"]{fill:#fff!important;stroke:#000!important;stroke-width:3px!important}
+#polarity svg path,#trajectory svg path{fill:#000!important}
