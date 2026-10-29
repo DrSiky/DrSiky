@@ -1,0 +1,38 @@
+/* Shared interaction/layout rules; the e-ink stylesheet alone controls monochrome. */
+.view-tools label{display:inline-flex;align-items:center;gap:7px}
+.view-tools select{padding:5px 8px;max-width:220px}
+.pdn-node{cursor:pointer}
+.pdn-node:focus-visible{outline:3px solid #173f6b;outline-offset:3px}
+.pdn-node.pdn-selected>rect:first-of-type{stroke-width:4px;stroke-dasharray:5 3}
+.pdn-edge.pdn-muted{opacity:.09}
+.pdn-edge.pdn-emphasis{opacity:1}
+.pdn-node.pdn-muted{opacity:.35}
+.pdn-focus-controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;padding:9px 0}
+.pdn-focus-controls label{display:inline-flex;gap:6px;align-items:center}
+.pdn-focus-controls select{max-width:330px}
+.pdn-focus-status{font-size:12px;line-height:1.5;min-height:1.5em}
+.vec-basis{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}
+.vec-basis button{padding:8px 14px}
+.vec-basis button[aria-pressed=true]{font-weight:700;border-width:2px}
+.vec-formula p{font-size:12px;line-height:1.6}
+.vec-empty{font-style:italic}
+.theme-color .pdn-card,.theme-color .vec-card,.theme-color .vec-all,.theme-color .ctx-fold{border-color:#c5d6e4;background:#fff;color:#193f61;border-radius:10px}
+.theme-color .fig-bar{background:#f4f8fc;border-color:#c5d6e4;color:#193f61}
+.theme-color .fig-bar button,.theme-color .view-tools button{border:1px solid #a6bfd2;background:#fff;color:#193f61;border-radius:7px}
+.theme-color .pdn-svgwrap{border-color:#c5d6e4;border-radius:10px}
+.theme-color .vec-barbox{border-color:#7897af}
+.theme-color .vec-barbox i{background:#244d70}
+.theme-color .view-tools{color:#34556f}
+.theme-color .pdn-node.pdn-selected>rect:first-of-type{stroke:#173f6b}
+.theme-color .vec-basis button[aria-pressed=true]{background:#173f6b;color:#fff}
+@media(max-width:1150px){
+ .receptor-tree-wrap,.fount-map-wrap,.psych-map-wrap,.cm-layout,.map-pair{grid-template-columns:minmax(0,1fr)!important}
+ .receptor-detail,.fount-detail,.cm-inspector{max-height:none}
+ .pdn-focus-controls{align-items:stretch;flex-direction:column}
+ .pdn-focus-controls select{max-width:100%}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+@media print{.pdn-focus-controls,.vec-basis{display:none!important}.pdn-edge.pdn-muted,.pdn-node.pdn-muted{opacity:1}}
+.vec-eff{margin:0;padding-left:16px;font-size:12px;text-align:left}
+.vec-eff li{margin:0 0 3px}
+.vec-table td.rs .vec-eff{min-width:230px}
