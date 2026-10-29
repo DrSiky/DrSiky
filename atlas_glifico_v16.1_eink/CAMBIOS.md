@@ -28,3 +28,12 @@ Ki ≠ ocupación ≠ respuesta clínica. Las áreas son resumen de afinidad doc
 
 ## Revisión posterior (correcciones)
 Red: deduplicación por régimen de origen; nodos de componentes en asociaciones fijas; evidencia con `potencyEligible=false` tratada como no numérica; trazo punteado para evidencia ordinal/cualitativa. Vectores: escala según la extensión real; el «centro» pasa a llamarse balance heurístico de componentes. Figuras: el bloqueo de scroll se sincroniza con las figuras abiertas. CSS: columnas fijas solo en escritorio.
+
+## Política de sedación (anti/pro) y capa C
+Definida por el usuario; implementada en las capas P/C/Q, **sin tocar la capa O**.
+- **Antagonismo (anti-):** H1 → sedación (principal) y apetito/peso; α1 → ortostasis/hipotensión y somnolencia añadida (secundaria); M1 → prototipo antimuscarínico (xerostomía, antiperistaltismo/íleo, prodelirium; sedación leve; leve aumento dopaminérgico secundario, por lo que M1 antagonista deja de sumar a «contención»). Ejemplo: clozapina (madre).
+- **Agonismo (pro-):** H1 → vigilia; α1 → vigilia/↑ presión arterial (ambos hacia «activación»); M1 → peristaltismo/sialorrea y efecto procognitivo-antipsicótico (hacia «contención»). Ejemplo: norclozapina (metabolito hijo), mostrada como dirección «m» sin magnitud, porque el atlas no calibra exposición de metabolitos.
+- **Efectos asociados** (apetito, ortostasis, carga antimuscarínica, vigilia/PA, procolinérgico): columna propia, no ejes. La carga antimuscarínica acepta también M3 y M sin subtipo (los efectos periféricos son mayoritariamente M3), sin forzarlos hacia sedación.
+- **Capa C (ordinal clínico):** entradas ordinales/regulatorias (p. ej. periciazina, zuclopentixol, droperidol) con dirección explícita; la magnitud es la ordinal que ya figura en el atlas (no una afinidad) y solo rellena ejes que P deja vacíos. Los «débil»/«baja afinidad» ordinales entran con su magnitud baja; «probable», «indirecto», «preclínico» siguen excluidos.
+- **Pesos:** los agonistas usan pesos espejo de los antagonistas (H1 .58 y α1 .18 hacia activación; M1 .24 hacia contención). **Son constantes de modelo sin calibrar**, no datos de fármaco.
+- Sedación por base (167): O 1 · P 23 · C 3 · Q 30 · sin dato 110.

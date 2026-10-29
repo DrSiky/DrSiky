@@ -58,3 +58,6 @@ svg.receptor-tree path.v158-trunk{stroke:#555!important;stroke-width:2.6px!impor
 svg.receptor-tree path[stroke-width="1.05"]{stroke:#2b2b2b!important;stroke-width:1.5px!important;opacity:.85!important}
 svg.receptor-tree path[stroke-width="1.8"]{stroke:#000!important;stroke-width:2.6px!important;opacity:1!important}
 .v145-q-head span{color:#222!important}
+.vec-eff{margin:0;padding-left:16px;font-size:12px;text-align:left}
+.vec-eff li{margin:0 0 3px}
+.vec-table td.rs .vec-eff{min-width:230px}
