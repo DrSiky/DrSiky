@@ -76,7 +76,9 @@ function v161Cell(x){
   return '<span class="mut">—</span>';
 }
 function v161Matrix(){
-  const out=[];Object.keys(DRUGS).forEach(n=>{const d=DRUGS[n];const dose=d.dose>0?d.dose:(MIN_DEFAULT_DOSE[n]??1);try{out.push(v161Comp({drug:n,dose}))}catch(e){}});return out;
+  const out=[];Object.keys(DRUGS).forEach(n=>{const d=DRUGS[n];const dose=d.dose>0?d.dose:(MIN_DEFAULT_DOSE[n]??1),row={drug:n,dose};
+    const fd=typeof V156_FORMS!=='undefined'&&V156_FORMS[n];if(fd){row.formulationId=Object.keys(fd)[0];row.dailyUnits=1}
+    try{const c=v161Comp(row);if(fd){c.cfg=(fd[row.formulationId]||{}).label||row.formulationId;c.reason=(c.reason?c.reason+' ':'')+'Evaluado con la presentación de referencia «'+c.cfg+'», 1 unidad/día; depende de la presentación y las unidades que configures en la pauta.'}out.push(c)}catch(e){}});return out;
 }
 function v161Csv(m){
   const h=['fármaco','familia','activación','base_act','sedación','base_sed','pro-monoaminérgico','base_ad','contención','base_am','área_u2','estado','motivo_o_dirección'];
@@ -104,7 +106,7 @@ function vectorsView(a){
   const net={x:(U.act-U.sed)*V161_S,y:(U.ad-U.am)*V161_S};
   const kites=per.map(x=>v161Kite(P,{act:v161Val(x.c,'act'),sed:v161Val(x.c,'sed'),ad:v161Val(x.c,'ad'),am:v161Val(x.c,'am')}));
   const all=[...joint,...kites.flat(),[P.x,P.y]];
-  const ext=Math.max(...all.map(p=>Math.max(Math.abs(p[0]),Math.abs(p[1])))),R=ext<=4.2?5:10;
+  const ext=Math.max(...all.map(p=>Math.max(Math.abs(p[0]),Math.abs(p[1])))),R=ext<=4.2?5:Math.ceil(ext/5)*5;
   const sx=x=>500+Math.max(-R,Math.min(R,x))*(350/R),sy=y=>340-Math.max(-R,Math.min(R,y))*(260/R);
   const pts=ps=>ps.map(p=>sx(p[0]).toFixed(1)+','+sy(p[1]).toFixed(1)).join(' ');
   let svg='<svg class="vec-svg" viewBox="0 0 1000 700" role="img" aria-labelledby="vecT vecD"><title id="vecT">Áreas de los componentes de vector de la pauta</title><desc id="vecD">Plano con eje horizontal de sedación a activación y eje vertical de contención a empuje pro-monoaminérgico. Cada fármaco genera un polígono cuyos vértices son sus cuatro componentes; el polígono rayado es el área conjunta de la pauta. Los anillos discontinuos señalan estabilizadores y los segmentos punteados direcciones cualitativas sin magnitud.</desc>'
@@ -133,7 +135,7 @@ function vectorsView(a){
   const chk=(id,lab,on)=>'<label><input type="checkbox" data-vs="'+id+'"'+(on?' checked':'')+'> '+lab+'</label>';
   const trs=per.map((x,i)=>'<tr><td><b>'+(i+1)+'</b></td><td>'+esc(x.r.drug)+'</td><td>'+esc(x.r.dose??'')+' mg</td>'+V161_AX.map(k=>'<td>'+v161Cell(x.c[k])+'</td>').join('')+'<td>'+(x.c.numeric?v161Area(x.c):'—')+'</td><td class="rs">'+esc(x.c.reason||'')+'</td></tr>').join('');
   const ref=vectorProfile(a);
-  const sum='<tr class="sumr"><td><b>Σ</b></td><td>Área conjunta (unión no lineal por componente)</td><td></td><td>'+U.act.toFixed(2)+'</td><td>'+U.sed.toFixed(2)+'</td><td>'+U.ad.toFixed(2)+'</td><td>'+U.am.toFixed(2)+'</td><td>'+jointArea.toFixed(1)+'</td><td class="rs">Centro del área: ('+(net.x>=0?'+':'')+net.x.toFixed(1)+' ; '+(net.y>=0?'+':'')+net.y.toFixed(1)+'). El vector neto es solo el desplazamiento del centro, no la información completa.</td></tr>'
+  const sum='<tr class="sumr"><td><b>Σ</b></td><td>Área conjunta (unión no lineal por componente)</td><td></td><td>'+U.act.toFixed(2)+'</td><td>'+U.sed.toFixed(2)+'</td><td>'+U.ad.toFixed(2)+'</td><td>'+U.am.toFixed(2)+'</td><td>'+jointArea.toFixed(1)+'</td><td class="rs">Balance heurístico de componentes (no es el centroide del área): ('+(net.x>=0?'+':'')+net.x.toFixed(1)+' ; '+(net.y>=0?'+':'')+net.y.toFixed(1)+'). Es la diferencia entre componentes opuestos, no la información completa.</td></tr>'
     +'<tr><td><b>Σ</b></td><td>Referencia: capa operativa del atlas (vectorProfile)</td><td></td><td>'+ref.act.toFixed(2)+'</td><td>'+ref.sed.toFixed(2)+'</td><td>'+ref.ad.toFixed(2)+'</td><td>'+ref.am.toFixed(2)+'</td><td>'+(0.5*(ref.act+ref.sed)*(ref.ad+ref.am)*V161_S*V161_S).toFixed(1)+'</td><td class="rs">Capa O, con las dianas agregadas. Su sedación es 0 por construcción: H1, α1 y M1 son operativamente elegibles pero no lo son como señal polar, y vectorProfile solo usa señales polares. La capa P recoge esas dianas como afinidad documentada.</td></tr>';
   const hi=pos?Object.entries(state.dims).filter(([k,v])=>pos.used.includes(k)&&v>=7).map(([k,v])=>k+' '+v+'/10'):[];
   host.innerHTML='<div class="panel"><h2>Vectores clínicos · áreas de los cuatro componentes</h2>'
@@ -166,6 +168,7 @@ function v161AutoZoom(svg,wrap){
 }
 function v161ApplyZ(wrap,svg,id){const z=V161Z[id]||v161AutoZoom(svg,wrap);wrap.dataset.z=z;svg.style.width=(z*100)+'%';svg.style.maxWidth='none';svg.style.minWidth='0';const o=wrap.querySelector('output');if(o)o.textContent=Math.round(z*100)+' %'}
 function v161Figures(){
+  v161SyncOpen();
   V161_FIGS.forEach(([sel,id])=>document.querySelectorAll(sel).forEach(svg=>{
     if(svg.closest('.fig-scroll'))return;
     const wrap=document.createElement('div');wrap.className='fig-scroll';wrap.dataset.fig=id;
@@ -179,6 +182,7 @@ function v161Figures(){
     v161ApplyZ(wrap,svg,id);
   }));
 }
+function v161SyncOpen(){document.body.classList.toggle('fig-open',!!document.querySelector('.fig-scroll.fig-full'))}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){const f=document.querySelector('.fig-scroll.fig-full');if(f){f.querySelector('[data-z="full"]').click()}}});
 function v161SetAside(hidden,manual){
   if(manual)v161Manual=true;document.body.classList.toggle('pauta-oculta',hidden);

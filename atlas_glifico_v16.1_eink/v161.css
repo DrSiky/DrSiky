@@ -17,10 +17,9 @@ body.fig-open{overflow:hidden}
 .fig-scroll.fig-full>.fig-bar{margin:0 -16px 8px;width:calc(100% + 32px);padding:8px 16px;border-bottom:3px solid #000}
 
 /* más espacio para las figuras cuando el panel de pauta está oculto */
-.receptor-tree-wrap,.fount-map-wrap{grid-template-columns:minmax(0,1fr) 270px!important}
-.cm-layout{grid-template-columns:minmax(0,1fr) 300px!important}
+@media(min-width:1451px){.receptor-tree-wrap,.fount-map-wrap{grid-template-columns:minmax(0,1fr) 270px!important}.cm-layout{grid-template-columns:minmax(0,1fr) 300px!important}}
+@media(min-width:821px){.map-pair{grid-template-columns:minmax(0,1fr) 340px!important}}
 .cm-canvas{overflow:visible!important}
-.map-pair{grid-template-columns:minmax(0,1fr) 340px!important}
 .receptor-tree-wrap>.fig-scroll,.fount-map-wrap>.fig-scroll{min-width:0}
 
 /* vectores como áreas */

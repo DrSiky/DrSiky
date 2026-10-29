@@ -451,6 +451,7 @@ svg .dx{display:inline}body.no-dx svg .dx{display:none!important}
   var t=document.getElementById('dxToggle');
   function setDx(){
     body.classList.toggle('no-dx',!t.checked);
+    if(!t.checked){var dc=document.querySelector('#pairFilter button[data-f="D"][aria-pressed="true"]'),al=document.querySelector('#pairFilter button[data-f="all"]');if(dc&&al)al.click();}
     try{localStorage.setItem('atlas-dx',t.checked?'1':'0');}catch(e){}
   }
   try{if(localStorage.getItem('atlas-dx')==='0'){t.checked=false;}}catch(e){}

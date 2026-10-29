@@ -22,10 +22,10 @@ function v160Edges(a){
   const best={};
   Object.entries(a).forEach(([t,x])=>(x.contrib||[]).forEach(c=>{
     if(c.petEligible)return;
-    const ord=c.evidence==='esqueleto ordinal',qual=!!c.qualitative;
+    const ord=c.evidence==='esqueleto ordinal'||c.potencyEligible===false,qual=!!c.qualitative;
     const pot=(ord||qual)?null:(Number(c.potencyValue)||0);
-    const e={t,entity:c.entity||c.drug,parent:c.drug,meta:c.entityType==='metabolite',cls:v160Class(c.action),pot,ord,qual,action:c.action||'',evidence:c.evidence||'',metric:c.metric||''};
-    const k=e.entity+'|'+t,old=best[k];
+    const e={t,entity:c.entity||c.drug,parent:c.drug,meta:c.entityType==='metabolite',comp:c.entityType==='component',cls:v160Class(c.action),pot,ord,qual,action:c.action||'',evidence:c.evidence||'',metric:c.metric||''};
+    const k=e.parent+'|'+e.entity+'|'+t,old=best[k];
     if(!old||(e.pot||0)>(old.pot||0))best[k]=e;
   }));
   return Object.values(best);
@@ -56,21 +56,21 @@ function pdnet(a){
   if(V160.onlyConv){Object.keys(byT).forEach(t=>{if(!flags[t].kind){delete byT[t];delete flags[t]}});edges=edges.filter(e=>byT[e.t])}
   // entidades (fármaco y metabolitos) en orden de la pauta
   const ents=[];
-  rows.forEach(r=>{ents.push({entity:r.drug,parent:r.drug,meta:false,row:r});[...new Set(edges.filter(e=>e.parent===r.drug&&e.meta).map(e=>e.entity))].forEach(n=>ents.push({entity:n,parent:r.drug,meta:true,row:r}))});
-  const entIdx={};ents.forEach((e,i)=>entIdx[e.entity]=i);
+  rows.forEach(r=>{ents.push({entity:r.drug,parent:r.drug,meta:false,row:r});[...new Set(edges.filter(e=>e.parent===r.drug&&e.comp&&e.entity!==r.drug).map(e=>e.entity))].forEach(n=>ents.push({entity:n,parent:r.drug,meta:false,comp:true,row:r}));[...new Set(edges.filter(e=>e.parent===r.drug&&e.meta).map(e=>e.entity))].forEach(n=>ents.push({entity:n,parent:r.drug,meta:true,row:r}))});
+  const ek=e=>e.parent+'|'+e.entity,entIdx={};ents.forEach((e,i)=>entIdx[ek(e)]=i);
   // dianas agrupadas por sistema, ordenadas por baricentro
   const sysOf=t=>v160Target(t).sys,groups={};
   Object.keys(byT).forEach(t=>{const s=sysOf(t);(groups[s]=groups[s]||[]).push(t)});
-  const bc=t=>byT[t].reduce((s,e)=>s+(entIdx[e.entity]??0),0)/byT[t].length;
+  const bc=t=>byT[t].reduce((s,e)=>s+(entIdx[ek(e)]??0),0)/byT[t].length;
   const order=[...V160_SYS.filter(s=>groups[s]),...Object.keys(groups).filter(s=>!V160_SYS.includes(s))];
   const LX=24,LW=290,RX=830,RW=246,W=1100,TOP=70;
   let y=TOP;const tpos={},heads=[];
   order.forEach(s=>{heads.push({s,y});y+=24;groups[s].sort((p,q)=>bc(p)-bc(q)).forEach(t=>{tpos[t]=y+12;y+=26});y+=10});
   const rightH=y;
-  const hs=ents.map(e=>e.meta?44:62),sumH=hs.reduce((p,q)=>p+q,0),H=Math.max(rightH,sumH+TOP+ents.length*14)+10;
+  const hs=ents.map(e=>e.meta||e.comp?44:62),sumH=hs.reduce((p,q)=>p+q,0),H=Math.max(rightH,sumH+TOP+ents.length*14)+10;
   const gap=ents.length?Math.max(12,(H-TOP-10-sumH)/Math.max(1,ents.length)):0;
   let ly=TOP;const npos=ents.map((e,i)=>{const o={y:ly,h:hs[i],cy:ly+hs[i]/2};ly+=hs[i]+gap;return o});
-  const cnt={};edges.forEach(e=>cnt[e.entity]=(cnt[e.entity]||0)+1);
+  const cnt={};edges.forEach(e=>cnt[ek(e)]=(cnt[ek(e)]||0)+1);
   let svg='<svg class="pdn-svg" viewBox="0 0 '+W+' '+H+'" role="img" aria-labelledby="pdnT pdnD"><title id="pdnT">Red farmacodinámica de la pauta</title><desc id="pdnD">Cada fármaco de la pauta se une a las dianas donde el atlas tiene datos. El tipo de línea y su remate indican la acción; el grosor, la potencia en la escala 0–10 del atlas. Las dianas con doble borde reciben acción de varios fármacos; las de borde discontinuo reciben acciones opuestas.</desc>'
    +'<defs>'
    +'<marker id="pdnBar" markerUnits="userSpaceOnUse" viewBox="0 -8 12 16" markerWidth="12" markerHeight="16" refX="10" refY="0" orient="auto"><path d="M10,-7 L10,7" stroke="#000" stroke-width="3" fill="none"/></marker>'
@@ -84,16 +84,18 @@ function pdnet(a){
   heads.forEach(h=>{svg+='<line x1="'+RX+'" y1="'+(h.y+4)+'" x2="'+(RX+RW)+'" y2="'+(h.y+4)+'" stroke="#000" stroke-width="1.2"/><text x="'+RX+'" y="'+(h.y+19)+'" font-size="11.5" font-weight="700" letter-spacing="1">'+esc(h.s.toUpperCase())+'</text>'});
   // aristas
   edges.forEach(e=>{
-    const i=entIdx[e.entity];if(i==null||tpos[e.t]==null)return;
+    const i=entIdx[ek(e)];if(i==null||tpos[e.t]==null)return;
     const x1=LX+LW,y1=npos[i].cy,x2=RX-7,y2=tpos[e.t],mx=(x1+x2)/2,w=(e.ord||e.qual)?1.5:(1.2+Math.max(0,Math.min(10,e.pot))/10*3.4);
-    svg+='<path d="M'+x1+','+y1+' C'+(mx+60)+','+y1+' '+(mx-60)+','+y2+' '+x2+','+y2+'" fill="none" stroke="#000" stroke-width="'+w.toFixed(2)+'"'+(V160_DASH[e.cls]?' stroke-dasharray="'+V160_DASH[e.cls]+'"':'')+' marker-end="url(#'+V160_CAP[e.cls]+')"><title>'+esc(e.entity+' → '+v160Target(e.t).label+' · '+e.action+(e.pot!=null?' · potencia '+v160Fmt(e.pot)+'/10':' · sin magnitud (ordinal o cualitativo)')+(e.evidence?' · '+e.evidence:''))+'</title></path>';
+    svg+='<path d="M'+x1+','+y1+' C'+(mx+60)+','+y1+' '+(mx-60)+','+y2+' '+x2+','+y2+'" fill="none" stroke="#000" stroke-width="'+w.toFixed(2)+'"'+((e.ord||e.qual)?' stroke-dasharray="'+V160_DASH.mod+'"':(V160_DASH[e.cls]?' stroke-dasharray="'+V160_DASH[e.cls]+'"':''))+' marker-end="url(#'+V160_CAP[e.cls]+')"><title>'+esc(e.entity+' → '+v160Target(e.t).label+' · '+e.action+(e.pot!=null?' · potencia '+v160Fmt(e.pot)+'/10':' · sin magnitud (ordinal o cualitativo)')+(e.evidence?' · '+e.evidence:''))+'</title></path>';
   });
   // nodos fármaco
   ents.forEach((e,i)=>{
-    const p=npos[i],d=DRUGS[e.entity]||DRUGS[e.parent]||{},n=cnt[e.entity]||0,x=LX+(e.meta?22:0),w=LW-(e.meta?22:0);
-    svg+='<rect x="'+x+'" y="'+p.y+'" width="'+w+'" height="'+p.h+'" fill="#fff" stroke="#000" stroke-width="'+(e.meta?1.5:2.4)+'"'+(e.meta?' stroke-dasharray="5 3"':'')+'/>'
-      +'<text x="'+(x+12)+'" y="'+(p.y+(e.meta?19:24))+'" font-size="'+(e.meta?12.5:15)+'" font-weight="700">'+esc((e.meta?'m · ':'')+e.entity)+'</text>';
-    if(!e.meta){
+    const p=npos[i],d=DRUGS[e.entity]||DRUGS[e.parent]||{},n=cnt[ek(e)]||0,x=LX+(e.meta||e.comp?22:0),w=LW-(e.meta||e.comp?22:0);
+    svg+='<rect x="'+x+'" y="'+p.y+'" width="'+w+'" height="'+p.h+'" fill="#fff" stroke="#000" stroke-width="'+(e.meta||e.comp?1.5:2.4)+'"'+(e.meta||e.comp?' stroke-dasharray="5 3"':'')+'/>'
+      +'<text x="'+(x+12)+'" y="'+(p.y+(e.meta||e.comp?19:24))+'" font-size="'+(e.meta||e.comp?12.5:15)+'" font-weight="700">'+esc((e.meta?'m · ':e.comp?'c · ':'')+e.entity)+'</text>';
+    if(e.comp){
+      svg+='<text x="'+(x+12)+'" y="'+(p.y+35)+'" font-size="11">'+esc('componente de '+e.parent+' · '+n+' diana'+(n===1?'':'s'))+'</text>';
+    }else if(!e.meta){
       svg+='<text x="'+(x+12)+'" y="'+(p.y+42)+'" font-size="12">'+esc((e.row.dose!==''&&e.row.dose!=null?e.row.dose+' mg':'dosis por definir')+' · '+n+' diana'+(n===1?'':'s')+' con este umbral')+'</text>';
       if(!n&&d.mech)svg+='<text x="'+(x+12)+'" y="'+(p.y+57)+'" font-size="10.5" fill="#222">'+esc(String(d.mech).slice(0,52))+'…</text>';
     }else{
@@ -112,7 +114,7 @@ function pdnet(a){
   // listas de lectura
   const listFlag=k=>Object.entries(flags).filter(([t,f])=>f.kind===k).map(([t])=>v160Target(t).label);
   const comp=listFlag('compet'),mix=listFlag('mixto'),conv=listFlag('conv');
-  const noData=ents.filter(e=>!e.meta&&!(cnt[e.entity]||0)).map(e=>e.entity);
+  const noData=ents.filter(e=>!e.meta&&!e.comp&&!(cnt[ek(e)]||0)).map(e=>e.entity);
   const li=xs=>xs.length?'<ul>'+xs.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'<p class="small">Ninguna con este umbral.</p>';
   const cards='<div class="pdn-flags">'
     +'<div class="pdn-card"><h4>⇄ Competencia entre fármacos</h4>'+li(comp)+'<p class="small">Acciones opuestas (bloqueo frente a agonismo) sobre la misma diana: el efecto neto no se infiere de la afinidad.</p></div>'

@@ -20,8 +20,11 @@ Reconstrucción: `python3 build.py RUTA/ATLAS_GLIFICO_VISUAL_v16.0.html [SALIDA.
 En el atlas H1/α1/M1 tienen `polarEligible=false` para los 167 fármacos, por lo que la sedación operativa vale 0 en todos. La capa P la recupera de forma separada y rotulada.
 
 ## Cobertura final (167)
-Área 53 · solo dirección 39 · amortiguación (estabilizadores: litio, valproato, lamotrigina, carbamazepina) 4 · sin eje aplicable 71.
+Área 53 · solo dirección 42 · amortiguación (estabilizadores: litio, valproato, lamotrigina, carbamazepina) 4 · sin eje aplicable 68. Los productos con presentación (p. ej. asociaciones de tramadol) se evalúan con su presentación de referencia y 1 unidad/día, indicado en el motivo.
 Pimozida, metadona, tramadol y tapentadol no tienen en el atlas dianas NET/SERT/D2 (solo hERG o ninguna): se quedan sin eje por diseño.
 
 ## Límites
 Ki ≠ ocupación ≠ respuesta clínica. Las áreas son resumen de afinidad documentada, no predicción de efecto ni recomendación terapéutica.
+
+## Revisión posterior (correcciones)
+Red: deduplicación por régimen de origen; nodos de componentes en asociaciones fijas; evidencia con `potencyEligible=false` tratada como no numérica; trazo punteado para evidencia ordinal/cualitativa. Vectores: escala según la extensión real; el «centro» pasa a llamarse balance heurístico de componentes. Figuras: el bloqueo de scroll se sincroniza con las figuras abiertas. CSS: columnas fijas solo en escritorio.

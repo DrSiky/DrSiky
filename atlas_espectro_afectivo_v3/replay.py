@@ -59,9 +59,15 @@ def parse_pdf(path):
         font = None
         size = 12
         tm = (0, 0)
+        gstack = []
         for operands, op in cs.operations:
             op = op.decode() if isinstance(op, bytes) else op
-            if op == 'rg':
+            if op == 'q':
+                gstack.append((fill, stroke, lw, dash, alpha, font, size))
+            elif op == 'Q':
+                if gstack:
+                    fill, stroke, lw, dash, alpha, font, size = gstack.pop()
+            elif op == 'rg':
                 fill = tuple(float(x) for x in operands)
             elif op == 'RG':
                 stroke = tuple(float(x) for x in operands)
