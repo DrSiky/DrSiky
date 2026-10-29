@@ -6,8 +6,9 @@ const V161={basis:'P',show:{kites:true,joint:true,centroid:false},filter:'',stat
 const V161_S=7,V161_AX=['act','sed','ad','am'];
 const V161_LBL={act:'Activación · proyección',sed:'Sedación · proyección',ad:'Pro-monoaminérgico · proyección',am:'Contención · proyección'};
 const V161_BASE={P:'P · proyección de afinidad',O:'O · heurística operativa del atlas',Q:'Q · relaciones cualitativas'};
-const V161_AGON=/\bagonismo(?! inverso)|facilit/i,V161_ANT=/antagon|agonismo inverso|bloque|inhib/i,V161_ANT_H1=/antagon|agonismo inverso|bloque|inhib|antihistam/i,V161_INH=/inhib|recaptaci|captaci|liberaci|facilit/i;
+const V161_AGON=/\bagonismo(?! inverso)|facilit/i,V161_ANT=/antagon|agonismo inverso|bloque|inhib/i,V161_ANT_H1=/antagon|agonismo inverso|bloque|inhib|antihistam/i,V161_ANT_A1=/antagon|agonismo inverso|bloque|inhib|adrenol[ií]tic/i,V161_INH=/inhib|recaptaci|captaci|liberaci|facilit/i;
 const V161_NEG=/sin funci[oó]n|funci[oó]n no|no (se )?(infiere|inferible|resuelt|tipific|asign|fiable)|direcci[oó]n (funcional )?no|preclínic|experimental|propuest|hip[oó]tesis|accesori|contextual|indirect|baja afinidad|afinidad baja|muy baja|d[eé]bil|no demostrad|probable|dato no humano|sin agonismo/i;
+const V161_NEG_C=new RegExp(V161_NEG.source.replace('|baja afinidad|afinidad baja|muy baja|d[eé]bil',''),'i');
 const V161_DASH=['','9 4','2 4','10 3 2 3','15 5','5 2 1 2'];
 function v161Eligible(c){return ['parent','component'].includes(c.entityType)&&!c.petEligible&&!c.qualitative&&c.evidence!=='esqueleto ordinal'&&c.potencyEligible!==false}
 function v161Take(a,t,re){
@@ -16,7 +17,7 @@ function v161Take(a,t,re){
 }
 function v161P(a){
   const T=(t,re)=>v161Take(a,t,re);
-  const s={NET:T('NET',V161_INH),DAT:T('DAT',V161_INH),SERT:T('SERT',V161_INH),MAOA:T('MAOA',/inhib/i),HT1Aa:T('HT1A',V161_AGON),D3a:T('D3',V161_AGON),D2n:T('D2',V161_ANT),D3n:T('D3',V161_ANT),HT2An:T('HT2A',V161_ANT),H1n:T('H1',V161_ANT_H1),M1n:T('M1',V161_ANT),A1n:T('A1',V161_ANT),H1a:T('H1',V161_AGON),A1a:T('A1',V161_AGON),M1a:T('M1',V161_AGON)};
+  const s={NET:T('NET',V161_INH),DAT:T('DAT',V161_INH),SERT:T('SERT',V161_INH),MAOA:T('MAOA',/inhib/i),HT1Aa:T('HT1A',V161_AGON),D3a:T('D3',V161_AGON),D2n:T('D2',V161_ANT),D3n:T('D3',V161_ANT),HT2An:T('HT2A',V161_ANT),H1n:T('H1',V161_ANT_H1),M1n:T('M1',V161_ANT),A1n:T('A1',V161_ANT_A1),H1a:T('H1',V161_AGON),A1a:T('A1',V161_AGON),M1a:T('M1',V161_AGON)};
   // Coeficientes editoriales heredados; los de los agonistas H1/α1/M1 son espejo de los de sedación. No son tamaños de efecto clínico.
   return {act:Math.min(1,s.NET*.32+s.DAT*.25+s.D3a*.25+s.HT1Aa*.10+s.H1a*.58+s.A1a*.18),sed:Math.min(1,s.H1n*.58+s.M1n*.24+s.A1n*.18),ad:Math.min(1,s.NET*.24+s.SERT*.14+s.HT1Aa*.23+s.D3a*.16+s.DAT*.10+s.MAOA*.13),am:Math.min(1,s.D2n*.38+s.D3n*.20+s.HT2An*.14+s.H1n*.14+s.M1a*.24)};
 }
@@ -33,7 +34,7 @@ function v161QDir(t,action){
     case'HT2A':return an?['am']:[];
     case'H1':return (an||/antihistam/i.test(s))?['sed','am']:(ag?['act']:[]);
     case'M1':return an?['sed']:(ag?['am']:[]);
-    case'A1':return an?['sed']:(ag?['act']:[]);
+    case'A1':return (an||/adrenol[ií]tic/i.test(s))?['sed']:(ag?['act']:[]);
     case'GABAA':return /modulaci[oó]n alost[eé]rica positiva|potenciaci[oó]n|facilitaci[oó]n|modulaci[oó]n gaba-a/i.test(s)?['sed']:[];
     default:return [];
   }
@@ -51,7 +52,7 @@ function v161Reason(a,d){
 }
 const V161_EFF=[
   {t:['H1'],re:V161_ANT_H1,lab:'H1 ⊣',txt:'sedación y apetito/aumento de peso'},
-  {t:['A1'],re:V161_ANT,lab:'α1 ⊣',txt:'ortostasis/hipotensión; somnolencia añadida (secundaria: por sí solo es poco sedante)'},
+  {t:['A1'],re:V161_ANT_A1,lab:'α1 ⊣',txt:'ortostasis/hipotensión; somnolencia añadida (secundaria: por sí solo es poco sedante)'},
   {t:['M1','M3','MACH'],re:V161_ANT,lab:'M ⊣',txt:'antimuscarínico: xerostomía, antiperistaltismo/íleo, prodelirium; sedación leve; leve ↑ dopamina secundaria'},
   {t:['H1'],re:V161_AGON,lab:'H1 ⊕',txt:'vigilia'},
   {t:['A1'],re:V161_AGON,lab:'α1 ⊕',txt:'vigilia; ↑ presión arterial'},
@@ -59,7 +60,7 @@ const V161_EFF=[
 function v161Eff(a){
   const out=[],par=c=>['parent','component'].includes(c.entityType)&&!c.petEligible;
   V161_EFF.forEach(e=>{
-    const cs=e.t.flatMap(t=>(a[t]?.contrib||[]).filter(c=>par(c)&&e.re.test(String(c.action))&&!V161_NEG.test(String(c.action))));
+    const ord=c=>!c.qualitative&&(c.evidence==='esqueleto ordinal'||c.potencyEligible===false),cs=e.t.flatMap(t=>(a[t]?.contrib||[]).filter(c=>par(c)&&e.re.test(String(c.action))&&!(ord(c)?V161_NEG_C:V161_NEG).test(String(c.action))));
     let b='',who='';
     if(cs.some(c=>v161Eligible(c)))b='afinidad documentada';
     else if(cs.some(c=>!c.qualitative&&(c.evidence==='esqueleto ordinal'||c.potencyEligible===false)))b='ordinal clínico';
