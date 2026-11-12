@@ -1,0 +1,32 @@
+/* v16.33 · Interfaz centrada en los atlas */
+body.v1633 .lens-console,body.v1633 nav.atlas-nav,body.v1633 #toolDrawer,body.v1633 .atlas-principle,body.v1633 .shell>.header p{display:none!important}
+body.v1633 .shell>.header{padding-bottom:6px;margin-bottom:0}
+body.v1633 .shell>.header h1{font-size:clamp(20px,2.4vw,28px);margin:0}
+.v1633-bar{position:sticky;top:0;z-index:40;background:#fff;border-bottom:2px solid #000;padding:8px 0 6px;margin:0 0 14px;display:grid;gap:7px;font-family:var(--sans,system-ui,sans-serif)}
+.v1633-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.v1633-k{font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;min-width:78px}
+.v1633-lenses,.v1633-views{display:flex;flex-wrap:wrap;gap:6px}
+.v1633-lenses button,.v1633-views button{border:1.5px solid #000;background:#fff;color:#000;border-radius:0;font:inherit;font-weight:600;cursor:pointer}
+.v1633-lenses button{padding:5px 11px;font-size:13.5px}
+.v1633-views button{padding:7px 16px;font-size:15px}
+.v1633-lenses button[aria-pressed=true],.v1633-views button[aria-pressed=true],.v1633-lenses button[aria-pressed=true]:hover,.v1633-views button[aria-pressed=true]:hover{background:#000!important;color:#fff!important}
+.v1633-lenses button:hover:not([aria-pressed=true]),.v1633-views button:hover:not([aria-pressed=true]){background:#ececec!important;color:#000!important}
+.v1633-lenses button:focus-visible,.v1633-views button:focus-visible,.v1633-more select:focus-visible{outline:3px solid #000;outline-offset:2px}
+.v1633-more{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:13.5px}
+.v1633-more select{padding:6px 8px;border:1.5px solid #000;background:#fff;font:inherit;font-weight:400;max-width:230px}
+.v1633-side{display:inline-flex;gap:6px;margin-left:auto}
+.v1633-side button{font-size:12.5px}
+.v1633-settings{position:relative;font-size:13px}
+.v1633-settings>summary{cursor:pointer;font-weight:700;padding:5px 8px;border:1.5px solid #000;list-style:none}
+.v1633-settings>summary::-webkit-details-marker{display:none}
+.v1633-settings[open]>.v1633-settings-body{position:absolute;right:0;top:calc(100% + 4px);background:#fff;border:1.5px solid #000;padding:10px;z-index:50;min-width:320px;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+.v1633-settings .view-tools{margin:0;flex-direction:column;align-items:flex-start}
+.v1633-note{margin:0;font-size:11.5px;color:#333}
+body.v1633:not(.v1633-on-pdnet) #v166-patterns,body.v1633:not(.v1633-on-pdnet) #v168-clinical{display:none!important}
+body.v1633 .explore-aside{position:sticky;top:120px;align-self:start;max-height:calc(100vh - 130px);overflow:auto}
+body.v1633 .explore-aside>p:first-of-type{display:none}
+.theme-color .v1633-bar{border-bottom-color:#c5d6e4;background:#f4f8fc}
+.theme-color .v1633-lenses button,.theme-color .v1633-views button,.theme-color .v1633-more select,.theme-color .v1633-settings>summary{border-color:#a6bfd2;color:#193f61;border-radius:7px}
+.theme-color .v1633-lenses button[aria-pressed=true],.theme-color .v1633-views button[aria-pressed=true]{background:#173f6b!important;color:#fff!important;border-color:#173f6b}
+@media(max-width:900px){.v1633-bar{position:static}.v1633-k{min-width:0;width:100%}.v1633-side{margin-left:0}body.v1633 .explore-aside{position:static;max-height:none}}
+@media print{.v1633-bar{display:none!important}}
