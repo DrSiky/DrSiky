@@ -373,10 +373,10 @@ def p48():
 
 
 # ------------------------------------------------------------------ 49 (guía)
-def guide(n=49):
+def guide(n=49, extra=(), word='Catorce'):
     it = new_page('Guía de lectura de un caso', 'GUÍA',
                   'I · orden de lectura del atlas; no es un algoritmo diagnóstico ni sustituye la entrevista', n)
-    subtitle(it, 'Catorce preguntas, en el orden en que suelen abrirse, con las páginas donde el atlas las desarrolla.')
+    subtitle(it, word + ' preguntas, en el orden en que suelen abrirse, con las páginas donde el atlas las desarrolla.')
     qs = [
         ('¿Es un episodio actual o un seguimiento?', ['pp. 4–6 (marco temporal)', 'p. 22']),
         ('¿Hubo alguna vez hipomanía o manía observadas, y con qué calidad de observación?', ['p. 3', 'p. 5', 'p. 19', 'p. 34']),
@@ -392,21 +392,21 @@ def guide(n=49):
         ('¿Qué instrumentos pueden ayudar y qué no miden?', ['pp. 26–27']),
         ('¿Qué diferenciales y comorbilidades quedan abiertas?', ['p. 36', 'p. 38', 'p. 39', 'p. 48']),
         ('¿Qué incertidumbre persiste y qué se reevaluará?', ['p. 9', 'p. 19', 'p. 30', 'p. 45']),
-    ]
+    ] + list(extra)
     top = 130.0
-    h, gap = 36.0, 4.0
+    h, gap = (36.0, 4.0) if len(qs) <= 14 else (34.0, 3.0)
     for k, (q, dest) in enumerate(qs):
         it.append(rect_top(50, top, 1141, top + h, 8, fill=WHITE, stroke=LINE, lw=1.0))
-        it.append(rect_top(62, top + 5, 88, top + 31, 13, fill=NAVY))
+        it.append(rect_top(62, top + h / 2 - 13, 88, top + h / 2 + 13, 13, fill=NAVY))
         num = str(k + 1)
-        it.append(text(75 - sw(num, 'Roboto-Bold', 12) / 2, top + 22.5, num, 'Roboto-Bold', 12, WHITE))
-        it.append(text(104, top + 23, q, 'Roboto-Medium', 13.5, INK))
+        it.append(text(75 - sw(num, 'Roboto-Bold', 12) / 2, top + h / 2 + 4.5, num, 'Roboto-Bold', 12, WHITE))
+        it.append(text(104, top + h / 2 + 5, q, 'Roboto-Medium', 13.5, INK))
         x = 1128.0
         for d in reversed(dest):
             wd = sw(d, 'Roboto-Medium', 10.5) + 20
             x -= wd
-            it.append(rect_top(x, top + 7, x + wd, top + 29, 10, fill=PILLFILL))
-            it.append(text(x + 10, top + 22, d, 'Roboto-Medium', 10.5, TEAL))
+            it.append(rect_top(x, top + h / 2 - 11, x + wd, top + h / 2 + 11, 10, fill=PILLFILL))
+            it.append(text(x + 10, top + h / 2 + 4, d, 'Roboto-Medium', 10.5, TEAL))
             x -= 8
         assert x > 104 + sw(q, 'Roboto-Medium', 13.5) + 12, ('guía solapa', k)
         top += h + gap
