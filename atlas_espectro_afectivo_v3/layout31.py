@@ -135,7 +135,7 @@ def hbars(items, x0, base0, pitch, rows, vmax, scale, label_w, color=TEAL, lsize
     items.append(line_top(xb, base0 - 17, xb, base0 + pitch * (len(rows) - 1) + 8, stroke=LINE, lw=1.0))
 
 
-def forest(items, x0, x1, base0, pitch, rows, lo, hi, ticks):
+def forest(items, x0, x1, base0, pitch, rows, lo, hi, ticks, unit='HR', ci=False):
     """Gráfico de bosque en escala logarítmica. rows: (etiqueta, estimador, ic_lo, ic_hi)."""
     def pos(v):
         return x0 + (math.log(v) - math.log(lo)) / (math.log(hi) - math.log(lo)) * (x1 - x0)
@@ -155,7 +155,7 @@ def forest(items, x0, x1, base0, pitch, rows, lo, hi, ticks):
         cx = pos(est)
         items.append(path(rrect_ops(cx - 4.5, Y(yb + 4.5), cx + 4.5, Y(yb - 4.5), 0), fill=INK, stroke=INK, lw=1.0))
         vs = ('%g' % est).replace('.', ',')
-        items.append(text(pos(h) + 8, yb + 3.5, 'HR %s' % vs, 'Roboto-Medium', 10, INK))
+        items.append(text(pos(h) + 8, yb + 3.5, ('%s %s (%s–%s)' % (unit, ('%.2f' % est).replace('.', ','), ('%.2f' % l).replace('.', ','), ('%.2f' % h).replace('.', ',')) if ci else '%s %s' % (unit, vs)), 'Roboto-Medium', 10, INK))
 
 
 # ----------------------------------------------------------------- láminas

@@ -407,9 +407,18 @@ def p36():
         '•  ¿Existen antecedentes neurológicos, infecciosos o metabólicos, o síntomas cognitivos acompañantes?',
         '•  ¿Cómo encaja la edad y la forma de inicio con la historia afectiva previa?',
         '•  ¿El síndrome persiste tras corregir la causa sospechada?'], where='p36', bsize=12, lead=19, gap=2) + 16
-    note(it, 50, top, 1141, 'I · Secundario no significa ajeno',
-         ['Un síndrome secundario no excluye vulnerabilidad previa ni la confirma; la secuencia por sí sola no demuestra causalidad '
-          '(p. 24). El VIH y la sustancia comparten escenarios clínicos con el chemsex (p. 37).'], where='p36')
+    top = note(it, 50, top, 1141, 'I · Secundario no significa ajeno',
+         ['Un síndrome secundario no excluye una vulnerabilidad previa, pero tampoco la confirma: que la manía o la depresión '
+          'aparezcan después de un fármaco, una infección o una lesión orienta la atribución, aunque la secuencia por sí sola no '
+          'demuestra causalidad (p. 24). Por eso el atlas pide reconstruir la cronología con cuidado y volver a evaluar el cuadro '
+          'cuando la causa sospechada se ha corregido.',
+          'En la práctica, la infección por VIH y el consumo de sustancias comparten a menudo el mismo escenario clínico, el del '
+          'chemsex (p. 37), y en esa encrucijada conviene explorar a la vez la causa médica, la tóxica y la afectiva primaria.'],
+         where='p36') + 14
+    note(it, 50, top, 1141, 'I · Por qué el diagnóstico médico va primero',
+         ['Krauthammer y Klerman propusieron entender la manía, como la hipertensión, como un síndrome de causas múltiples (P42). '
+          'Leída así, la pregunta por la causa secundaria no es un trámite previo al diagnóstico psiquiátrico, sino parte de él: '
+          'cambia el pronóstico, el tratamiento y la manera de explicar a la persona lo que le ocurre.'], kind='info', where='p36')
     return it
 
 
@@ -505,9 +514,15 @@ def p38():
     top = 128.0
     for k in range(3):
         top = card_row(it, cards[2 * k:2 * k + 2], top, X2, where='p38', bsize=12.5, lead=18) + 14
-    note(it, 50, top + 2, 1141, 'I · Comorbilidad frente a diferencial',
-         ['Varias de estas condiciones son a la vez diagnóstico alternativo y comorbilidad; el atlas las recoge como preguntas abiertas '
-          'y no como exclusiones automáticas.'], where='p38')
+    top = note(it, 50, top + 2, 1141, 'I · Comorbilidad frente a diferencial',
+         ['Varias de estas condiciones son a la vez diagnóstico alternativo y comorbilidad. El trastorno límite, el TDAH o el uso de '
+          'sustancias pueden imitar la inestabilidad afectiva, pero también coexistir con un trastorno bipolar y modificar su curso, '
+          'su riesgo suicida y su respuesta al tratamiento (P30, P35, P37, P43). Por eso el atlas las recoge como preguntas abiertas '
+          'y no como exclusiones automáticas: descartar una no obliga a aceptar la otra.'], where='p38') + 14
+    note(it, 50, top, 1141, 'I · Cómo ordenar la entrevista',
+         ['Ayuda separar tres planos: la duración y la forma de los cambios de ánimo (episódicos o reactivos y breves), su relación '
+          'con desencadenantes y sustancias, y la historia longitudinal desde la infancia. La lectura dimensional de las pp. 49–55 '
+          'explica por qué la comorbilidad es la regla y no la excepción (P80).'], kind='info', where='p38')
     return it
 
 
@@ -590,8 +605,11 @@ def p40():
         it.append(rect_top(x0 + 14, t0 + h - 22, x0 + 14 + pw, t0 + h - 3, 9, fill=PILLFILL))
         it.append(text(x0 + 24, t0 + h - 9, pill, 'Roboto-Medium', 10, TEAL))
         it.append(rect_top(cx - 9, ymid - 9, cx + 9, ymid + 9, 9, fill=NAVY, stroke=WHITE, lw=2.0))
-    note(it, 50, 724, 1141, 'I · Una tensión que el atlas hereda',
-         ['La historia muestra el vaivén entre concepto amplio y categorías; el atlas lo trata como pregunta abierta (p. 23).'],
+    note(it, 50, 664, 1141, 'I · Una tensión que el atlas hereda',
+         ['La historia del concepto oscila entre la amplitud de Kraepelin y la precisión de las categorías operativas. Desde 2009 '
+          'ese vaivén se ha enriquecido con propuestas dimensionales y longitudinales: la estadificación (P82), RDoC (P81), HiTOP '
+          '(P79) y el modelo ACE (P75), que retoma la intuición de Weygandt sobre los estados mixtos (P74). El atlas no zanja la '
+          'discusión: la trata como pregunta abierta (p. 23) y la desarrolla en las pp. 49–55.'],
          where='p40', t1=790)
     return it
 
