@@ -1,0 +1,12 @@
+/* v16.36 */
+.v1636-state{display:inline-block;font-size:10.5px;font-weight:700;padding:0 5px;margin-left:4px;border:1px solid #000;white-space:nowrap}
+.v1636-state.live{background:#fff}
+.v1636-state.draft{border-style:dashed;font-style:italic}
+.v1636-draft{opacity:.85}
+.v1636-draftnote{font-style:italic;font-size:12px}
+.v1636-breakdown{margin-top:16px;border-top:2px solid #000;padding-top:10px}
+.v1636-breakdown h3{margin:0 0 6px}
+.v1636-table{border-collapse:collapse;font-size:12.5px;min-width:420px}
+.v1636-table td,.v1636-table th{border:1px solid #000;padding:3px 7px;text-align:left}
+.v1636-table tr.v1636-comp th{background:#eee}
+.theme-color .v1636-table tr.v1636-comp th{background:#eef3f8}
