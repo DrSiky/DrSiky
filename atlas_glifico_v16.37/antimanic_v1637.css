@@ -1,0 +1,11 @@
+/* v16.37 */
+.v1637-seg{stroke:#4f948f;stroke-width:3;stroke-dasharray:5 5;fill:none}
+.v1637-mech{fill:#fff;stroke:#4f948f;stroke-width:3}
+.v1637-mech-label{fill:#4f948f;font-size:12px;font-style:italic}
+.vector-key i.v1637-key{display:inline-block;width:22px;height:0;border-top:3px dashed #4f948f;vertical-align:middle;margin-right:6px;background:none}
+.v1637-table td{vertical-align:top}
+.v1637-comp-note{border-left:3px solid #000;padding:4px 8px;font-size:12.5px;margin:6px 0}
+.v1636-breakdown h4{margin:14px 0 6px}
+.theme-eink .v1637-seg,.theme-eink .v1637-mech{stroke:#000}
+.theme-eink .v1637-mech-label{fill:#000}
+.theme-eink .vector-key i.v1637-key{border-top-color:#000}
