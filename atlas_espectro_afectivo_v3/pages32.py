@@ -394,7 +394,7 @@ def guide(n=49, extra=(), word='Catorce'):
         ('¿Qué incertidumbre persiste y qué se reevaluará?', ['p. 9', 'p. 19', 'p. 30', 'p. 45']),
     ] + list(extra)
     top = 130.0
-    h, gap = (36.0, 4.0) if len(qs) <= 14 else (34.0, 3.0)
+    h, gap = (36.0, 4.0) if len(qs) <= 14 else ((34.0, 3.0) if len(qs) == 15 else (32.0, 2.5))
     for k, (q, dest) in enumerate(qs):
         it.append(rect_top(50, top, 1141, top + h, 8, fill=WHITE, stroke=LINE, lw=1.0))
         it.append(rect_top(62, top + h / 2 - 13, 88, top + h / 2 + 13, 13, fill=NAVY))
