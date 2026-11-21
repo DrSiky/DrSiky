@@ -1,0 +1,20 @@
+/* v16.34 · Alertas de interacción bajo la pauta */
+.v1634-alerts{margin-top:14px;border-top:2px solid #000;padding-top:10px;font-family:var(--sans,system-ui,sans-serif)}
+.v1634-alerts h3{margin:0 0 8px;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+.v1634-alerts h3 small{font-weight:600;letter-spacing:0;text-transform:none;margin-left:6px}
+.v1634-item{border:1.5px solid #000;margin:0 0 7px;padding:6px 8px;font-size:12.5px;line-height:1.45;background:#fff}
+.v1634-item>summary{cursor:pointer;font-weight:700}
+.v1634-contra{border-width:3px}
+.v1634-mayor{border-style:double;border-width:4px}
+.v1634-vigilar{border-style:dashed}
+.v1634-badge{display:inline-block;font-size:11px;padding:0 5px;border:1px solid #000;margin-right:3px;font-weight:700;white-space:nowrap}
+.v1634-contra .v1634-badge{background:#000;color:#fff}
+.v1634-drugs{font-weight:600;margin:5px 0 3px}
+.v1634-item p{margin:4px 0}
+.v1634-extra{border-left:3px solid #000;padding-left:7px}
+.v1634-src,.v1634-foot,.v1634-none{font-size:11.5px;color:#333}
+.theme-color .v1634-item{border-color:#a6bfd2;border-radius:7px}
+.theme-color .v1634-contra{border-color:#9b1c1c}
+.theme-color .v1634-contra .v1634-badge{background:#9b1c1c;border-color:#9b1c1c}
+.theme-color .v1634-mayor{border-color:#9a5b00}
+@media print{.v1634-item{break-inside:avoid}.v1634-item:not([open])>*:not(summary){display:block}}

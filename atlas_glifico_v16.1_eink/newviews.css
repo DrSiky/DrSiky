@@ -1,0 +1,28 @@
+/* ===== Vistas nuevas v16.0: red farmacodinámica y vectores clínicos ===== */
+.pdn-controls,.vec-controls{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin:10px 0 14px;font-family:var(--sans);font-size:13.5px}
+.pdn-controls label{display:inline-flex;gap:6px;align-items:center;font-weight:700}
+.pdn-controls select{padding:4px 8px;margin-left:4px}
+.pdn-lead{font-size:16px;margin:4px 0 8px;max-width:1100px}
+.pdn-flags{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:12px 0}
+.pdn-card,.vec-card{border:1.5px solid #000;background:#fff;padding:10px 14px;font-family:var(--sans);font-size:13.5px}
+.pdn-card h4,.vec-card h4{margin:0 0 6px;font-family:var(--sans);font-size:12.5px;letter-spacing:.07em;text-transform:uppercase}
+.pdn-card ul,.vec-card ul{margin:0;padding-left:18px}
+.pdn-card li,.vec-card li{font-size:13.5px;line-height:1.45}
+.pdn-svgwrap{border:1.5px solid #000;background:#fff;overflow:auto;margin:10px 0}
+svg.pdn-svg,svg.vec-svg{display:block;width:100%;height:auto;min-width:860px;font-family:"Helvetica Neue",Arial,sans-serif}
+svg.pdn-svg text,svg.vec-svg text{paint-order:stroke;stroke:#fff;stroke-width:3.5px;stroke-linejoin:round}
+.pdn-legend{display:flex;flex-wrap:wrap;gap:10px 22px;margin:8px 0 14px;font-family:var(--sans);font-size:13px;align-items:center}
+.pdn-legend .lg{display:inline-flex;gap:8px;align-items:center}
+.pdn-legend svg{width:64px;height:16px;flex:0 0 auto}
+.pdn-table{width:100%;margin-top:6px}
+.pdn-table td.flag{font-weight:700;white-space:nowrap}
+.pdn-note{font-family:var(--sans);font-size:13.5px;border:1.5px solid #000;border-left:8px solid #000;padding:9px 14px;margin:10px 0;background:#fff}
+.vec-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+.vec-table{width:100%;margin-top:6px}
+.vec-bar{display:inline-block;height:9px;background:#000;vertical-align:middle;min-width:1px}
+.vec-barbox{display:inline-block;width:64px;border:1px solid #000;height:11px;vertical-align:middle;margin-right:6px;background:#fff}
+.vec-barbox i{display:block;height:100%;background:#000}
+.vec-formula{font-family:var(--sans);font-size:13px}
+.vec-formula code{font-family:Menlo,Consolas,monospace;font-size:12.5px}
+.vec-table td,.vec-table th{white-space:nowrap}.vec-table td:last-child{white-space:normal;min-width:220px}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
